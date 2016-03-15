@@ -10,3 +10,16 @@ body{
 .navbar-header img:hover{
 	transform: rotate(360deg);
 }  
+h1
+{
+	text-align: center;
+}
+.mealAddButton
+{
+	float: right;
+	margin-bottom: 4%;
+}
+.rechercheMeal
+{
+	margin-bottom: 3%;
+}

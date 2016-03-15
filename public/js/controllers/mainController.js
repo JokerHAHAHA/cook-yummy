@@ -1,6 +1,6 @@
 // MAIN CONTROLLER
 function mainController($scope, $http, todoService) {
-	$scope.title = "Todo List";
+	$scope.title = "TODO LIST";
 	
 	function load(){
 		todoService.get().then(function(res){
