@@ -7,28 +7,26 @@
 </form>
 
 <ul class="nav-meals nav nav-tabs">
-  <li class="active"><a href="#">ENTREE</a></li>
-  <li><a href="#/dish">PLAT</a></li>
-  <li><a href="#/garnish">ACCOMPAGNEMENT</a></li>
-  <li><a href="#/dessert">DESSERT</a></li>
-  <li><a href="#/drink">BOISSON</a></li>
+	<li class="active"><a href="#">ENTREE</a></li>
+	<li><a href="#/dish">PLAT</a></li>
+	<li><a href="#/garnish">ACCOMPAGNEMENT</a></li>
+	<li><a href="#/dessert">DESSERT</a></li>
+	<li><a href="#/drink">BOISSON</a></li>
 </ul>
 
 <table class="table table-condensed">
 	<tr>
-		<th>phooooto</th>
+		<th></th>
 		<th>Nom</th>
 		<th>Description</th>
 		<th></th>
 
 	</tr>
 
-
-	<tr ng-repeat="meal in meals">
-		<td></td>
-		<td>{{meal.name | uppercase }}</td>
-		<td>{{meal.description}}</td>	
-		<td>
-			<button type="submit" class="btn btn-danger" ng-click="delete(meal)">X</button></td>
+	<tr ng-repeat="meal in meals  | filter: {categorie: 'starter'}">
+		<td><img src="{{meal.avatar}}" style="height: 100%;" /></td>
+		<td style="vertical-align: middle;">{{meal.name}}</td>
+		<td style="vertical-align: middle;">{{meal.description}}</td>
+		<td style="vertical-align: middle;"><form class="btn-modifier" type="get" action="#/updateMeal" style="display: inline-block;"><button type="submit" class="btn btn-warning" ng-click="keep(meal)">Modifier</button></form><button type="submit" class="btn btn-danger" ng-click="delete(meal)">X</button></td>
 	</tr>
 </table>

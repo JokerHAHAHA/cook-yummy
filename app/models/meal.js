@@ -1,13 +1,14 @@
 // MODEL MEAL
 var mongoose = require('mongoose');
 var mealSchema = new mongoose.Schema({
+	avatar: String,
 	name: String,
 	description: String,
 	categorie: String,
 	ingredient: String,
 	recette: String,
 	boisson: String,
-	allergie: String
+	allergie: String,
 });
 
 var Meal = {
@@ -16,13 +17,14 @@ var Meal = {
 
 	create: function(req, res) {
 		Meal.model.create({
+			avatar: req.body.avatar,
 			name: req.body.name,
 			description: req.body.description,
 			categorie: req.body.categorie,
 			ingredient: req.body.ingredient,
 			recette: req.body.recette,
 			boisson: req.body.boisson,
-			allergie: req.body.allergie
+			allergie: req.body.allergie,
 		}, function(){
 			res.sendStatus(200);
 		})
@@ -34,13 +36,14 @@ var Meal = {
 	},
 	update: function(req, res){
 		Meal.model.findByIdAndUpdate(req.params.id, {
+			avatar: req.body.avatar,
 			name: req.body.name,
 			description: req.body.description,
 			categorie: req.body.categorie,
 			ingredient: req.body.ingredient,
 			recette: req.body.recette,
 			boisson: req.body.boisson,
-			allergie: req.body.allergie
+			allergie: req.body.allergie,
 		}, function(){
 			res.sendStatus(200);
 		})
@@ -49,6 +52,7 @@ var Meal = {
 		Meal.model.findByIdAndRemove(req.params.id, function(){
 			res.sendStatus(200);
 		})
-	} 
+	}, 
 }
 module.exports = Meal;
+

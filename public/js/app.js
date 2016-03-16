@@ -4,9 +4,6 @@ function config($routeProvider) {
 			templateUrl: 'views/main.html',
 			controller: 'mainController'
 		})
-		.when('/about', {
-			templateUrl: 'views/about.html'
-		})
 		.when('/starter', {
 			templateUrl: 'views/meal/starter.html',
 			controller: 'mealCtrl'
@@ -30,6 +27,13 @@ function config($routeProvider) {
 		.when('/addMeal', {
 			templateUrl: 'views/meal/addMeal.html',
 			controller: 'mealCtrl'
+		})
+		.when('/updateMeal', {
+			templateUrl: 'views/meal/updateMeal.html',
+			controller: 'mealCtrl'
+		})
+		.when('/about', {
+			templateUrl: 'views/about.html'
 		})
 		.otherwise({
 			redirectTo: '/'

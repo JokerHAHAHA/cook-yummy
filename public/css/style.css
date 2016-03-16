@@ -31,23 +31,26 @@ h1{
 }
 .mealAddButton{
 	width: 7%;
-	margin: auto 15% auto auto;
+	margin-left: 50%;
 }
 .rechercheMeal{
 	width: 50%;
+	margin-bottom: 0;
 }
 .nav-meals{
 	margin: 8% 0;
 	color: #000000;
 }
-.form-control{
+.addMealInput{
 	margin-bottom: 5%;
 }
 .radio{
 	display: inline-block;
 	margin: 2% 3% 5% 3%;
 }
-
+.btn-modifier{
+	margin: 0 5%;
+}
 
 
 

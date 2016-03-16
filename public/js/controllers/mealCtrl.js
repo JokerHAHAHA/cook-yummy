@@ -9,6 +9,7 @@ function mealCtrl($scope, $http, mealService) {
 	$scope.add = function(){
 		
 		var data = {};
+		data.avatar = $scope.imageFile;
 		data.name = $scope.name;
 		data.description = $scope.description;
 		data.categorie =  $scope.categorie;
@@ -20,6 +21,7 @@ function mealCtrl($scope, $http, mealService) {
 		mealService.create(data).then(function(res){
 			load();
 		});
+		$scope.imageFile = "";
 		$scope.name = "";
 		$scope.description = "";
 		$scope.categorie =  "";
@@ -39,5 +41,39 @@ function mealCtrl($scope, $http, mealService) {
 			load();
 		});
 	}
+
+
+	$scope.previewFile = function(){
+		var preview = document.querySelector('#preview');
+		var file    = document.querySelector('input[type=file]').files[0];
+		var reader  = new FileReader();
+		reader.onloadend = function () {
+			preview.src = reader.result;
+			$scope.imageFile = reader.result;
+		}
+
+		if (file) {
+			reader.readAsDataURL(file);
+		} else {
+			preview.src = "";
+		}
+	}
+	
+	$scope.keep = function(meal){
+		
+		$scope.imageFile = meal.avatar;
+		$scope.name = meal.name;
+		$scope.description = meal.description;
+		$scope.categorie = meal.categorie;
+		$scope.ingredient = meal.ingredient;
+		$scope.recette = meal.recette;
+		$scope.boisson = meal.boisson;
+		$scope.allergie = meal.allergie;
+		
+		}
+
+
+
+
 	load();
 }
