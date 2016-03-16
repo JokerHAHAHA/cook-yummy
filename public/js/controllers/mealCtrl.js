@@ -27,6 +27,7 @@ function mealCtrl($scope, $http, mealService) {
 		$scope.recette = "";
 		$scope.boisson = "";
 		$scope.allergie = "";
+		history.back();
 	}
 	$scope.update = function(meal){
 		mealService.update(meal._id, meal).then(function(res){

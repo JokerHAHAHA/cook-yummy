@@ -1,0 +1,34 @@
+
+<h1>PLATS</h1>
+
+<form class="recherche" type="get" action="#/addMeal">
+	<input type="text" class="rechercheMeal form-control" ng-model="search" placeholder="Rechercher">
+	<button type="submit" class="mealAddButton btn btn-danger">+</button>
+</form>
+
+<ul class="nav-meals nav nav-tabs">
+  <li><a href="#/starter">ENTREE</a></li>
+  <li class="active"><a href="#">PLAT</a></li>
+  <li><a href="#/garnish">ACCOMPAGNEMENT</a></li>
+  <li><a href="#/dessert">DESSERT</a></li>
+  <li><a href="#/drink">BOISSON</a></li>
+</ul>
+
+<table class="table table-condensed">
+	<tr>
+		<th>phooooto</th>
+		<th>Nom</th>
+		<th>Description</th>
+		<th></th>
+
+	</tr>
+
+
+	<tr ng-repeat="meal in meals">
+		<td></td>
+		<td>{{meal.name | uppercase }}</td>
+		<td>{{meal.description}}</td>	
+		<td>
+			<button type="submit" class="btn btn-danger" ng-click="delete(meal)">X</button></td>
+	</tr>
+</table>

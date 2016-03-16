@@ -1,5 +1,11 @@
+a{
+	color: grey;
+}
+hr{
+	border-top: transparent;
+}
 body{
-    padding-top: 70px;
+	padding-top: 70px;
 }
 .navbar-border{
 	border-bottom: 3px solid #F0DB4F;
@@ -9,17 +15,55 @@ body{
 }
 .navbar-header img:hover{
 	transform: rotate(360deg);
-}  
-h1
-{
+}
+.table{
+	width: 80%;
+	margin: auto;
+}
+h1{
 	text-align: center;
 }
-.mealAddButton
-{
-	float: right;
-	margin-bottom: 4%;
+.recherche{
+	display: flex;
+	width: 60%;
+	margin: 5% auto;
+	margin-bottom: 7%;
 }
-.rechercheMeal
-{
-	margin-bottom: 3%;
+.mealAddButton{
+	width: 7%;
+	margin: auto 15% auto auto;
 }
+.rechercheMeal{
+	width: 50%;
+}
+.nav-meals{
+	margin: 8% 0;
+	color: #000000;
+}
+.form-control{
+	margin-bottom: 5%;
+}
+.radio{
+	display: inline-block;
+	margin: 2% 3% 5% 3%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

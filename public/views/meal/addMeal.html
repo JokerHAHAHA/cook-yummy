@@ -1,0 +1,48 @@
+
+<h1>NOUVEAU PLAT</h1>
+
+
+<div class="table form-group">
+	<label>Nom :</label>
+	<input type="text" class="form-control" ng-model="name" placeholder="Entrez le nom ici">
+	<hr>
+	<label>Description :</label>
+	<input type="text" class="form-control" ng-model="description" placeholder="Entrez une description courte ici" style="height: 100px;">
+	<hr>
+	<label>Catégorie :</label>
+	<!-- 	<input type="text" class="form-control" ng-model="categorie" placeholder="Entrez une catégorie de plat ici"> -->
+	<form>
+		<div class="radio">
+			<label><input type="radio" name="optradio">Entrée</label>
+		</div>
+		<div class="radio">
+			<label><input type="radio" name="optradio" checked>Plat</label>
+		</div>
+		<div class="radio">
+			<label><input type="radio" name="optradio"	>Accompagnement</label>
+		</div>
+		<div class="radio">
+			<label><input type="radio" name="optradio">Dessert</label>
+		</div>
+		<div class="radio">
+			<label><input type="radio" name="optradio">Boisson</label>
+		</div>
+	</form>
+	<hr>
+	<label>Ingrédients :</label>
+	<input type="text" class="form-control" ng-model="ingredient" placeholder="Entrez tous les ingredients ici">
+	<hr>
+	<label>Recette :</label>
+	<input type="text" class="form-control" ng-model="recette" placeholder="Entrez la recette ici" style="height: 500px;">
+	<hr>
+	<label>Boissons associées :</label>
+	<input type="text" class="form-control" ng-model="boisson" placeholder="Entrez toutes les boissons ici">
+	<hr>
+	<label>Produits allergènes :</label>
+	<input type="text" class="form-control" ng-model="allergie" placeholder="Entrez tous les ingrédients allergènes ici">
+	<hr>
+	<hr>
+	<div class="form-group">
+		<button type="submit" class="btn btn-success form-control" ng-click="add()" style="width: 40%;">Ajouter</button>
+	</div>
+</div>

@@ -7,12 +7,28 @@ function config($routeProvider) {
 		.when('/about', {
 			templateUrl: 'views/about.html'
 		})
-		.when('/meals', {
-			templateUrl: 'views/meals.html',
+		.when('/starter', {
+			templateUrl: 'views/meal/starter.html',
+			controller: 'mealCtrl'
+		})
+		.when('/dish', {
+			templateUrl: 'views/meal/dish.html',
+			controller: 'mealCtrl'
+		})
+		.when('/garnish', {
+			templateUrl: 'views/meal/garnish.html',
+			controller: 'mealCtrl'
+		})
+		.when('/dessert', {
+			templateUrl: 'views/meal/dessert.html',
+			controller: 'mealCtrl'
+		})
+		.when('/drink', {
+			templateUrl: 'views/meal/drink.html',
 			controller: 'mealCtrl'
 		})
 		.when('/addMeal', {
-			templateUrl: 'views/addMeal.html',
+			templateUrl: 'views/meal/addMeal.html',
 			controller: 'mealCtrl'
 		})
 		.otherwise({
