@@ -4,8 +4,8 @@ function config($routeProvider) {
 			templateUrl: 'views/main.html',
 			controller: 'mainController'
 		})
-		.when('/starter', {
-			templateUrl: 'views/meal/starter.html',
+		.when('/meal', {
+			templateUrl: 'views/meal/meal.html',
 			controller: 'mealCtrl'
 		})
 		.when('/dish', {
