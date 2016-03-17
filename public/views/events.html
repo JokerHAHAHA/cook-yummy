@@ -15,10 +15,10 @@
 				<option>Autre</option>
 			</select>
 		</div>
-
+	<!-- == formulaire de création d'événements == -->
 		<div class="form-group1">
 			<label for="inputNom">Nom :</label><br/>
-			<input type="text" class="form-control" id="inputNom" placeholder="Nom" ng-model="nom"> 
+			<input type="text" class="form-control" id="inputNom"  ng-model="nom"> 
 		</div>
 
 		<div class="form-group2">
@@ -28,12 +28,58 @@
 
 		<div class="form-group3">
 			<label for="inputJour">Jour :</label><br/>
-			<input type="text" class="form-control" id="inputJour" placeholder="01" ng-model="jour">
+			<select type="text" class="inJour form-control" id="inputJour" 
+				    ng-model="jour">
+				<option value="">01</option>
+				<option value="">02</option>
+				<option value="">03</option>
+				<option value="">04</option>
+				<option value="">05</option>
+				<option value="">06</option>
+				<option value="">07</option>
+				<option value="">08</option>
+				<option value="">09</option>
+				<option value="">10</option>
+				<option value="">11</option>
+				<option value="">12</option>
+				<option value="">13</option>
+				<option value="">14</option>
+				<option value="">15</option>
+				<option value="">16</option>
+				<option value="">17</option>
+				<option value="">18</option>
+				<option value="">19</option>
+				<option value="">20</option>
+				<option value="">21</option>
+				<option value="">22</option>
+				<option value="">23</option>
+				<option value="">24</option>
+				<option value="">25</option>
+				<option value="">26</option>
+				<option value="">27</option>
+				<option value="">28</option>
+				<option value="">29</option>
+				<option value="">30</option>
+				<option value="">31</option>
+			</select>
 		</div>
 
 		<div class="form-group4">
 			<label for="inputMois">Mois :</label><br/>
-			<input type="text" class="form-control" id="inputMois" placeholder="Jan" ng-model="mois">
+			<select type="text" class="inMois form-control" id="inputMois" 
+				    ng-model="mois">
+				<option value="Jan">Jan</option>
+				<option value="Fev">Fev</option>
+				<option value="Mar">Mar</option>
+				<option value="Avr">Avr</option>
+				<option value="Mai">Mai</option>
+				<option value="Juin">Juin</option>
+				<option value="Juil">Juil</option>
+				<option value="Aou">Août</option>
+				<option value="Sep">Sep</option>
+				<option value="Octo">Oct</option>
+				<option value="Nov">Nov</option>
+				<option value="Dec">Dec</option>
 		</div>
 
 		<div class="form-group5">
@@ -48,7 +94,7 @@
 			<br/>
 			
 		<button type="submit" class="btn btn-success" ng-click="add()">Ajouter</button>
-	</form>
+	</form><!-- /formulaire... -->
 
 	<hr>
 	<ul class="list-group">
@@ -73,27 +119,28 @@
 
 <!-- ========================================================================================================================= -->
 	    <div class="container">
-		<div class="row">
-			<div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]">
-				<ul class="event-list">
-					<li ng-repeat="event in events">
-						<time datetime="2014-07-20">
-							<span class="day">{{event.jour}}</span>
-							<span class="month">{{event.mois}}</span>
-							<span class="year">{{event.annee}}</span>
-							<span class="time">{{event.heure}}</span>
-						</time>
-						<img alt="Feu d'artifice" src="https://farm4.staticflickr.com/3100/2693171833_3545fb852c_q.jpg" />
-						<div class="info">
-							<h2 class="title">{{event.nom}}</h2>
-							<p class="desc" ng-model="lieu">@ {{event.lieu}}</p>
-								<button class="btn btn-info pull-right" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded	="false" aria-controls="collapseExample">Details</button>
-						</div>
-						
-					</li>
+			<div class="row">
+				<div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]">
+					<ul class="event-list">
+						<li ng-repeat="event in events">
+							<time datetime="2014-07-20">
+								<span class="day">{{event.jour}}</span>
+								<span class="month">{{event.mois}}</span>
+								<span class="year">{{event.annee}}</span>
+								<span class="time"></span>
+							</time>
+								<img alt="Feu d'artifice" src="https://farm4.staticflickr.com/3100/2693171833_3545fb852c_q.jpg" />
+							<div class="info">
+								<h2 class="title">{{event.nom}}</h2>
+								<p class="desc" ng-model="lieu">@ {{event.lieu}}</p>
+									<button class="btn btn-info pull-right" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded	="false" aria-controls="collapseExample">Details</button>
+								<ul>
+									<li class="pull-left timeEvent"><i class="glyphicon glyphicon-time"></i> {{event.heure}}</li>
+								</ul>
 
-					
-				</ul>
+							</div>
+						</li>	
+					</ul>
+				</div>
 			</div>
 		</div>
-	</div>

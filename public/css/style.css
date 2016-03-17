@@ -16,7 +16,7 @@ hr{
 body{
     padding-top: 70px;
 		/*background-color: #4e5d6c;*/
-    background-image: url("../img/ok4.jpg");
+    /*background-image: url("../img/ok4.jpg");*/
     background-repeat:no-repeat;
     background-size: cover;
 
@@ -71,8 +71,7 @@ h1{
 }
 
 
-
-}
+/*
 .btn-info {
   background-color:#ed771e;
   border-color:#ed771e;
@@ -86,7 +85,7 @@ h1{
   border-color:#ed771e;
   color:white;
 }
-
+*/
 
 .home {
   height: 400px;
@@ -159,8 +158,9 @@ h1{
 	width: 200px;
 }
 
-/*=========================================================================================================*/
-
+/*=========================================================================================================================
+		== Events ==
+===========================================================================================================================*/
     @import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic");
     @import url("//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
     body {
@@ -198,14 +198,20 @@ h1{
 	}
 	.event-list > li > time > .day {
 		display: block;
-		font-size: 56pt;
+		font-size: 50pt;
 		font-weight: 100;
 		line-height: 1;
 	}
-	.event-list > li time > .month {
+	.event-list > li > time > .month {
 		display: block;
-		font-size: 24pt;
+		font-size: 20pt;
 		font-weight: 900;
+		line-height: 1;
+	}
+	.event-list > li > time > .year {
+		display: block;
+		font-size: 18px;
+		font-weight: 400;
 		line-height: 1;
 	}
 	.event-list > li > img {
@@ -258,12 +264,15 @@ h1{
     .event-list > li > .social > ul > li > a {
         padding: 3px 0px;
 	} 
-	.event-list > li > .info > ul > li:hover,
+	/*.event-list > li > .info > ul > li:hover,
 	.event-list > li > .social > ul > li:hover {
 		color: rgb(30, 30, 30);
 		background-color: rgb(200, 200, 200);
 	}
-	
+	*/
+	.timeEvent {
+		margin-left: 10px;
+	}
 
 	@media (min-width: 768px) {
 		.event-list > li {
