@@ -6,15 +6,23 @@
 	<button type="submit" class="mealAddButton btn btn-danger">+</button>
 </form>
 
-<ul class="nav-meals nav nav-tabs">
+<!-- <ul class="nav-meals nav nav-tabs">
 	<li class="active"><a href="#">ENTREE</a></li>
 	<li><a href="#/dish">PLAT</a></li>
 	<li><a href="#/garnish">ACCOMPAGNEMENT</a></li>
 	<li><a href="#/dessert">DESSERT</a></li>
 	<li><a href="#/drink">BOISSON</a></li>
+</ul> -->
+
+<ul class="nav-meals nav nav-tabs">
+	<li ng-click="viewCount(1)"><a>ENTREE</a></li>
+	<li ng-click="viewCount(2)"><a>PLAT</a></li>
+	<li><a ng-click="viewCount(2)">ACCOMPAGNEMENT</a></li>
+	<li><a ng-click="viewCount(2)">DESSERT</a></li>
+	<li><a ng-click="viewCount(2)">BOISSON</a></li>
 </ul>
 
-<table class="table table-condensed">
+<table ng-show="number == 1" class="table table-condensed">
 	<tr>
 		<th></th>
 		<th>Nom</th>
@@ -23,10 +31,29 @@
 
 	</tr>
 
-	<tr ng-repeat="meal in meals  | filter: {categorie: 'starter'}">
+	<tr ng-repeat="meal in meals  | filter: {categorie: 'starter'} | filter: search">
 		<td><img src="{{meal.avatar}}" style="height: 100%;" /></td>
 		<td style="vertical-align: middle;">{{meal.name}}</td>
 		<td style="vertical-align: middle;">{{meal.description}}</td>
 		<td style="vertical-align: middle;"><form class="btn-modifier" type="get" action="#/updateMeal" style="display: inline-block;"><button type="submit" class="btn btn-warning" ng-click="keep(meal)">Modifier</button></form><button type="submit" class="btn btn-danger" ng-click="delete(meal)">X</button></td>
+	</tr>
+</table>
+
+
+<table ng-show="number == 2" class="table table-condensed">
+	<tr>
+		<th></th>
+		<th>Nom</th>
+		<th>Description</th>
+		<th></th>
+
+	</tr>
+
+
+	<tr ng-repeat="meal in meals  | filter: {categorie: 'dish'} | filter: search">
+		<td><img src="{{meal.avatar}}" style="height: 100%;" /></td>
+		<td style="vertical-align: middle;">{{meal.name}}</td>
+		<td style="vertical-align: middle;">{{meal.description}}</td>
+		<td style="vertical-align: middle;"><form class="btn-modifier" type="get" action="#/updateMeal" style="display: inline-block;"><button type="submit" class="btn btn-warning">Modifier</button></form><button type="submit" class="btn btn-danger" ng-click="delete(meal)">X</button></td
 	</tr>
 </table>

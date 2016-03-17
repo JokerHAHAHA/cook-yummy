@@ -24,7 +24,7 @@
 	</tr>
 
 
-	<tr ng-repeat="meal in meals  | filter: {categorie: 'dish'}">
+	<tr ng-repeat="meal in meals  | filter: {categorie: 'dish'} | filter: search">
 		<td><img src="{{meal.avatar}}" style="height: 100%;" /></td>
 		<td style="vertical-align: middle;">{{meal.name}}</td>
 		<td style="vertical-align: middle;">{{meal.description}}</td>

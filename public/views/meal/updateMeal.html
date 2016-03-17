@@ -4,9 +4,9 @@
 
 <div class="table form-group">
 	<form>
-		<div class="form-group" ng-repeat="meal in meals | filter: {}">
+		<div class="form-group" ng-repeat="meal in meals | filter: $scope._id">
 			<input type="text" class="form-control" id="inputMessage" 
-			ng-model="meal.name">
+			ng-model="name">
 		</div>
 	</form>
 	<hr>
@@ -15,3 +15,4 @@
 		<button type="submit" class="btn btn-success form-control" ng-click="add()" style="width: 40%; margin: 0 auto; ">Creer</button>
 	</div>
 </div>
+

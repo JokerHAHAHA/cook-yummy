@@ -1,6 +1,7 @@
 // MEALS CONTROLLER
 function mealCtrl($scope, $http, mealService) {
-	
+	$scope.number = 1;
+
 	function load(){
 		mealService.get().then(function(res){
 			$scope.meals = res.data;
@@ -60,7 +61,8 @@ function mealCtrl($scope, $http, mealService) {
 	}
 	
 	$scope.keep = function(meal){
-		
+
+		$scope._id = meal._id
 		$scope.imageFile = meal.avatar;
 		$scope.name = meal.name;
 		$scope.description = meal.description;
@@ -70,9 +72,11 @@ function mealCtrl($scope, $http, mealService) {
 		$scope.boisson = meal.boisson;
 		$scope.allergie = meal.allergie;
 		
-		}
+	}
 
-
+	$scope.viewCount = function(number){
+		$scope.number = number;
+	}
 
 
 	load();
