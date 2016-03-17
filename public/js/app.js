@@ -37,7 +37,29 @@ function config($routeProvider) {
 		})
 		.otherwise({
 			redirectTo: '/'
-		});
+		})
+	.when('/liste_invites', {
+		templateUrl: 'views/liste_invites.html',
+		controller: 'registrationController'
+	})
+	.when('/home', {
+		templateUrl: 'views/home.html',
+		controller: 'registrationController'
+	})
+	.when('/invites', {
+		templateUrl: 'views/invites.html',
+		controller: 'registrationController'
+	})
+	.when('/login', {
+		templateUrl: 'views/login.html',
+		controller: 'registrationController'
+	})
+	.when('/registration', {
+		templateUrl: 'views/registration.html',
+		controller: 'registrationController'
+	});
+
+
 }
 function run($rootScope, $location){
 	var path = function() { return $location.path(); };
@@ -45,12 +67,16 @@ function run($rootScope, $location){
 		$rootScope.activetab = newVal;
 	});
 }
-angular.module('app', ['ngRoute'])
-    .config(config)
-    .controller('mainController', mainController)
-    .controller('mealCtrl',mealCtrl)
-    .service('todoService', todoService)
-    .service('mealService', mealService)
-    /*.factory('', )*/
-    .run(run);
 
+angular.module('app', ['ngRoute','ngAutocomplete'])
+.config(config)
+.controller('mainController', mainController)
+.controller('registrationController', registrationController)
+.controller('mealCtrl',mealCtrl)
+.service('todoService', todoService)
+.service('accountService', accountService)
+.service('mealService', mealService)
+
+
+/*.factory('', )*/
+.run(run);

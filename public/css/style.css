@@ -1,17 +1,27 @@
+
 a{
 	color: grey;
 }
 hr{
 	border-top: transparent;
 }
+
+
 body{
-	padding-top: 70px;
+    padding-top: 70px;
+		/*background-color: #4e5d6c;*/
+    background-image: url("../img/ok4.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+
 }
 .navbar-border{
-	border-bottom: 3px solid #F0DB4F;
+	border-bottom: 3px solid #ed771e;
 }
 .navbar-header img{
 	transition: 0.4s;
+  width: 120px;
+  height: 50px;;
 }
 .navbar-header img:hover{
 	transform: rotate(360deg);
@@ -70,3 +80,77 @@ h1{
 
 
 
+=======
+
+}
+.btn-info {
+  background-color:#ed771e;
+  border-color:#ed771e;
+}
+.btn-info:hover {
+  background-color:#ed771e;
+  border-color:#ed771e;
+}
+.btn {
+  background-color:#ed771e;
+  border-color:#ed771e;
+  color:white;
+}
+
+
+.home {
+  height: 400px;
+  /*text-align: center;
+  vertical-align: middle*/
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  margin-bottom: -30px;
+}
+
+/* invites_liste */
+.src-image {
+  display: none;
+}
+
+.card {
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #CCC;
+  border-radius: 8px;
+  text-align: center;
+  padding: 0;
+  background-color: #284c79;
+  color: rgb(136, 172, 217);
+}
+
+.card .header-bg {
+  /* This stretches the canvas across the entire hero unit */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  border-bottom: 1px #FFF solid;
+  /* This positions the canvas under the text */
+  z-index: 1;
+}
+.card .avatar {
+  position: relative;
+  margin-top: 15px;
+  z-index: 100;
+}
+
+.card .avatar img {
+  width: 100px;
+  height: 100px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 5px solid rgba(0,0,30,0.8);
+}
+.pink{
+  background-color: pink;
+}
+
+/* fin invites_liste */
