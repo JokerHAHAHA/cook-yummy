@@ -1,7 +1,11 @@
+<div class="container">
 
+<h1>Qui voulez-vous inviter?</h1>
 <div class="row">
+    <div class="col-md-4">
     <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="Filtre" ng-model="filtre">
-
+</div>
+<div class="col-md-12">
     <div class="col-md-4">
         <h3>Sexe</h3>
         <button type="button" class="btn btn-default" value="female" ng-model="filtre" ng-click="myFilter = 'female'">female</button>
@@ -10,24 +14,27 @@
     </div>
     <div class="col-md-4">
         <h3>Allergies</h3>
-        <button type="button" class="btn btn-default"></button>
-        <button type="button" class="btn btn-default"></button>
-        <button type="button" class="btn btn-default"></button>
-        <button type="button" class="btn btn-default"></button>
+        <button type="button" class="btn btn-default">Noix</button>
+        <button type="button" class="btn btn-default">Oeuf</button>
+        <button type="button" class="btn btn-default">Lactose</button>
 
     </div>
     <div class="col-md-4">
-        <button type="button" class="btn btn-default"></button>
-        <button type="button" class="btn btn-default"></button>
-        <button type="button" class="btn btn-default"></button>
-        <button type="button" class="btn btn-default"></button>
+        <h3>Règime alimentaire</h3>
+        <button type="button" class="btn btn-default">Végétarien</button>
+        <button type="button" class="btn btn-default">Végétalien</button>
+        <button type="button" class="btn btn-default">Gluten Free</button>
 
+    </div>
+    </div>
     </div>
 
 
 
     <div class="form-group move-down">
-        <label for="Autocomplete">Generic Autocomplete</label>
+        <hr>
+        <hr>
+        <hr>
         <input type="text" id="Autocomplete" class="form-control" ng-autocomplete='toto' ng-model="result" options="{ types: '(cities)'}" />
     </div>
 
@@ -44,4 +51,5 @@
                     <p><button type="button" class="btn btn-default">Inviter {{account.firstname}}</button></p>
                 </div>
             </div>
-        </div>
+
+</div>

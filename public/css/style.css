@@ -12,13 +12,49 @@ a{
 hr{
 	border-top: transparent;
 }
+.home{
+	/*background:url("../img/ok4.jpg");*/
+	filter: sep
+	height: auto;
+	padding: 0px;
+	margin-top: -3px;
+	margin-right: -169.444px;
+	margin-left: -169.444px;
 
+}
+.moe-down{
+	padding-top: 10px;
+
+}
+#Autocomplete{
+	margin-top: 10px;
+
+}
+.container-fluid{
+	padding: 0px;
+	margin-top: -5px;
+}
 body{
     padding-top: 70px;
-		/*background-color: #4e5d6c;*/
-    background-image: url("../img/ok4.jpg");
+		background-image: url("../img/ok5.jpg");
+
+		/*background-image: url("../img/ok5.jpg");*/
     background-repeat:no-repeat;
     background-size: cover;
+		height: 100vh;
+
+
+}
+body:before{
+	position: absolute;
+	content: "";
+	right: 0;
+	left: 0;
+	bottom: 0;
+	top: 0;
+	background-color: #4e5d6c;
+	opacity: 0.6;
+	z-index: -1;
 
 }
 .navbar-border{
@@ -73,22 +109,18 @@ h1{
 
 
 }
-.btn-info {
+.btn_orange {
   background-color:#ed771e;
   border-color:#ed771e;
 }
-.btn-info:hover {
+.btn_orange:hover {
   background-color:#ed771e;
   border-color:#ed771e;
-}
-.btn {
-  background-color:#ed771e;
-  border-color:#ed771e;
-  color:white;
 }
 
 
-.home {
+
+.homee {
   height: 400px;
   /*text-align: center;
   vertical-align: middle*/
@@ -142,14 +174,14 @@ h1{
 .pink{
   background-color: pink;
 }
+.invites{
+	margin-top: 100px;
+}
 
 /* fin invites_liste */
 
-}  
-
-.form-group1 {
-	
 }
+
 
 .inDescr {
 	width: 200px !important;
@@ -165,9 +197,8 @@ h1{
     @import url("//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
     body {
 		padding: 60px 0px;
-		background-color: rgb(220, 220, 220);
 	}
-    
+
     .event-list {
 		list-style: none;
 		font-family: 'Lato', sans-serif;
@@ -251,19 +282,19 @@ h1{
 		width: 100%;
 		color: rgb(30, 30, 30);
 		text-decoration: none;
-	} 
-    .event-list > li > .social > ul > li {    
+	}
+    .event-list > li > .social > ul > li {
         padding: 0px;
     }
     .event-list > li > .social > ul > li > a {
         padding: 3px 0px;
-	} 
+	}
 	.event-list > li > .info > ul > li:hover,
 	.event-list > li > .social > ul > li:hover {
 		color: rgb(30, 30, 30);
 		background-color: rgb(200, 200, 200);
 	}
-	
+
 
 	@media (min-width: 768px) {
 		.event-list > li {
@@ -298,8 +329,8 @@ h1{
 			height: 120px;
 			text-align: left;
 			padding-right: 40px;
-		}	
-		.event-list > li > .info > .title, 
+		}
+		.event-list > li > .info > .title,
 		.event-list > li > .info > .desc {
 			padding: 0px 10px;
 		}
@@ -318,7 +349,7 @@ h1{
         .event-list > li > .social > ul {
             border-left: 1px solid rgb(230, 230, 230);
         }
-		.event-list > li > .social > ul > li {			
+		.event-list > li > .social > ul > li {
 			display: block;
             padding: 0px;
 		}
@@ -328,4 +359,3 @@ h1{
 			padding: 10px 0px 9px;
 		}
 	}
-
