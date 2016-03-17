@@ -4,6 +4,34 @@ function config($routeProvider) {
 			templateUrl: 'views/main.html',
 			controller: 'mainController'
 		})
+		.when('/starter', {
+			templateUrl: 'views/meal/starter.html',
+			controller: 'mealCtrl'
+		})
+		.when('/dish', {
+			templateUrl: 'views/meal/dish.html',
+			controller: 'mealCtrl'
+		})
+		.when('/garnish', {
+			templateUrl: 'views/meal/garnish.html',
+			controller: 'mealCtrl'
+		})
+		.when('/dessert', {
+			templateUrl: 'views/meal/dessert.html',
+			controller: 'mealCtrl'
+		})
+		.when('/drink', {
+			templateUrl: 'views/meal/drink.html',
+			controller: 'mealCtrl'
+		})
+		.when('/addMeal', {
+			templateUrl: 'views/meal/addMeal.html',
+			controller: 'mealCtrl'
+		})
+		.when('/updateMeal', {
+			templateUrl: 'views/meal/updateMeal.html',
+			controller: 'mealCtrl'
+		})
 		.when('/about', {
 			templateUrl: 'views/about.html'
 		})
@@ -20,7 +48,9 @@ function run($rootScope, $location){
 angular.module('app', ['ngRoute'])
     .config(config)
     .controller('mainController', mainController)
+    .controller('mealCtrl',mealCtrl)
     .service('todoService', todoService)
+    .service('mealService', mealService)
     /*.factory('', )*/
     .run(run);
 

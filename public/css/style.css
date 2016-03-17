@@ -1,5 +1,11 @@
+a{
+	color: grey;
+}
+hr{
+	border-top: transparent;
+}
 body{
-    padding-top: 70px;
+	padding-top: 70px;
 }
 .navbar-border{
 	border-bottom: 3px solid #F0DB4F;
@@ -9,4 +15,58 @@ body{
 }
 .navbar-header img:hover{
 	transform: rotate(360deg);
-}  
+}
+.table{
+	width: 80%;
+	margin: auto;
+}
+h1{
+	text-align: center;
+}
+.recherche{
+	display: flex;
+	width: 60%;
+	margin: 5% auto;
+	margin-bottom: 7%;
+}
+.mealAddButton{
+	width: 7%;
+	margin-left: 50%;
+}
+.rechercheMeal{
+	width: 50%;
+	margin-bottom: 0;
+}
+.nav-meals{
+	margin: 8% 0;
+	color: #000000;
+}
+.addMealInput{
+	margin-bottom: 5%;
+}
+.radio{
+	display: inline-block;
+	margin: 2% 3% 5% 3%;
+}
+.btn-modifier{
+	margin: 0 5%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
