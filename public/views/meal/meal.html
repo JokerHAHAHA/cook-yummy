@@ -14,7 +14,7 @@
 	<li><a ng-click="viewCount(5)">BOISSON</a></li>
 </ul>
 
-	<div class="container">
+	<!-- <div class="container">
 		<div class="row">
 			<tr>
 				<th class="col-md-offset-2 col-md-2">test</th>
@@ -23,24 +23,37 @@
 				<th class="cold-md-2"></th>
 			</tr>
 		</div>
+	</div> -->
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-offset-1 col-lg-2"></div>
+			<div class="col-lg-2">NOM</div>
+			<div class="cold-lg-3]">DESCRIPTION</div>
+			<div class="cold-lg-3"></div>
+		</div>
 	</div>
 
 <!-- =============================================================================
-                 STARTERS
+STARTERS
 ================================================================================== -->
 
-<table ng-show="number == 1" class="table table-condensed">
-
-	<tr ng-repeat="meal in meals  | filter: {categorie: 'starter'} | filter: search">
-		<td><img src="{{meal.avatar}}" style="height: 100%;" /></td>
-		<td style="vertical-align: middle;">{{meal.name}}</td>
-		<td style="vertical-align: middle;">{{meal.description}}</td>
-		<td style="vertical-align: middle;"><form class="btn-modifier" type="get" action="#/updateMeal" style="display: inline-block;"><button type="submit" class="btn btn-warning" ng-click="keep(meal)">Modifier</button></form><button type="submit" class="btn btn-danger" ng-click="delete(meal)">X</button></td>
-	</tr>
+<table ng-show="number == 1" class="container table table-condensed">
+	<div class="row" ng-repeat="meal in meals | filter: {categorie: 'starter'} | filter: search">
+		<div class="col-lg-offset-1 col-lg-2"><img src="{{meal.avatar}}" style="height: 100%;" /></div>
+		<div class="col-lg-2" style="vertical-align: middle;">{{meal.name}}</div>
+		<div class="col-lg-3" style="vertical-align: middle;">{{meal.description}}</div>
+		<div class="col-lg-3" style="vertical-align: middle;">
+			<form class="btn-modifier" type="get" action="#/updateMeal" style="display: inline-block;">
+				<button type="submit" class="btn btn-warning" ng-click="keep(meal)">Modifier</button>
+			</form>
+			<button type="submit" class="btn btn-danger" ng-click="delete(meal)">X</button>
+		</div>
+	</div>
 </table>
 
 <!-- =============================================================================
-                 DISH
+DISH
 ================================================================================== -->
 <table ng-show="number == 2" class="table table-condensed">
 	<!-- <tr>
@@ -57,21 +70,21 @@
 		<td style="vertical-align: middle;">{{meal.name}}</td>
 		<td style="vertical-align: middle;">{{meal.description}}</td>
 		<td style="vertical-align: middle;"><form class="btn-modifier" type="get" action="#/updateMeal" style="display: inline-block;"><button type="submit" class="btn btn-warning">Modifier</button></form><button type="submit" class="btn btn-danger" ng-click="delete(meal)">X</button></td
-	</tr>
-</table>
+		</tr>
+	</table>
 
 <!-- =============================================================================
-                 GARNISH
+GARNISH
 ================================================================================== -->
 
 <table ng-show="number == 3" class="table table-condensed">
-	<tr>
+	<!-- <tr>
 		<th></th>
 		<th>Nom</th>
 		<th>Description</th>
 		<th></th>
 
-	</tr>
+	</tr> -->
 
 
 	<tr ng-repeat="meal in meals  | filter: {categorie: 'garnish'} | filter: search">
@@ -79,21 +92,21 @@
 		<td style="vertical-align: middle;">{{meal.name}}</td>
 		<td style="vertical-align: middle;">{{meal.description}}</td>
 		<td style="vertical-align: middle;"><form class="btn-modifier" type="get" action="#/updateMeal" style="display: inline-block;"><button type="submit" class="btn btn-warning">Modifier</button></form><button type="submit" class="btn btn-danger" ng-click="delete(meal)">X</button></td
-	</tr>
-</table>
+		</tr>
+	</table>
 
 <!-- =============================================================================
-                 DESSERT
+DESSERT
 ================================================================================== -->
 
 <table ng-show="number == 4" class="table table-condensed">
-	<tr>
+	<!-- <tr>
 		<th></th>
 		<th>Nom</th>
 		<th>Description</th>
 		<th></th>
 
-	</tr>
+	</tr> -->
 
 
 	<tr ng-repeat="meal in meals  | filter: {categorie: 'dessert'} | filter: search">
@@ -101,21 +114,21 @@
 		<td style="vertical-align: middle;">{{meal.name}}</td>
 		<td style="vertical-align: middle;">{{meal.description}}</td>
 		<td style="vertical-align: middle;"><form class="btn-modifier" type="get" action="#/updateMeal" style="display: inline-block;"><button type="submit" class="btn btn-warning">Modifier</button></form><button type="submit" class="btn btn-danger" ng-click="delete(meal)">X</button></td
-	</tr>
-</table>
+		</tr>
+	</table>
 
 <!-- =============================================================================
-                 DRINK
+DRINK
 ================================================================================== -->
 
 <table ng-show="number == 5" class="table table-condensed">
-	<tr>
+	<!-- <tr>
 		<th></th>
 		<th>Nom</th>
 		<th>Description</th>
 		<th></th>
 
-	</tr>
+	</tr> -->
 
 
 	<tr ng-repeat="meal in meals  | filter: {categorie: 'drink'} | filter: search">
@@ -123,5 +136,5 @@
 		<td style="vertical-align: middle;">{{meal.name}}</td>
 		<td style="vertical-align: middle;">{{meal.description}}</td>
 		<td style="vertical-align: middle;"><form class="btn-modifier" type="get" action="#/updateMeal" style="display: inline-block;"><button type="submit" class="btn btn-warning">Modifier</button></form><button type="submit" class="btn btn-danger" ng-click="delete(meal)">X</button></td
-	</tr>
-</table>
+		</tr>
+	</table>
