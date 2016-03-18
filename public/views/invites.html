@@ -1,12 +1,10 @@
-<div class="container">
-
 <div class="col-md-9">
 	<div class="container invites">
 		<div class="row centered-form" ng-show="i == 0">
 			<div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
 				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h3 class="panel-title">Ajouter un inviter </h3>
+					<div class="panel-heading ">
+						<h3 class="panel-title ">Ajouter un inviter </h3>
 					</div>
 					<div class="panel-body">
 						<form role="form">
@@ -26,14 +24,48 @@
 							<div class="form-group">
 								<input type="text" name="email" id="email" class="form-control input-sm" placeholder="Email"ng-model="email">
 							</div>
-
-
-
 						</form>
 					</div>
 				</div>
 			</div>
 		</div>
+		<div class="row centered-form" ng-show="i == 1">
+			<div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Adresse</h3>
+
+					</div>
+					<div class="panel-body">
+						<form role="form">
+							<div class="row">
+								<div class="col-xs-6 col-sm-6 col-md-6">
+									<div class="form-group">
+										<input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="Rue" ng-model="street">
+									</div>
+								</div>
+								<div class="col-xs-6 col-sm-6 col-md-6">
+									<div class="form-group">
+										<input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="Zip Code" ng-model="zip">
+									</div>
+								</div>
+								<div class="col-xs-6 col-sm-6 col-md-12">
+								<div class="form-group">
+										<input type="text" id="Autocomplete" class="form-control" ng-autocomplete='toto' placeholder="Ville" ng-model="city" options="{ types: '(cities)'}" />
+										</div>
+										</div>
+										<div class="col-xs-6 col-sm-6 col-md-12">
+										<div class="form-group">
+												<input type="text" id="Autocomplete" class="form-control" ng-autocomplete='toto' placeholder="Pays" ng-model="country" />
+												</div>
+												</div>
+							</div>
+						</form>
+						</div>
+	</div>
+		</div>
+	</div>
+
 		<div class="row centered-form" ng-show="i == 1">
 			<div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
 				<div class="panel panel-default">
@@ -201,17 +233,47 @@
 							<div class="row">
 								<div class="col-xs-4 col-sm-4 col-md-4">
 									<div class="checkbox">
-										<label><input type="radio" ng-model="lactose" value="male"> Lactose</label>
+										<label><input type="radio" ng-model="oeuf" value="oeuf"> Oeuf</label>
 									</div>
 								</div>
 								<div class="col-xs-4 col-sm-4 col-md-4">
 									<div class="checkbox">
-										<label><input type="radio" ng-model="noix" value="female"> Noix</label>
+										<label><input type="radio" ng-model="noix" value="noix"> Noix</label>
 									</div>
 								</div>
 								<div class="col-xs-4 col-sm-4 col-md-4">
 									<div class="checkbox">
-										<label><input type="radio" ng-model="gluten" value="female"> Gluten</label>
+										<label><input type="radio" ng-model="lactose" value="lactose"> Lactose</label>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+					</div>
+					</div>
+					<div class="row centered-form" ng-show="i == 2">
+						<div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+							<div class="panel panel-default">
+
+					<div class="panel-heading">
+						<h3 class="panel-title">Régime alimentaire</h3>
+					</div>
+					<div class="panel-body">
+						<form role="form">
+							<div class="row">
+								<div class="col-xs-4 col-sm-4 col-md-12">
+									<div class="checkbox">
+										<label><input type="radio" ng-model="vegetarien" value="vegetarien"> Végétarien</label>
+									</div>
+								</div>
+								<div class="col-xs-4 col-sm-4 col-md-12">
+									<div class="checkbox">
+										<label><input type="radio" ng-model="vegan" value="vegan"> Vegan</label>
+									</div>
+								</div>
+								<div class="col-xs-4 col-sm-4 col-md-12">
+									<div class="checkbox">
+										<label><input type="radio" ng-model="gluten" value="gluten"> Gluten Free</label>
 									</div>
 								</div>
 							</div>
@@ -219,6 +281,7 @@
 					</div>
 				</div>
 			</div>
+		</div>
 		</div>
 		<div class="row centered-form" ng-show= "i == 3">
 			<div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
@@ -243,7 +306,8 @@
 				</div>
 			</div>
 		</div>
-	</div>
+
+
 	<!-- <div class="col-md-4" ng-repeat="account in accounts">
 	<h1>{{account.firstname}}</h1>
 	<h1 >{{account.lastname}}</h1>
@@ -252,12 +316,15 @@
 
 
 </div> -->
+<div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+	<div>
 <div style="float:right">
-			<input type='button' class='btn ' name='first' value='previous' ng-show="i > 0"ng-click="moins(i)" />
-			<input type='button' class='btn ' name='previous' value='Next' ng-show="i <= 2" ng-click="plus(i)"/>
+			<input type='button' class='btn btn_orange ' name='first' value='previous' ng-show="i > 0"ng-click="moins(i)" />
+			<input type='button' class='btn btn_orange' name='previous' value='Next' ng-show="i <= 2" ng-click="plus(i)"/>
 		</div>
 </div>
+</div>
+
 <div class="col-md-6">
 
-</div>
 </div>

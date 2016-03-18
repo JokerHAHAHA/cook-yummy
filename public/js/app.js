@@ -1,7 +1,7 @@
 function config($routeProvider) {
 	$routeProvider
 		.when('/', {
-			templateUrl: 'views/main.html',
+			templateUrl: 'views/home.html',
 			controller: 'mainController'
 		})
 		.when('/starter', {
@@ -81,7 +81,7 @@ angular.module('app', ['ngRoute','ngAutocomplete'])
 .controller('mealCtrl',mealCtrl)
 .service('todoService', todoService)
 .service('accountService', accountService)
-.service('eventService', eventService)	
+.service('eventService', eventService)
 .service('mealService', mealService)
 
 

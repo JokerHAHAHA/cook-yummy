@@ -44,6 +44,18 @@ body{
 		height: 100vh;
 
 
+
+}
+.orange{
+	color:#ED771E;
+}
+.btn_orange{
+	background-color: #ED771E;
+	color: white;
+}
+.btn_orange{
+	background-color: #ED771E;
+	color: white;
 }
 body:before{
 	position: absolute;
@@ -55,6 +67,7 @@ body:before{
 	background-color: #4e5d6c;
 	opacity: 0.6;
 	z-index: -1;
+	position: fixed;
 
 }
 .navbar-border{

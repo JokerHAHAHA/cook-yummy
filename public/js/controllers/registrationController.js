@@ -21,6 +21,24 @@ $scope.add = function(){
   data.password = $scope.password;
   data.sexe = $scope.sexe;
   data.image = $scope.imageFile;
+  data.noix = $scope.noix;
+  data.gluten = $scope.gluten;
+  data.lactose = $scope.lactose;
+  data.vegetarien = $scope.vegetarien;
+  data.vegan = $scope.vegan;
+  data.gluten = $scope.gluten;
+  data.city = $scope.city;
+  data.zip = $scope.zip;
+  data.street = $scope.street;
+  data.country = $scope.country;
+
+
+
+
+
+
+
+
   accountService.create(data).then(function(res){
     load();
   });
@@ -30,6 +48,16 @@ $scope.add = function(){
   $scope.password = "";
   $scope.confirmation = "";
   $scope.imageFile= "";
+  $scope.noix= "";
+  $scope.gluten= "";
+  $scope.lactose= "";
+  $scope.vegetarien= "";
+  $scope.vegan= "";
+  $scope.gluten= "";
+  $scope.city= "";
+  $scope.zip= "";
+  $scope.street= "";
+  $scope.country= "";
   location.reload();
 };
 $scope.update = function(account){
