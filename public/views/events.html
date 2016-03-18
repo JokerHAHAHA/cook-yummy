@@ -2,99 +2,229 @@
 <h1 class="page-header">{{title}}</h1>
 	<form class="form-inline">
 
-		<div class="form-group1">
-			<label for="inputDescription">Choisi un type d'événement :</label><br/>
-			<select type="text" class="inDescr form-control" id="inputDescription" 
-				   placeholder="Nom" ng-model="description">
-				<option>Anniversaire</option>
-				<option>Noël</option>
-				<option>Nouvel An</option>
-				<option>Petit déjeuner</option>
-				<option>Déjeuner</option>
-				<option>Dîner</option>
-				<option>Autre</option>
-			</select>
-		</div>
-	<!-- == formulaire de création d'événements == -->
-		<div class="form-group1">
+<!-- ============================= formulaire de création d'événements =============================================== -->
+		<h3>Créer un événement</h3>
+			<hr>
+		<div class="form-groupNom">
 			<label for="inputNom">Nom :</label><br/>
 			<input type="text" class="form-control" id="inputNom"  ng-model="nom"> 
 		</div>
+			<hr>
+	<div class="container">
+		<div class="row">
+			<div class="form-groupDescription col-md-offset-2 col-md-3">
+				<label for="inputDescription">Choisir un type d'événement :</label><br/>
+				<select type="text" class="inDescr form-control" id="inputDescription" 
+					   placeholder="Nom" ng-model="description">
+					<option>Anniversaire</option>
+					<option>Noël</option>
+					<option>Nouvel An</option>
+					<option>Petit déjeuner</option>
+					<option>Déjeuner</option>
+					<option>Dîner</option>
+					<option>Autre</option>
+				</select>
+			</div>
 
-		<div class="form-group2">
-			<label for="inputLieu">Lieu :</label><br/>
-			<input type="text" class="form-control" id="inputLieu" placeholder="Lieu" ng-model="lieu"> 
+			<div class="form-groupLieu col-md-offset-2 col-md-3"><!-- formulaire: lieu -->
+				<label for="Autocomplete">Lieu :</label><br/>
+				<input type="text" class="form-control" id="inputLieu" placeholder="Lieu" ng-autocomplete='toto' ng-model="lieu" options="{ types: '(cities)'}"> 
+			</div>
 		</div>
+	</div>
+		<hr>
 
-		<div class="form-group3">
-			<label for="inputJour">Jour :</label><br/>
-			<select type="text" class="inJour form-control" id="inputJour" 
-				    ng-model="jour">
-				<option value="">01</option>
-				<option value="">02</option>
-				<option value="">03</option>
-				<option value="">04</option>
-				<option value="">05</option>
-				<option value="">06</option>
-				<option value="">07</option>
-				<option value="">08</option>
-				<option value="">09</option>
-				<option value="">10</option>
-				<option value="">11</option>
-				<option value="">12</option>
-				<option value="">13</option>
-				<option value="">14</option>
-				<option value="">15</option>
-				<option value="">16</option>
-				<option value="">17</option>
-				<option value="">18</option>
-				<option value="">19</option>
-				<option value="">20</option>
-				<option value="">21</option>
-				<option value="">22</option>
-				<option value="">23</option>
-				<option value="">24</option>
-				<option value="">25</option>
-				<option value="">26</option>
-				<option value="">27</option>
-				<option value="">28</option>
-				<option value="">29</option>
-				<option value="">30</option>
-				<option value="">31</option>
-			</select>
-		</div>
+	<div class="containerDate">
+		<div class="row">
+			<label>Date et Heure de l'événement :</label><br/>
+			<div class="form-groupJour"><!-- formulaire: jour -->
+				<select type="number" class="inJour form-control" id="inputJour" 
+					    ng-model="jour">
+					<option value="" selected="selected">Jour</option>
+					<option></option>
+					<option value="01">01</option>
+					<option value="02">02</option>
+					<option value="03">03</option>
+					<option value="04">04</option>
+					<option value="05">05</option>
+					<option value="06">06</option>
+					<option value="07">07</option>
+					<option value="08">08</option>
+					<option value="09">09</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+					<option value="18">18</option>
+					<option value="19">19</option>
+					<option value="20">20</option>
+					<option value="21">21</option>
+					<option value="22">22</option>
+					<option value="23">23</option>
+					<option value="24">24</option>
+					<option value="25">25</option>
+					<option value="26">26</option>
+					<option value="27">27</option>
+					<option value="28">28</option>
+					<option value="29">29</option>
+					<option value="30">30</option>
+					<option value="31">31</option>
+				</select>
+			</div>
 
-		<div class="form-group4">
-			<label for="inputMois">Mois :</label><br/>
-			<select type="text" class="inMois form-control" id="inputMois" 
-				    ng-model="mois">
-				<option value="Jan">Jan</option>
-				<option value="Fev">Fev</option>
-				<option value="Mar">Mar</option>
-				<option value="Avr">Avr</option>
-				<option value="Mai">Mai</option>
-				<option value="Juin">Juin</option>
-				<option value="Juil">Juil</option>
-				<option value="Aou">Août</option>
-				<option value="Sep">Sep</option>
-				<option value="Octo">Oct</option>
-				<option value="Nov">Nov</option>
-				<option value="Dec">Dec</option>
-		</div>
+			<div class="form-groupMois"><!-- formulaire: mois -->
+				<select type="text" class="inMois form-control" id="inputMois" 
+					    ng-model="mois">
+					<option value="" selected="selected">Mois</option>
+					<option></option>
+					<option value="Jan">Jan</option>
+					<option value="Fev">Fev</option>
+					<option value="Mar">Mar</option>
+					<option value="Avr">Avr</option>
+					<option value="Mai">Mai</option>
+					<option value="Juin">Juin</option>
+					<option value="Juil">Juil</option>
+					<option value="Aou">Août</option>
+					<option value="Sep">Sep</option>
+					<option value="Octo">Oct</option>
+					<option value="Nov">Nov</option>
+					<option value="Dec">Dec</option>
+				</select>
+			</div>
 
-		<div class="form-group5">
-			<label for="inputAnnee">Année :</label><br/>
-			<input type="text" class="form-control" id="inputAnnee" placeholder="2016" ng-model="annee">
-		</div>
+			<div class="form-groupAnnee"><!-- formulaire: année -->
+				<select type="number" class="inAnnee form-control" id="inputAnnee" 
+					    ng-model="annee">
+					<option value="" selected="selected">Année</option>
+					<option></option>
+					<option value="2015">2015</option>
+					<option value="2016">2016</option>
+					<option value="2017">2017</option>
+					<option value="2018">2018</option>
+					<option value="2019">2019</option>
+					<option value="2020">2020</option>
+					<option value="2021">2021</option>
+					<option value="2022">2022</option>
+					<option value="2023">2023</option>
+					<option value="2024">2024</option>
+					<option value="2025">2025</option>
+					<option value="2026">2026</option>
+					<option value="2027">2027</option>
+					<option value="2028">2028</option>
+					<option value="2029">2029</option>
+					<option value="2030">2030</option>
+				</select>
+			</div>
 
-		<div class="form-group6">
-			<label for="inputHeure">Heure :</label><br/>
-			<input type="text" class="form-control" id="inputHeure" placeholder="00h00" ng-model="heure">
-		</div>
+			<div class="form-groupHeure col-md-offset-1"><!-- formulaire: heure -->
+				<select type="number" class="inHeure form-control" id="inputHeure" 
+					    ng-model="heure">
+					<option value="" selected="selected">Heure</option>
+					<option></option>
+					<option value="00">00</option>
+					<option value="01">01</option>
+					<option value="02">02</option>
+					<option value="03">03</option>
+					<option value="04">04</option>
+					<option value="05">05</option>
+					<option value="06">06</option>
+					<option value="07">07</option>
+					<option value="08">08</option>
+					<option value="09">09</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+					<option value="18">18</option>
+					<option value="19">19</option>
+					<option value="20">20</option>
+					<option value="21">21</option>
+					<option value="22">22</option>
+					<option value="23">23</option>
+				</select>
+			</div>
+
+			<div class="form-groupMinute"><!-- formulaire: minute -->
+				<select type="number" class="inMinute form-control" id="inputMinute" 
+					    ng-model="minute">
+					<option value="" selected="selected">Minute</option>
+					<option></option>
+					<option value="00">00</option>
+					<option value="01">01</option>
+					<option value="02">02</option>
+					<option value="03">03</option>
+					<option value="04">04</option>
+					<option value="05">05</option>
+					<option value="06">06</option>
+					<option value="07">07</option>
+					<option value="08">08</option>
+					<option value="09">09</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+					<option value="18">18</option>
+					<option value="19">19</option>
+					<option value="20">20</option>
+					<option value="21">21</option>
+					<option value="22">22</option>
+					<option value="23">23</option>
+					<option value="24">24</option>
+					<option value="25">25</option>
+					<option value="26">26</option>
+					<option value="27">27</option>
+					<option value="28">28</option>
+					<option value="29">29</option>
+					<option value="30">30</option>
+					<option value="31">31</option>
+					<option value="32">32</option>
+					<option value="33">33</option>
+					<option value="34">34</option>
+					<option value="35">35</option>
+					<option value="36">36</option>
+					<option value="37">37</option>
+					<option value="38">38</option>
+					<option value="39">39</option>
+					<option value="40">40</option>
+					<option value="41">41</option>
+					<option value="42">42</option>
+					<option value="43">43</option>
+					<option value="44">44</option>
+					<option value="45">45</option>
+					<option value="46">46</option>
+					<option value="47">47</option>
+					<option value="48">48</option>
+					<option value="49">49</option>
+					<option value="50">50</option>
+					<option value="51">51</option>
+					<option value="52">52</option>
+					<option value="53">53</option>
+					<option value="54">54</option>
+					<option value="55">55</option>
+					<option value="56">56</option>
+					<option value="57">57</option>
+					<option value="58">58</option>
+					<option value="59">59</option>
+				</select>
+			</div>
 			<br/>
 			
-		<button type="submit" class="btn btn-success" ng-click="add()">Ajouter</button>
-	</form><!-- /formulaire... -->
+		<button type="submit" class="btn btn-success pull-right" ng-click="add()">Ajouter</button>
+		</div>
+	</div>
+	</form><!-- /formulaire de création d'événements -->
 
 	<hr>
 	<ul class="list-group">
@@ -133,9 +263,9 @@
 							<div class="info">
 								<h2 class="title">{{event.nom}}</h2>
 								<p class="desc" ng-model="lieu">@ {{event.lieu}}</p>
-									<button class="btn btn-info pull-right" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded	="false" aria-controls="collapseExample">Details</button>
+									<button class="btn btn-info details-ev pull-right" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded	="false" aria-controls="collapseExample">Details</button>
 								<ul>
-									<li class="pull-left timeEvent"><i class="glyphicon glyphicon-time"></i> {{event.heure}}</li>
+									<li class="pull-left timeEvent"><i class="glyphicon glyphicon-time"></i> {{event.heure}} H {{event.minute}}</li>
 								</ul>
 
 							</div>

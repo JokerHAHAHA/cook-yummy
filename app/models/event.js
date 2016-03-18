@@ -8,6 +8,7 @@ var eventSchema = new mongoose.Schema({
   mois: String,
   annee: String,
   heure: String,
+  minute: String,
   menu: String,
   invitation: String
 });
@@ -24,6 +25,7 @@ var Event = {
 			mois: req.body.mois,
 			annee: req.body.annee,
 			heure: req.body.heure,
+			minute: req.body.minute,
 			menu: req.body.menu,
 			invitation: req.body.invitation
 		}, function(){
@@ -44,6 +46,7 @@ var Event = {
 			mois: req.body.mois,
 			annee: req.body.annee,
 			heure: req.body.heure,
+			minute: req.body.minute,
 			menu: req.body.menu,
 			invitation: req.body.invitation
 		}, function(){

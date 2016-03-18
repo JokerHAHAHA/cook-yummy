@@ -338,3 +338,49 @@ h1{
 		}
 	}
 
+.form-groupDescription {
+	display: inline-block;
+}
+.form-groupLieu {
+	display: inline-block;	
+}
+#inputLieu {
+	width: 300px;
+}
+
+
+#inputNom {
+	width: 500px;
+}
+.form-groupNom {
+	text-align: center;
+}
+.form-groupJour {
+	width: 100px;
+	display: inline-block;
+}
+.form-groupMois {
+	width: 100px;
+	display: inline-block;
+}
+.form-groupAnnee {
+	width: 100px;
+	display: inline-block;
+}
+.form-groupHeure {
+	width: 100px;
+	display: inline-block;
+}
+.form-groupMinute {
+	display: inline-block;
+	width: 100px;
+}
+
+.containerDate {
+	text-align: center;
+}
+
+.containerTime {
+	margin-left: auto;
+	margin-right: auto;
+}
