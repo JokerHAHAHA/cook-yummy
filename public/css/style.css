@@ -68,6 +68,14 @@ body:before{
 	background-color: #ED771E;
 	color: white;
 }
+.row>div, .ligne{
+	height: 75px;
+	vertical-align: middle;
+	line-height: 75px;
+}
+.col-lg-offset-1{
+	margin: 0;
+}
 .navbar-border{
 	border-bottom: 3px solid #ed771e;
 }
@@ -78,8 +86,9 @@ body:before{
 }
 .navbar-header img:hover{
 	transform: rotate(360deg);
-
-
+}
+.contMeal{
+	margin: 0;
 }
 .table{
 	width: 80%;
@@ -127,6 +136,10 @@ h1{
 .btn_orange:hover {
 	background-color:#ed771e;
 	border-color:#ed771e;
+}
+.btn-info:hover {
+  background-color:#ed771e;
+  border-color:#ed771e;
 }
 
 
