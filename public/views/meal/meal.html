@@ -1,25 +1,25 @@
 
-<h1>PLATS</h1>
+<h1 class="meal">PLATS</h1>
 
 <form class="recherche" type="get" action="#/addMeal">
 	<input type="text" class="rechercheMeal form-control" ng-model="search" placeholder="Rechercher">
 	<button type="submit" class="mealAddButton btn btn-danger">+</button>
 </form>
 
-<ul class="nav-meals nav nav-tabs">
-	<li ng-click="viewCount(1)"><a>ENTREE</a></li>
-	<li ng-click="viewCount(2)"><a>PLAT</a></li>
-	<li><a ng-click="viewCount(3)">ACCOMPAGNEMENT</a></li>
-	<li><a ng-click="viewCount(4)">DESSERT</a></li>
-	<li><a ng-click="viewCount(5)">BOISSON</a></li>
-</ul>
+<div class="nav-meals">
+	<div ng-click="viewCount(1)">ENTREE</div>
+	<div ng-click="viewCount(2)">PLAT</div>
+	<div ng-click="viewCount(3)">ACCOMPAGNEMENT</div>
+	<div ng-click="viewCount(4)">DESSERT</div>
+	<div ng-click="viewCount(5)">BOISSON</div>
+</div>
 
-<div class="container page-header">
-	<div class="row">
-		<div class="col-lg-offset-1 col-lg-3"></div>
-		<div class="col-lg-2">NOM</div>
-		<div class="col-lg-4">DESCRIPTION</div>
-		<div class="col-lg-2"></div>
+<div class="container page-header principal">
+	<div class="row meal sous-nav-meals">
+		<div class="col-md-2"></div>
+		<div class="col-sm-3"><strong>NOM</strong></div>
+		<div class="col-sm-4"><strong>DESCRIPTION</strong></div>
+		<div class="col-md-3"></div>
 	</div>
 </div>
 
@@ -28,12 +28,12 @@
 STARTERS
 ================================================================================== -->
 
-<div ng-show="number == 5" class="container">
-	<div class="row" ng-repeat="meal in meals | filter: {categorie: 'starter'} | filter: search">
-		<div class="ligne col-lg-offset-1 col-lg-3"><img src="{{meal.avatar}}" style="height: 70%;" /></div>
-		<div class="ligne col-lg-2" style="vertical-align: middle;">{{meal.name}}</div>
-		<div class="ligne col-lg-4" style="vertical-align: middle;">{{meal.description}}</div>
-		<div class="ligne col-lg-2" style="vertical-align: middle;">
+<div ng-show="number == 1" class="container principal">
+	<div class="row meal" ng-repeat="meal in meals | filter: {categorie: 'starter'} | filter: search">
+		<div class="ligne col-md-2"><img src="{{meal.avatar}}" style="height: 70%;" /></div>
+		<div class="ligne col-sm-3" style="vertical-align: middle;">{{meal.name}}</div>
+		<div class="ligne col-sm-4" style="vertical-align: middle;">{{meal.description}}</div>
+		<div class="ligne col-md-3" style="vertical-align: middle;">
 			<form class="btn-modifier" type="get" action="#/updateMeal" style="display: inline-block;">
 				<button type="submit" class="btn btn-warning" ng-click="keep(meal)">Modifier</button>
 			</form>
@@ -47,8 +47,8 @@ STARTERS
 DISH
 ================================================================================== -->
 
-<div ng-show="number == 2" class="container">
-	<div class"row" ng-repeat="meal in meals | filter: {categorie: 'dish'} | filter: search">
+<div ng-show="number == 2" class="container principal">
+	<div class"row meal" ng-repeat="meal in meals | filter: {categorie: 'dish'} | filter: search">
 		<div class="ligne col-lg-offset-1 col-lg-3"><img src="{{meal.avatar}}" style="height: 100%;" /></div>
 		<div class="ligne col-lg-2" style="vertical-align: middle;">{{meal.name}}</div>
 		<div class="ligne col-lg-4" style="vertical-align: middle;">{{meal.description}}</div>
@@ -65,8 +65,8 @@ DISH
 GARNISH
 ================================================================================== -->
 
-<div ng-show="number == 3" class="container">
-	<div class="row" ng-repeat="meal in meals  | filter: {categorie: 'garnish'} | filter: search">
+<div ng-show="number == 3" class="container principal">
+	<div class="row meal" ng-repeat="meal in meals  | filter: {categorie: 'garnish'} | filter: search">
 		<div class="ligne col-lg-offset-1 col-lg-3"><img src="{{meal.avatar}}" style="height: 100%;" /></div>
 		<div class="ligne col-lg-2" style="vertical-align: middle;">{{meal.name}}</div>
 		<div class="ligne col-lg-4" style="vertical-align: middle;">{{meal.description}}</div>
@@ -83,8 +83,8 @@ GARNISH
 DESSERT
 ================================================================================== -->
 
-<div ng-show="number == 4" class="container">
-	<div class="row" ng-repeat="meal in meals | filter: {categorie: 'dessert'} | filter: search">
+<div ng-show="number == 4" class="container principal principal">
+	<div class="row meal" ng-repeat="meal in meals | filter: {categorie: 'dessert'} | filter: search">
 		<div class="ligne col-lg-offset-1 col-lg-3"><img src="{{meal.avatar}}" style="height: 70%;" /></div>
 		<div class="ligne col-lg-2" style="vertical-align: middle;">{{meal.name}}</div>
 		<div class="ligne col-lg-4" style="vertical-align: middle;">{{meal.description}}</div>
@@ -101,8 +101,8 @@ DESSERT
 DRINK
 ================================================================================== -->
 
-<div ng-show="number == 1" class="container">
-	<div class="row" ng-repeat="meal in meals  | filter: {categorie: 'drink'} | filter: search">
+<div ng-show="number == 5" class="container principal">
+	<div class="row meal" ng-repeat="meal in meals  | filter: {categorie: 'drink'} | filter: search">
 		<div class="ligne col-lg-offset-1 col-lg-3"><img src="{{meal.avatar}}" style="height: 100%;" /></div>
 		<div class="ligne col-lg-2" style="vertical-align: middle;">{{meal.name}}</div>
 		<div class="ligne col-lg-4" style="vertical-align: middle;">{{meal.description}}</div>

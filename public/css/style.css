@@ -5,14 +5,8 @@
 **
 **
 */
-*{
-	color: black;
-}
 a{
 	color: grey;
-}
-hr{
-	border-top: transparent;
 }
 .home{
 	/*background:url("../img/ok4.jpg");*/
@@ -58,12 +52,6 @@ body:before{
 	position: fixed;
 
 }
-.nav>li>a{
-	color: white;
-}
-.nav>li>a:hover{
-	color: #ED771E;
-}
 .orange{
 	color:#ED771E;
 }
@@ -75,12 +63,89 @@ body:before{
 	background-color: #ED771E;
 	color: white;
 }
+
+/*=====================================
+CSS PLATS
+=======================================*/
+
+hr{
+	border-top: transparent;
+}
+.rechercheMeal{
+	width: 50%;
+	margin-bottom: 0;
+}
+.mealAddButton{
+	width: 7%;
+	margin-left: 50%;
+}
+.addMealInput{
+	margin-bottom: 5%;
+}
+.nav-meals{
+	position: fixed;
+	left: 2%;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
+	-ms-flex-direction: column;
+	-o-flex-direction: column;
+	flex-direction: column;
+	-webkit-flex-wrap: wrap;
+	-moz-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	-o-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin: 0;
+	width: 20%;
+	height: 250px;
+	border-radius: 5%;
+	border
+}
+.nav-meals>div{
+	width: 100%;
+	color: white;
+	font-size: 150%;
+	font-weight: bold;
+	margin: 2% 0;
+}
+.nav-meals>div:hover{
+	color: #ED771E;
+}
+.sous-nav-meals{
+	padding-bottom: 2%;
+}
+.principal{
+	width: 80%;
+	padding: 0;
+	margin: 0;
+	float: right;
+}
 .ligne{
 	height: 75px;
 	vertical-align: middle;
 	line-height: 75px;
 	margin: 1% 0;
 }
+.radio{
+	display: inline-block;
+	margin: 2% 3% 5% 3%;
+}
+.meal{
+	color: white;
+}
+/* FIN CSS PLATS
+=======================================*/
+
+
+
+
+
+
 .navbar-border{
 	border-bottom: 3px solid #ed771e;
 }
@@ -108,54 +173,13 @@ h1{
 	margin: 5% auto;
 	margin-bottom: 7%;
 }
-.mealAddButton{
-	width: 7%;
-	margin-left: 50%;
-}
-.rechercheMeal{
-	width: 50%;
-	margin-bottom: 0;
-}
-.nav-meals{
-	margin: 8% 0;
-	color: #000000;
-}
-.addMealInput{
-	margin-bottom: 5%;
-}
-.radio{
-	display: inline-block;
-	margin: 2% 3% 5% 3%;
-}
 .btn-modifier{
 	margin: 0 5%;
-}
-
-
-
-
 }
 .btn_orange {
 	background-color:#ed771e;
 	border-color:#ed771e;
-
-/*
-.btn-info {
-  background-color:#ed771e;
-  border-color:#ed771e;
->>>>>>> events
 }
-.btn_orange:hover {
-	background-color:#ed771e;
-	border-color:#ed771e;
-}
-.btn-info:hover {
-  background-color:#ed771e;
-  border-color:#ed771e;
-}
-*/
-
-
 .homee {
 	height: 400px;
   /*text-align: center;
@@ -364,7 +388,7 @@ body {
 		display: inline-block;
 
 	}
-	.event-list > li > time
+	.event-list > li > time{
 
 		width: 100%;
 		color: rgb(255, 255, 255);
