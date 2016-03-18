@@ -1,10 +1,12 @@
+<div class="container">
+
 <input type="text" class="eventSearch pull-right form-control" ng-model="search" placeholder="Recherche">
 <h1 class="page-header">{{title}}</h1>
 	<form class="form-inline">
 
 		<div class="form-group1">
 			<label for="inputDescription">Choisi un type d'événement :</label><br/>
-			<select type="text" class="inDescr form-control" id="inputDescription" 
+			<select type="text" class="inDescr form-control" id="inputDescription"
 				   placeholder="Nom" ng-model="description">
 				<option>Anniversaire</option>
 				<option>Noël</option>
@@ -18,12 +20,12 @@
 
 		<div class="form-group1">
 			<label for="inputNom">Nom :</label><br/>
-			<input type="text" class="form-control" id="inputNom" placeholder="Nom" ng-model="nom"> 
+			<input type="text" class="form-control" id="inputNom" placeholder="Nom" ng-model="nom">
 		</div>
 
 		<div class="form-group2">
 			<label for="inputLieu">Lieu :</label><br/>
-			<input type="text" class="form-control" id="inputLieu" placeholder="Lieu" ng-model="lieu"> 
+			<input type="text" class="form-control" id="inputLieu" placeholder="Lieu" ng-model="lieu">
 		</div>
 
 		<div class="form-group3">
@@ -46,7 +48,7 @@
 			<input type="text" class="form-control" id="inputHeure" placeholder="00h00" ng-model="heure">
 		</div>
 			<br/>
-			
+
 		<button type="submit" class="btn btn-success" ng-click="add()">Ajouter</button>
 	</form>
 
@@ -56,11 +58,11 @@
 			<form class="form-inline">
 				<div class="form-group">
 
-					<input type="text" class="form-control" id="inputMessage" 
+					<input type="text" class="form-control" id="inputMessage"
 						   ng-model="event.description">
-						   
-					<input type="text" class="form-control" id="inputMessage" 
-						   ng-model="event.date"> 		   
+
+					<input type="text" class="form-control" id="inputMessage"
+						   ng-model="event.date">
 				</div>
 				<div class="pull-right">
 					<!-- <button type="" class="btn btn-warning" ng-click="">Details</button> -->
@@ -89,11 +91,12 @@
 							<p class="desc" ng-model="lieu">@ {{event.lieu}}</p>
 								<button class="btn btn-info pull-right" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded	="false" aria-controls="collapseExample">Details</button>
 						</div>
-						
+
 					</li>
 
-					
+
 				</ul>
 			</div>
 		</div>
+	</div>
 	</div>

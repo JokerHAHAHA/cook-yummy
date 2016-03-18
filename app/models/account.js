@@ -6,7 +6,17 @@ var accountSchema = new mongoose.Schema({
   email: String,
   password: String,
 	sexe: String,
-	image: String
+	image: String,
+  noix:String,
+  lactose:String,
+  vegetarien:String,
+  vegan:String,
+  gluten:String,
+	city:String,
+  zip:String,
+  street:String,
+  country:String
+
 });
 var Account = {
 
@@ -19,7 +29,16 @@ var Account = {
       email: req.body.email,
 			sexe: req.body.sexe,
       password: req.body.password,
-			image: req.body.image
+			image: req.body.image,
+			noix:req.body.noix,
+		  lactose:req.body.lactose,
+		  vegetarien:req.body.vegetarien,
+		  vegan:req.body.vegan,
+		  gluten:req.body.gluten,
+			city:req.body.city,
+		  zip:req.body.zip,
+		  street:req.body.street,
+		  country:req.body.country
 		}, function(){
 			res.sendStatus(200);
 		});
@@ -36,7 +55,16 @@ var Account = {
       email: req.body.email,
 			sexe: req.body.sexe,
 			image: req.body.image,
-      password: req.body.password
+      password: req.body.password,
+			noix:req.body.noix,
+		  lactose:req.body.lactose,
+		  vegetarien:req.body.vegetarien,
+		  vegan:req.body.vegan,
+		  gluten:req.body.gluten,
+			city:req.body.city,
+		  zip:req.body.zip,
+		  street:req.body.street,
+		  country:req.body.country
 		}, function(){
 			res.sendStatus(200);
 		});

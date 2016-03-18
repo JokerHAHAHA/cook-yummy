@@ -1,47 +1,24 @@
 function config($routeProvider) {
 	$routeProvider
-		.when('/', {
-			templateUrl: 'views/main.html',
-			controller: 'mainController'
-		})
-		.when('/meal', {
-			templateUrl: 'views/meal/meal.html',
-			controller: 'mealCtrl'
-		})
-		.when('/dish', {
-			templateUrl: 'views/meal/dish.html',
-			controller: 'mealCtrl'
-		})
-		.when('/garnish', {
-			templateUrl: 'views/meal/garnish.html',
-			controller: 'mealCtrl'
-		})
-		.when('/dessert', {
-			templateUrl: 'views/meal/dessert.html',
-			controller: 'mealCtrl'
-		})
-		.when('/drink', {
-			templateUrl: 'views/meal/drink.html',
-			controller: 'mealCtrl'
-		})
-		.when('/addMeal', {
-			templateUrl: 'views/meal/addMeal.html',
-			controller: 'mealCtrl'
-		})
-		.when('/updateMeal', {
-			templateUrl: 'views/meal/updateMeal.html',
-			controller: 'mealCtrl'
-		})
-		.when('/about', {
-			templateUrl: 'views/about.html'
-		})
-		.when('/events', {
-			templateUrl: 'views/events.html',
-			controller: 'eventsController'
-		})
-		.otherwise({
-			redirectTo: '/'
-		})
+	.when('/', {
+		templateUrl: 'views/home.html',
+	})
+	.when('/meal', {
+		templateUrl: 'views/meal/meal.html',
+		controller: 'mealCtrl'
+	})
+	.when('/addMeal', {
+		templateUrl: 'views/meal/addMeal.html',
+		controller: 'mealCtrl'
+	})
+	.when('/updateMeal', {
+		templateUrl: 'views/meal/updateMeal.html',
+		controller: 'mealCtrl'
+	})
+	.when('/events', {
+		templateUrl: 'views/events.html',
+		controller: 'eventsController'
+	})
 	.when('/liste_invites', {
 		templateUrl: 'views/liste_invites.html',
 		controller: 'registrationController'
@@ -54,13 +31,12 @@ function config($routeProvider) {
 		templateUrl: 'views/invites.html',
 		controller: 'registrationController'
 	})
-	.when('/login', {
-		templateUrl: 'views/login.html',
-		controller: 'registrationController'
-	})
 	.when('/registration', {
 		templateUrl: 'views/registration.html',
 		controller: 'registrationController'
+	})
+	.otherwise({
+		redirectTo: '/'
 	});
 
 
@@ -81,7 +57,7 @@ angular.module('app', ['ngRoute','ngAutocomplete'])
 .controller('mealCtrl',mealCtrl)
 .service('todoService', todoService)
 .service('accountService', accountService)
-.service('eventService', eventService)	
+.service('eventService', eventService)
 .service('mealService', mealService)
 
 
