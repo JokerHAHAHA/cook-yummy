@@ -16,6 +16,7 @@ function eventsController($scope, $http, eventService) {
 		data.mois = $scope.mois;
 		data.annee = $scope.annee;
 		data.heure = $scope.heure;
+		data.minute = $scope.minute;
 		data.menu = $scope.menu;
 		data.invitation = $scope.invitation;
 
@@ -29,6 +30,7 @@ function eventsController($scope, $http, eventService) {
 		$scope.mois = "";
 		$scope.annee = "";
 		$scope.heure = "";
+		$scope.minute = "";
 		$scope.menu = "";
 		$scope.invitation = "";
 	}
