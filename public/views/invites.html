@@ -50,21 +50,21 @@
 									</div>
 								</div>
 								<div class="col-xs-6 col-sm-6 col-md-12">
-								<div class="form-group">
+									<div class="form-group">
 										<input type="text" id="Autocomplete" class="form-control" ng-autocomplete='toto' placeholder="Ville" ng-model="city" options="{ types: '(cities)'}" />
-										</div>
-										</div>
-										<div class="col-xs-6 col-sm-6 col-md-12">
-										<div class="form-group">
-												<input type="text" id="Autocomplete" class="form-control" ng-autocomplete='toto' placeholder="Pays" ng-model="country" />
-												</div>
-												</div>
+									</div>
+								</div>
+								<div class="col-xs-6 col-sm-6 col-md-12">
+									<div class="form-group">
+										<input type="text" id="Autocomplete" class="form-control" ng-autocomplete='toto' placeholder="Pays" ng-model="country" />
+									</div>
+								</div>
 							</div>
 						</form>
-						</div>
-	</div>
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
 
 		<div class="row centered-form" ng-show="i == 1">
 			<div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
@@ -249,39 +249,39 @@
 							</div>
 						</form>
 					</div>
-					</div>
-					</div>
-					<div class="row centered-form" ng-show="i == 2">
-						<div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
-							<div class="panel panel-default">
+				</div>
+			</div>
+			<div class="row centered-form" ng-show="i == 2">
+				<div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+					<div class="panel panel-default">
 
-					<div class="panel-heading">
-						<h3 class="panel-title">Régime alimentaire</h3>
-					</div>
-					<div class="panel-body">
-						<form role="form">
-							<div class="row">
-								<div class="col-xs-4 col-sm-4 col-md-12">
-									<div class="checkbox">
-										<label><input type="radio" ng-model="vegetarien" value="vegetarien"> Végétarien</label>
+						<div class="panel-heading">
+							<h3 class="panel-title">Régime alimentaire</h3>
+						</div>
+						<div class="panel-body">
+							<form role="form">
+								<div class="row">
+									<div class="col-xs-4 col-sm-4 col-md-12">
+										<div class="checkbox">
+											<label><input type="radio" ng-model="vegetarien" value="vegetarien"> Végétarien</label>
+										</div>
+									</div>
+									<div class="col-xs-4 col-sm-4 col-md-12">
+										<div class="checkbox">
+											<label><input type="radio" ng-model="vegan" value="vegan"> Vegan</label>
+										</div>
+									</div>
+									<div class="col-xs-4 col-sm-4 col-md-12">
+										<div class="checkbox">
+											<label><input type="radio" ng-model="gluten" value="gluten"> Gluten Free</label>
+										</div>
 									</div>
 								</div>
-								<div class="col-xs-4 col-sm-4 col-md-12">
-									<div class="checkbox">
-										<label><input type="radio" ng-model="vegan" value="vegan"> Vegan</label>
-									</div>
-								</div>
-								<div class="col-xs-4 col-sm-4 col-md-12">
-									<div class="checkbox">
-										<label><input type="radio" ng-model="gluten" value="gluten"> Gluten Free</label>
-									</div>
-								</div>
-							</div>
-						</form>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 		</div>
 		<div class="row centered-form" ng-show= "i == 3">
 			<div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
@@ -312,17 +312,14 @@
 	<h1>{{account.firstname}}</h1>
 	<h1 >{{account.lastname}}</h1>
 	<img src="{{account.image}}">
-
-
-
 </div> -->
 <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
 	<div>
-<div style="float:right">
+		<div style="float:right">
 			<input type='button' class='btn btn_orange ' name='first' value='previous' ng-show="i > 0"ng-click="moins(i)" />
 			<input type='button' class='btn btn_orange' name='previous' value='Next' ng-show="i <= 2" ng-click="plus(i)"/>
 		</div>
-</div>
+	</div>
 </div>
 
 <div class="col-md-6">

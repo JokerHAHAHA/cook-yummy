@@ -28,12 +28,12 @@
 STARTERS
 ================================================================================== -->
 
-<div ng-show="number == 1" class="container">
+<div ng-show="number == 5" class="container">
 	<div class="row" ng-repeat="meal in meals | filter: {categorie: 'starter'} | filter: search">
-		<div class="col-lg-offset-1 col-lg-3"><img src="{{meal.avatar}}" style="height: 70%;" /></div>
-		<div class="col-lg-2" style="vertical-align: middle;">{{meal.name}}</div>
-		<div class="col-lg-4" style="vertical-align: middle;">{{meal.description}}</div>
-		<div class="col-lg-2" style="vertical-align: middle;">
+		<div class="ligne col-lg-offset-1 col-lg-3"><img src="{{meal.avatar}}" style="height: 70%;" /></div>
+		<div class="ligne col-lg-2" style="vertical-align: middle;">{{meal.name}}</div>
+		<div class="ligne col-lg-4" style="vertical-align: middle;">{{meal.description}}</div>
+		<div class="ligne col-lg-2" style="vertical-align: middle;">
 			<form class="btn-modifier" type="get" action="#/updateMeal" style="display: inline-block;">
 				<button type="submit" class="btn btn-warning" ng-click="keep(meal)">Modifier</button>
 			</form>
@@ -67,16 +67,16 @@ GARNISH
 
 <div ng-show="number == 3" class="container">
 	<div class="row" ng-repeat="meal in meals  | filter: {categorie: 'garnish'} | filter: search">
-		<div class="col-lg-offset-1 col-lg-3"><img src="{{meal.avatar}}" style="height: 100%;" /></div>
-		<div class="col-lg-2" style="vertical-align: middle;">{{meal.name}}</div>
-		<div class="col-lg-4" style="vertical-align: middle;">{{meal.description}}</div>
-		<div class="col-lg-2" style="vertical-align: middle;">
+		<div class="ligne col-lg-offset-1 col-lg-3"><img src="{{meal.avatar}}" style="height: 100%;" /></div>
+		<div class="ligne col-lg-2" style="vertical-align: middle;">{{meal.name}}</div>
+		<div class="ligne col-lg-4" style="vertical-align: middle;">{{meal.description}}</div>
+		<div class="ligne col-lg-2" style="vertical-align: middle;">
 			<form class="btn-modifier" type="get" action="#/updateMeal" style="display: inline-block;">
 				<button type="submit" class="btn btn-warning">Modifier</button>
 			</form>
 			<button type="submit" class="btn btn-danger" ng-click="delete(meal)">X</button>
 		</div>
-	</tr>
+	</div>
 </div>
 
 <!-- =============================================================================
@@ -84,29 +84,29 @@ DESSERT
 ================================================================================== -->
 
 <div ng-show="number == 4" class="container">
-	<div class="row" ng-repeat="meal in meals  | filter: {categorie: 'dessert'} | filter: search">
-		<div class="col-lg-offset-1 col-lg-3"><img src="{{meal.avatar}}" style="height: 100%;" /></div>
-		<div class="col-lg-2"style="vertical-align: middle;">{{meal.name}}</div>
-		<div class="col-lg-4"style="vertical-align: middle;">{{meal.description}}</div>
-		<div class="col-lg-2"style="vertical-align: middle;">
+	<div class="row" ng-repeat="meal in meals | filter: {categorie: 'dessert'} | filter: search">
+		<div class="ligne col-lg-offset-1 col-lg-3"><img src="{{meal.avatar}}" style="height: 70%;" /></div>
+		<div class="ligne col-lg-2" style="vertical-align: middle;">{{meal.name}}</div>
+		<div class="ligne col-lg-4" style="vertical-align: middle;">{{meal.description}}</div>
+		<div class="ligne col-lg-2" style="vertical-align: middle;">
 			<form class="btn-modifier" type="get" action="#/updateMeal" style="display: inline-block;">
-				<button type="submit" class="btn btn-warning">Modifier</button>
+				<button type="submit" class="btn btn-warning" ng-click="keep(meal)">Modifier</button>
 			</form>
 			<button type="submit" class="btn btn-danger" ng-click="delete(meal)">X</button>
 		</div>
-	</tr>
+	</div>
 </div>
 
 <!-- =============================================================================
 DRINK
 ================================================================================== -->
 
-<div ng-show="number == 5" class="container">
+<div ng-show="number == 1" class="container">
 	<div class="row" ng-repeat="meal in meals  | filter: {categorie: 'drink'} | filter: search">
-		<div class="col-lg-offset-1 col-lg-3"><img src="{{meal.avatar}}" style="height: 100%;" /></div>
-		<div class="col-lg-2" style="vertical-align: middle;">{{meal.name}}</div>
-		<div class="col-lg-4" style="vertical-align: middle;">{{meal.description}}</div>
-		<div class="col-lg-2" style="vertical-align: middle;">
+		<div class="ligne col-lg-offset-1 col-lg-3"><img src="{{meal.avatar}}" style="height: 100%;" /></div>
+		<div class="ligne col-lg-2" style="vertical-align: middle;">{{meal.name}}</div>
+		<div class="ligne col-lg-4" style="vertical-align: middle;">{{meal.description}}</div>
+		<div class="ligne col-lg-2" style="vertical-align: middle;">
 			<form class="btn-modifier" type="get" action="#/updateMeal" style="display: inline-block;">
 				<button type="submit" class="btn btn-warning">Modifier</button>
 			</form>
