@@ -1,27 +1,23 @@
 
 <h1 class="title">PLATS</h1>
 
-<form class="recherche" type="get" action="#/addMeal">
-	<input type="text" class="rechercheMeal form-control" ng-model="search" placeholder="Recherche">
-	<button type="submit" class="glyphicon glyphicon-plus mealAddButton btn btn-success"></button>
-</form>
-
-<div class="nav-meals">
-	<div ng-click="viewCount(1)">ENTREE</div>
-	<div ng-click="viewCount(2)">PLAT</div>
-	<div ng-click="viewCount(3)">LEGUMES</div>
-	<div ng-click="viewCount(4)">DESSERT</div>
-	<div ng-click="viewCount(5)">BOISSON</div>
-</div>
-
-<!--<div class="container page-header principal">
-	<div class="row sous-nav-meals">
-		<div class="col-lg-offset-1 col-lg-3"></div>
-		<div class="col-lg-5"><strong>NOM</strong></div>
-		<div class="col-sm-4"><strong>DESCRIPTION</strong></div>
-		<div class="col-md-3"></div>
+<div ng-hide="number == 6" class="en-tete">
+	<form class="recherche">
+		<!-- barre de recherche -->
+		<input ng-hide="number == 0" type="text" class="rechercheMeal form-control" ng-model="search" placeholder="Recherche">
+		<!-- bouton ajouter repas -->
+		<button ng-click="viewCount(6)" type="submit" class="glyphicon glyphicon-plus mealAddButton btn btn-success"></button>
+	</form>
+	
+	<!-- barre de navigation laterale -->
+	<div class="nav-meals">
+		<div ng-click="viewCount(1)">ENTREE</div>
+		<div ng-click="viewCount(2)">PLAT</div>
+		<div ng-click="viewCount(3)">LEGUMES</div>
+		<div ng-click="viewCount(4)">DESSERT</div>
+		<div ng-click="viewCount(5)">BOISSON</div>
 	</div>
-</div> -->
+</div>
 
 
 <!-- =============================================================================
@@ -126,5 +122,135 @@ DRINK
 			</form>
 			<span type="submit" class="btn btn-danger" ng-click="delete(meal)">X</span>
 		</div>
+	</div>
+</div>
+
+
+
+
+
+<!-- =============================================================================
+ADD MEAL
+================================================================================== -->
+
+
+
+<div ng-show="number == 6" class="formulaire table form-group">
+<div ng-click="viewCount(0)" class="btn-retour btn">
+	<p>Retour</p>
+</div>
+<h1 class="sub-title">NOUVEAU</h1>
+	
+	<!-- formulaire pour choisir une photo sur l'ordinateur/mobile de l'utilisateur -->
+	<form class="recup-photo">
+		<label>Image de présentation :</label>
+		<div class="parcourir">
+			<p>Choisir une photo</p>
+			<input class="input-file" type="file" ng-model="imageFile" onchange="angular.element(this).scope().previewFile(this)">
+		</div>
+		<img class="preview" id="preview" /><br>
+	</form>
+
+	<label>Nom :</label>
+	<input type="text" class="addMealInput form-control" ng-model="name" placeholder="Entrez le nom ici">
+	
+	<!-- saut ligne -->
+	<hr>
+	
+	<label>Description :</label>
+	<textarea class="addMealInput form-control" ng-model="description" placeholder="Entrez une description courte ici" style="height: 100px;"></textarea>
+	
+	<!-- saut ligne -->
+	<hr>
+	
+	<!-- formulaire choix unique -->
+	<label>Catégorie :</label>
+	<form class="form-categorie">
+		<div class="radio">
+			<label><input type="radio" name="optradio" ng-model="categorie" value="starter">Entrée</label>
+		</div>
+		<div class="radio">
+			<label><input type="radio" name="optradio" ng-model="categorie" value="dish">Plat</label>
+		</div>
+		<div class="radio">
+			<label><input type="radio" name="optradio" ng-model="categorie"	value="garnish">Accompagnement</label>
+		</div>
+		<div class="radio">
+			<label><input type="radio" name="optradio" ng-model="categorie" value="dessert">Dessert</label>
+		</div>
+		<div class="radio">
+			<label><input type="radio" name="optradio" ng-model="categorie" value="drink">Boisson</label>
+		</div>
+	</form>
+
+	<!-- saut ligne -->
+	<hr>
+	
+	<label>Ingrédients :</label>
+	<input type="text" class="addMealInput form-control" ng-model="ingredient" placeholder="Entrez tous les ingredients ici">
+
+	<!-- saut ligne -->
+	<hr>
+
+	<label>Recette :</label>
+	<textarea class="recette addMealInput form-control" ng-model="recette" placeholder="Entrez toute votre recette ici" style="height: 500px;"></textarea>
+
+	<!-- saut ligne -->
+	<hr>
+
+	<label>Boissons associées :</label>
+	<input type="text" class="addMealInput form-control" ng-model="boisson" placeholder="Entrez toutes les boissons ici">
+	
+	<!-- saut ligne -->
+	<hr>
+	
+	<!-- formulaire choix unique -->
+	<label>Produits allergènes :</label>
+	<form class="form-allergie">
+		<div class="radio">
+			<label><input type="radio" name="optradio" ng-model="allergie" value="gluten">Gluten</label>
+		</div>
+		<div class="radio">
+			<label><input type="radio" name="optradio" ng-model="allergie" value="crustace">Crustacés</label>
+		</div>
+		<div class="radio">
+			<label><input type="radio" name="optradio" ng-model="allergie"	value="oeuf">Oeufs</label>
+		</div>
+		<div class="radio">
+			<label><input type="radio" name="optradio" ng-model="allergie" value="poisson">Poissons</label>
+		</div>
+		<div class="radio">
+			<label><input type="radio" name="optradio" ng-model="allergie" value="arachide">Arachides</label>
+		</div>
+		<div class="radio">
+			<label><input type="radio" name="optradio" ng-model="allergie" value="soja">Soja</label>
+		</div>
+		<div class="radio">
+			<label><input type="radio" name="optradio" ng-model="allergie" value="lait">Lait</label>
+		</div>
+		<div class="radio">
+			<label><input type="radio" name="optradio" ng-model="allergie"	value="coque">Fruits à coque</label>
+		</div>
+		<div class="radio">
+			<label><input type="radio" name="optradio" ng-model="allergie" value="celeri">Céleri</label>
+		</div>
+		<div class="radio">
+			<label><input type="radio" name="optradio" ng-model="allergie" value="sesame">Sésame</label>
+		</div>
+		<div class="radio">
+			<label><input type="radio" name="optradio" ng-model="allergie" value="lupin">Lupin</label>
+		</div>
+		<div class="radio">
+			<label><input type="radio" name="optradio" ng-model="allergie" value="mollusque">Mollusque</label>
+		</div>
+	</form>
+
+	<!-- sauts lignes -->
+	<hr>
+	<hr>
+
+	<!-- bouton final de validation -->
+	<div>
+		<button type="submit" class="btn-enregistrer btn btn-success form-control" ng-click="add()">Enregistrer</button>
 	</div>
 </div>

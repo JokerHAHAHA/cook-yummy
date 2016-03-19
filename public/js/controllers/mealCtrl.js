@@ -1,12 +1,17 @@
 // MEALS CONTROLLER
 function mealCtrl($scope, $http, mealService) {
-	$scope.number = 1;
+	$scope.number = 6;
 
 	function load(){
 		mealService.get().then(function(res){
 			$scope.meals = res.data;
 		});
 	}
+
+	function viewCount(number){
+		$scope.number = number;
+	}
+
 	$scope.add = function(){
 		
 		var data = {};
@@ -18,6 +23,9 @@ function mealCtrl($scope, $http, mealService) {
 		data.recette = $scope.recette;
 		data.boisson = $scope.boisson;
 		data.allergie = $scope.allergie;
+
+		// reaffiche la 1er page
+		viewCount(0);
 		
 		mealService.create(data).then(function(res){
 			load();
@@ -30,7 +38,8 @@ function mealCtrl($scope, $http, mealService) {
 		$scope.recette = "";
 		$scope.boisson = "";
 		$scope.allergie = "";
-		history.back();
+		preview.src = "";
+
 	}
 	$scope.update = function(meal){
 		mealService.update(meal._id, meal).then(function(res){
