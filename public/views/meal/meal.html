@@ -31,10 +31,11 @@ STARTERS
 		</div>
 		
 		<div class="ligne col-lg-5" style="vertical-align: middle;">{{meal.name}}</div>
-		<!-- <div class="ligne col-sm-4" style="vertical-align: middle;">{{meal.description}}</div> -->
+		
+
 		<div class="ligne col-md-3 row-button" style="vertical-align: middle;">
-			<form class="btn-modifier" ng-click="keep(meal)" style="display: inline-block;">
-				<button type="submit" class="btn btn-warning" ng-click="viewCount(7)">Modifier</button>
+			<form class="btn-modifier" style="display: inline-block;">
+				<button type="submit" class="btn btn-warning" ng-click="keep(meal); viewCount(7)">Modifier</button>
 			</form>
 			<span type="submit" class="btn btn-danger" ng-click="delete(meal)">X</span>
 		</div>
@@ -52,7 +53,7 @@ DISH
 		</div>
 		
 		<div class="ligne col-lg-5" style="vertical-align: middle;">{{meal.name}}</div>
-		<!-- <div class="ligne col-sm-4" style="vertical-align: middle;">{{meal.description}}</div> -->
+
 		<div class="ligne col-md-3 row-button" style="vertical-align: middle;">
 			<form class="btn-modifier" type="get" action="#/updateMeal" style="display: inline-block;">
 				<button type="submit" class="btn btn-warning" ng-click="keep(meal)">Modifier</button>
@@ -279,7 +280,7 @@ UPDATE MEAL
 		<!-- <div ng-repeat="meal in meals">
 			<img class="img-circle" src="{{meal.avatar}}" style="height: 70%;" /></br>
 		</div> -->
-<img ng-model="avatar">
+		<img ng-model="avatar">
 	</form>
 
 	<label>Nom :</label>
@@ -382,6 +383,6 @@ UPDATE MEAL
 
 	<!-- bouton final de validation -->
 	<div>
-		<button type="submit" class="btn-enregistrer btn btn-success form-control" ng-click="update(meal)">Enregistrer</button>
+		<button type="submit" class="btn-enregistrer btn btn-success form-control" ng-click="update(); viewCount(0)">Enregistrer</button>
 	</div>
 </div>

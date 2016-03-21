@@ -1,6 +1,6 @@
 // MEALS CONTROLLER
 function mealCtrl($scope, $http, mealService) {
-	$scope.number = 0;
+	$scope.number = 1	;
 
 	function load(){
 		mealService.get().then(function(res){
@@ -41,12 +41,25 @@ function mealCtrl($scope, $http, mealService) {
 		preview.src = "";
 
 	}
-	$scope.update = function(meal){
+	
+	$scope.update = function(){
 
-		mealService.update(meal._id, meal).then(function(res){
+		var data = {};
+		data._id = $scope._id;
+		data.avatar = $scope.avatar;
+		data.name = $scope.name;
+		data.description = $scope.description;
+		data.categorie =  $scope.categorie;
+		data.ingredient = $scope.ingredient;
+		data.recette = $scope.recette;
+		data.boisson = $scope.boisson;
+		data.allergie = $scope.allergie;
+		
+		mealService.update(data._id, data).then(function(res){
 			load();
 		});		
 	}
+
 	$scope.delete = function(meal){
 		mealService.delete(meal._id).then(function(res){
 			load();
