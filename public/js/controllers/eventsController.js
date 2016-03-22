@@ -44,7 +44,7 @@ function eventsController($scope, $http, eventService) {
 		data.menu = $scope.menu;
 		data.invitation = $scope.invitation;
 		data.image = $scope.images[$scope.description];
-		console.log($scope.description);
+		
 
 		eventService.create(data).then(function(res){
 			load();
