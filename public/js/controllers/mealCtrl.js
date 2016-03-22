@@ -1,6 +1,6 @@
 // MEALS CONTROLLER
 function mealCtrl($scope, $http, mealService) {
-	$scope.number = 1	;
+	$scope.number = 1;
 
 	function load(){
 		mealService.get().then(function(res){
@@ -106,6 +106,7 @@ function mealCtrl($scope, $http, mealService) {
 		// 5 = drink
 		// 6 = addMeal
 		// 7 = updateMeal
+		// 8 = meal sheet
 	}
 
 

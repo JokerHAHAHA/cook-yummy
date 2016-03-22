@@ -1,5 +1,5 @@
 
-<h1 class="title">PLATS</h1>
+<h1 class="title">Plats</h1>
 
 <div ng-hide="number == 6" class="en-tete">
 	<form class="recherche">
@@ -26,10 +26,13 @@ STARTERS
 
 <div ng-show="number == 1" class="container principal">
 	<div class="row meal" ng-repeat="meal in meals | filter: {categorie: 'starter'} | filter: search">
-		<div class="ligne col-lg-4">
+		
+		<span type="submit" class="loupe col-lg-1 glyphicon glyphicon-zoom-in" ng-click="keep(meal); viewCount(8)"></span>
+
+		<div class="ligne col-lg-3">
 			<img class="img-circle" src="{{meal.avatar}}" style="height: 70%;" />
 		</div>
-		
+		 
 		<div class="ligne col-lg-5" style="vertical-align: middle;">{{meal.name}}</div>
 		
 
@@ -134,10 +137,10 @@ MEAL SHEET
 
 
 <div ng-show="number == 8" class="formulaire table form-group">
-	<div ng-click="viewCount(0)" class="btn-retour btn">
+	<div ng-click="load(); viewCount(0)" class="btn-retour btn">
 		<p>Retour</p>
 	</div>
-	<h1 class="sub-title">NOUVEAU</h1>
+	<h1 class="sub-title">{{name}}</h1>
 	
 	<!-- formulaire pour choisir une photo sur l'ordinateur/mobile de l'utilisateur -->
 	<form class="recup-photo">
@@ -146,17 +149,16 @@ MEAL SHEET
 			<p>Choisir une photo</p>
 			<input class="input-file" type="file" ng-model="imageFile" onchange="angular.element(this).scope().previewFile(this)">
 		</div>
-		<img class="preview" id="preview" /><br>
+		<img class="preview" id="preview" ng-href="avatar"/><br>
 	</form>
 
 	<label>Nom :</label>
-	<div type="text" class="addMealInput form-control" ng-model="name"></div>
-	
+	<div type="text" class="addMealInput form-control" >{{name}}</div>
 	<!-- saut ligne -->
 	<hr>
 	
 	<label>Description :</label>
-	<div class="addMealInput form-control" ng-model="description" style="height: 100px;"></div>
+	<div class="addMealInput form-control" style="height: 100px;">{{description}}</div>
 	
 	<!-- saut ligne -->
 	<hr>
@@ -185,7 +187,7 @@ MEAL SHEET
 	<hr>
 	
 	<label>Ingrédients :</label>
-	<div type="text" class="addMealInput form-control" ng-model="ingredient">
+	<div type="text" class="addMealInput form-control">{{ingredient}}</div>
 
 	<!-- saut ligne -->
 	<hr>
