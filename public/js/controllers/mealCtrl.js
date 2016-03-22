@@ -1,12 +1,17 @@
 // MEALS CONTROLLER
 function mealCtrl($scope, $http, mealService) {
-	$scope.number = 1;
+	$scope.number = 1	;
 
 	function load(){
 		mealService.get().then(function(res){
 			$scope.meals = res.data;
 		});
 	}
+
+	function viewCount(number){
+		$scope.number = number;
+	}
+
 	$scope.add = function(){
 		
 		var data = {};
@@ -18,6 +23,9 @@ function mealCtrl($scope, $http, mealService) {
 		data.recette = $scope.recette;
 		data.boisson = $scope.boisson;
 		data.allergie = $scope.allergie;
+
+		// reaffiche HOME MEAL
+		viewCount(0);
 		
 		mealService.create(data).then(function(res){
 			load();
@@ -30,13 +38,28 @@ function mealCtrl($scope, $http, mealService) {
 		$scope.recette = "";
 		$scope.boisson = "";
 		$scope.allergie = "";
-		history.back();
+		preview.src = "";
+
 	}
-	$scope.update = function(meal){
-		mealService.update(meal._id, meal).then(function(res){
+	
+	$scope.update = function(){
+
+		var data = {};
+		data._id = $scope._id;
+		data.avatar = $scope.avatar;
+		data.name = $scope.name;
+		data.description = $scope.description;
+		data.categorie =  $scope.categorie;
+		data.ingredient = $scope.ingredient;
+		data.recette = $scope.recette;
+		data.boisson = $scope.boisson;
+		data.allergie = $scope.allergie;
+		
+		mealService.update(data._id, data).then(function(res){
 			load();
-		});
+		});		
 	}
+
 	$scope.delete = function(meal){
 		mealService.delete(meal._id).then(function(res){
 			load();
@@ -63,7 +86,7 @@ function mealCtrl($scope, $http, mealService) {
 	$scope.keep = function(meal){
 
 		$scope._id = meal._id
-		$scope.imageFile = meal.avatar;
+		$scope.avatar = meal.avatar
 		$scope.name = meal.name;
 		$scope.description = meal.description;
 		$scope.categorie = meal.categorie;
@@ -71,11 +94,18 @@ function mealCtrl($scope, $http, mealService) {
 		$scope.recette = meal.recette;
 		$scope.boisson = meal.boisson;
 		$scope.allergie = meal.allergie;
-		
 	}
 
 	$scope.viewCount = function(number){
 		$scope.number = number;
+		// 0 = home meal
+		// 1 = entry
+		// 2 = dish
+		// 3 = garnish
+		// 4 = dessert
+		// 5 = drink
+		// 6 = addMeal
+		// 7 = updateMeal
 	}
 
 
