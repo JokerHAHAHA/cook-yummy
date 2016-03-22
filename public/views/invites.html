@@ -83,12 +83,12 @@
 							<div class="row">
 								<div class="col-xs-6 col-sm-6 col-md-6">
 									<div class="checkbox">
-										<label><input type="radio" ng-model="sexe" value="male"> Homme</label>
+										<label><input type="checkbox" ng-model="homme" value="male"> Homme</label>
 									</div>
 								</div>
 								<div class="col-xs-6 col-sm-6 col-md-6">
 									<div class="checkbox">
-										<label><input type="radio" ng-model="sexe" value="female"> Femme</label>
+										<label><input type="checkbox" ng-model="femme" value="female"> Femme</label>
 									</div>
 								</div>
 								<div class="col-xs-6 col-sm-6 col-md-12">
@@ -233,17 +233,17 @@
 							<div class="row">
 								<div class="col-xs-4 col-sm-4 col-md-4">
 									<div class="checkbox">
-										<label><input type="radio" ng-model="oeuf" value="oeuf"> Oeuf</label>
+										<label><input type="checkbox" ng-model="oeuf" value="oeuf"> Oeuf</label>
 									</div>
 								</div>
 								<div class="col-xs-4 col-sm-4 col-md-4">
 									<div class="checkbox">
-										<label><input type="radio" ng-model="noix" value="noix"> Noix</label>
+										<label><input type="checkbox" ng-model="noix" value="noix"> Noix</label>
 									</div>
 								</div>
 								<div class="col-xs-4 col-sm-4 col-md-4">
 									<div class="checkbox">
-										<label><input type="radio" ng-model="lactose" value="lactose"> Lactose</label>
+										<label><input type="checkbox" ng-model="lactose" value="lactose"> Lactose</label>
 									</div>
 								</div>
 							</div>
@@ -263,17 +263,17 @@
 								<div class="row">
 									<div class="col-xs-4 col-sm-4 col-md-12">
 										<div class="checkbox">
-											<label><input type="radio" ng-model="vegetarien" value="vegetarien"> Végétarien</label>
+											<label><input type="checkbox" ng-model="vegetarien" value="vegetarien"> Végétarien</label>
 										</div>
 									</div>
 									<div class="col-xs-4 col-sm-4 col-md-12">
 										<div class="checkbox">
-											<label><input type="radio" ng-model="vegan" value="vegan"> Vegan</label>
+											<label><input type="checkbox" ng-model="vegan" value="vegan"> Vegan</label>
 										</div>
 									</div>
 									<div class="col-xs-4 col-sm-4 col-md-12">
 										<div class="checkbox">
-											<label><input type="radio" ng-model="gluten" value="gluten"> Gluten Free</label>
+											<label><input type="checkbox" ng-model="gluten" value="gluten"> Gluten Free</label>
 										</div>
 									</div>
 								</div>
@@ -291,11 +291,11 @@
 					</div>
 					<div class="panel-body">
 						<form role="form">
-							<div class="row">
+							<div class="row" style="align-text:center;">
 
 								<form>
 									<input type='file' ng-model='imageFile' base-sixty-four-input onchange="angular.element(this).scope().previewFile(this)">
-									<img style="max-height: 240px; max-width: 24Opx; text-center"id="preview">
+									<img style=" text-align: center; border: 1px solid #ED771E; border-radius: 5px; max-height: 150px; max-width: 150px;" id="preview">
 								</form>
 							</div>
 

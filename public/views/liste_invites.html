@@ -1,32 +1,32 @@
 <div class="container">
 
-<h1 class="orange">Qui voulez-vous inviter?</h1>
-<div class="row">
-    <div class="col-md-4">
-    <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="Filtre" ng-model="filtre">
-</div>
-<div class="col-md-12">
-    <div class="col-md-4">
-        <h3 class="orange">Sexe</h3>
-        <button type="button" class="btn btn-default" value="female" ng-model="filtre" ng-click="myFilter = 'female'">female</button>
-        <button type="button" class="btn btn-default" value="female" ng-model="filtre" ng-click="myFilter = 'male'">Male</button>
+    <h1 class="orange">Qui voulez-vous inviter?</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="Filtre" ng-model="filtre">
+        </div>
+        <div class="col-md-12">
+            <div class="col-md-4">
+                <h3 class="orange">Sexe</h3>
+                <button type="checkbox" class="btn btn-default"  style=" background-color: pink;">female</button>
+                <button type="button" class="btn btn-default">Male</button>
 
-    </div>
-    <div class="col-md-4">
-        <h3 class="orange">Allergies</h3>
-        <button type="button" class="btn btn-default" ng-click="myFilter = 'noix'">Noix</button>
-        <button type="button" class="btn btn-default" ng-click="myFilter = 'oeuf'">Oeuf</button>
-        <button type="button" class="btn btn-default" ng-click="myFilter = 'lactose'">Lactose</button>
+            </div>
+            <div class="col-md-4">
+                <h3 class="orange">Allergies</h3>
+                <button type="checkbox" class="btn btn-default" ng-class=" myFilterNoix == true ? 'push' : ''" ng-click= "myFilterNoix = !myFilterNoix ">Noix</button>
+                <button type="checkbox" class="btn btn-default" ng-class=" myFilterOeuf == true ? 'push' : ''" ng-click= "myFilterOeuf = !myFilterOeuf">Oeuf</button>
+                <button type="checkbox" class="btn btn-default" ng-class=" myFilterLactose == true ? 'push' : ''" ng-click= "myFilterLactose = !myFilterLactose">Lactose</button>
 
-    </div>
-    <div class="col-md-4">
-        <h3 class="orange">Règime alimentaire</h3>
-        <button type="button" class="btn btn-default" ng-click="myFilter = 'vegetarien'">Végétarien</button>
-        <button type="button" class="btn btn-default"ng-click="myFilter = 'vegan'">Végan</button>
-        <button type="button" class="btn btn-default"ng-click="myFilter = 'gluten'">Gluten Free</button>
+            </div>
+            <div class="col-md-4">
+                <h3 class="orange">Règime alimentaire</h3>
+                <button type="checkbox" class="btn btn-default" ng-class=" myFiltervegetarien == true ? 'push' : ''" ng-click= "myFiltervegetarien = !myFiltervegetarien">Végétarien</button>
+                <button type="checkbox" class="btn btn-default" ng-class=" myFilterVegan == true ? 'push' : ''" ng-click= "myFilterVegan = !myFilterVegan">Végan</button>
+                <button type="checkbox" class="btn btn-default" ng-class=" myFilterGluten == true ? 'push' : ''" ng-click= "myFilterGluten = !myFilterGluten">Gluten Free</button>
 
-    </div>
-    </div>
+            </div>
+        </div>
     </div>
 
 
@@ -37,19 +37,59 @@
         <hr/>
         <input type="text" id="Autocomplete" class="form-control" ng-autocomplete='toto' ng-model="result" options="{ types: '(cities)'}" />
     </div>
-
-    <div class="col-md-3" ng-repeat="account in accounts | filter: {sexe: myFilter} | filter: filtre | filter: {noix: myFilter} |filter: {oeuf: myFilter} | filter: {lactose: myFilter} | filter: {vegetarien: myFilter} |filter: {vegan: myFilter} |filter: {gluten: myFilter}">
+<!-- | filter: {noix: myFilterNoix | filter: {oeuf: myFilterOeuf | filter: {vegan: myFilterVegan | filter: {vegetarien: myFiltervegetarien | filter: {Gluten: myFilterGluten | filter: {lactose: myFilterLactose} -->
+    <div class="col-md-3" ng-repeat="account in accounts | filter: filtre">
         <br>
-        <div class="card" ng-class= "account.sexe == 'female' ? 'pink': ''">
+        <button type="button" class="close" ng-click="delete(account)" data-dismiss="modal">&times;</button>
+
+        <div class="card" ng-class= "account.femme == true ? 'pink': ''">
+
             <canvas class="header-bg" width="250" height="70" id="header-blur"></canvas>
+
+
             <div class="avatar">
                 <img src="{{account.image}}" alt="" />
             </div>
+
             <div class="content">
                 <p>{{account.firstname}}<br>
                     {{account.lastname}}</p>
-                    <p><button type="button" class="btn btn-default">Inviter {{account.firstname}}</button></p>
+                    <p><button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-default">Update {{account.firstname}}</button></p>
                 </div>
             </div>
 
+            <div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">{{account.firstname}}</h4>
+        <div style=" text-align: center;">
+            <img style=" text-align: center; border: 1px solid #ED771E; border-radius: 5px; max-height: 150px; max-width: 150px;" src="{{account.image}}" alt="" />
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-6">
+            <div class="form-group">
+              <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="Prénom" ng-model="account.firstname">
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6">
+            <div class="form-group">
+              <input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Nom" ng-model="account.lastname">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="update(account)" >Update</button>
+      </div>
+    </div>
+
+  </div>
 </div>
+
+        </div>

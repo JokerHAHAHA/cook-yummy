@@ -1,7 +1,7 @@
 // MAIN CONTROLLER
 function mainController($scope, $http, todoService) {
 	$scope.title = "TODO LIST";
-	
+
 	function load(){
 		todoService.get().then(function(res){
 			$scope.todos = res.data;
