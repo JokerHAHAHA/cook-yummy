@@ -54,15 +54,15 @@ angular.module('app', ['ngRoute','ngAutocomplete'])
 .controller('mainController', mainController)
 .controller('registrationController', registrationController)
 .controller('eventsController', eventsController)
+.controller('menuController', menuController)
 .controller('mealCtrl',mealCtrl)
 .service('todoService', todoService)
 .service('accountService', accountService)
 .service('eventService', eventService)
 .service('mealService', mealService)
+.service('menuService', menuService)
+
 
 
 /*.factory('', )*/
 .run(run);
-
-
-

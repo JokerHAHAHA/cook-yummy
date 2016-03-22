@@ -22,10 +22,13 @@
     <script src="js/libs/angular-route.min.js"></script>
     <script src="js/libs/ngAutocomplete.js"></script>
     <script src="js/controllers/mainController.js"></script>
+    <script src="js/controllers/menuController.js"></script>
+
     <script src="js/controllers/mealCtrl.js"></script>
     <script src="js/controllers/registrationController.js"></script>
     <script src="js/controllers/eventsController.js"></script>
     <script src="js/services/mealService.js"></script>
+    <script src="js/services/menuService.js"></script>
     <script src="js/services/todoService.js"></script>
     <script src="js/services/accountService.js"></script>
     <script src="js/services/eventService.js"></script>
@@ -39,10 +42,10 @@
                    <a href="#/home"><img src="./img/logo.png" width="50px"></a>
                </div>
                <ul class="nav navbar-nav">
-                <li ng-class="{active: activetab=='/about'}"><a href="#/invites">Invités</a></li>
                 <li ng-class="{active: activetab=='/invite'}"><a href="#/liste_invites">Invités liste</a></li>
                 <li ng-class="{active: activetab=='/meal'}"><a href="#/meal">Plats</a></li>
                 <li ng-class="{active: activetab=='/events'}"><a href="#/events">Evénements</a></li>
+                <li ng-class="{active: activetab=='/menus'}"><a href="#/menu">Menus</a></li>
             </ul>
         </div>
     </nav>
@@ -52,10 +55,8 @@
     </div>
 </div>
 
-      
-        
-        
+
+
+
 </body>
 </html>
-  
-

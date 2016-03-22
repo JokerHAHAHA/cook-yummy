@@ -1,6 +1,12 @@
 <div class="container">
-
+    <div class="row">
+      <div class="col-md-7">
     <h1 class="orange">Qui voulez-vous inviter?</h1>
+    </div>
+    <div class="col-md-5">
+    <a href="#/invites"><button ng-click="viewCount(6)" type="submit" class="glyphicon glyphicon-plus mealAddButton btn btn-success"></button></a>
+</div>
+</div>
     <div class="row">
         <div class="col-md-4">
             <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="Filtre" ng-model="filtre">
@@ -8,7 +14,7 @@
         <div class="col-md-12">
             <div class="col-md-4">
                 <h3 class="orange">Sexe</h3>
-                <button type="checkbox" class="btn btn-default"  style=" background-color: pink;">female</button>
+                <button type="checkbox" class="btn btn-default">female</button>
                 <button type="button" class="btn btn-default">Male</button>
 
             </div>
@@ -37,12 +43,11 @@
         <hr/>
         <input type="text" id="Autocomplete" class="form-control" ng-autocomplete='toto' ng-model="result" options="{ types: '(cities)'}" />
     </div>
-<!-- | filter: {noix: myFilterNoix | filter: {oeuf: myFilterOeuf | filter: {vegan: myFilterVegan | filter: {vegetarien: myFiltervegetarien | filter: {Gluten: myFilterGluten | filter: {lactose: myFilterLactose} -->
     <div class="col-md-3" ng-repeat="account in accounts | filter: filtre">
         <br>
         <button type="button" class="close" ng-click="delete(account)" data-dismiss="modal">&times;</button>
 
-        <div class="card" ng-class= "account.femme == true ? 'pink': ''">
+        <div class="card" ng-class= "account.femme == 'true' ? 'pink': ''">
 
             <canvas class="header-bg" width="250" height="70" id="header-blur"></canvas>
 

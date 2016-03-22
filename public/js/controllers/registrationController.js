@@ -1,4 +1,4 @@
-function registrationController($scope, $http, accountService) {
+function registrationController($scope, $http, accountService, $location) {
 
 $scope.myFilterHomme = "";
 $scope.myFilterNoix = "";
@@ -74,7 +74,9 @@ $scope.add = function(){
   $scope.country= "";
   $scope.homme ="";
   $scope.femme= "";
-  location.reload();
+
+
+
 };
 $scope.update = function(account){
   accountService.update(account._id, account).then(function(res){
