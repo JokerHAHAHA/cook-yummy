@@ -1,65 +1,36 @@
 <div class="container">
 
-<<<<<<< HEAD
-<h1 class="orange">Qui voulez-vous inviter?</h1>
-=======
     <h1 class="orange">Qui voulez-vous inviter?</h1>
->>>>>>> Hadrien
     <div class="row">
         <div class="col-md-4">
             <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="Filtre" ng-model="filtre">
         </div>
-<<<<<<< HEAD
-
-<!-- ???? Il manque un row ??? -->
-        <div class="col-md-12">
-            <div class="col-md-4">
-                <h3 class="orange">Sexe</h3>
-                <button type="button" class="btn btn-default" value="female" ng-model="filtre" ng-click="myFilter = 'female'">female</button>
-                <button type="button" class="btn btn-default" value="female" ng-model="filtre" ng-click="myFilter = 'male'">Male</button>
-=======
         <div class="col-md-12">
             <div class="col-md-4">
                 <h3 class="orange">Sexe</h3>
                 <button type="checkbox" class="btn btn-default"  style=" background-color: pink;">female</button>
                 <button type="button" class="btn btn-default">Male</button>
->>>>>>> Hadrien
 
             </div>
             <div class="col-md-4">
                 <h3 class="orange">Allergies</h3>
-<<<<<<< HEAD
-                <button type="button" class="btn btn-default" ng-click="myFilter = 'noix'">Noix</button>
-                <button type="button" class="btn btn-default" ng-click="myFilter = 'oeuf'">Oeuf</button>
-                <button type="button" class="btn btn-default" ng-click="myFilter = 'lactose'">Lactose</button>
-=======
                 <button type="checkbox" class="btn btn-default" ng-class=" myFilterNoix == true ? 'push' : ''" ng-click= "myFilterNoix = !myFilterNoix ">Noix</button>
                 <button type="checkbox" class="btn btn-default" ng-class=" myFilterOeuf == true ? 'push' : ''" ng-click= "myFilterOeuf = !myFilterOeuf">Oeuf</button>
                 <button type="checkbox" class="btn btn-default" ng-class=" myFilterLactose == true ? 'push' : ''" ng-click= "myFilterLactose = !myFilterLactose">Lactose</button>
->>>>>>> Hadrien
 
             </div>
             <div class="col-md-4">
                 <h3 class="orange">Règime alimentaire</h3>
-<<<<<<< HEAD
-                <button type="button" class="btn btn-default" ng-click="myFilter = 'vegetarien'">Végétarien</button>
-                <button type="button" class="btn btn-default"ng-click="myFilter = 'vegan'">Végan</button>
-                <button type="button" class="btn btn-default"ng-click="myFilter = 'gluten'">Gluten Free</button>
-
-            </div>
-        </div>  
-=======
                 <button type="checkbox" class="btn btn-default" ng-class=" myFiltervegetarien == true ? 'push' : ''" ng-click= "myFiltervegetarien = !myFiltervegetarien">Végétarien</button>
                 <button type="checkbox" class="btn btn-default" ng-class=" myFilterVegan == true ? 'push' : ''" ng-click= "myFilterVegan = !myFilterVegan">Végan</button>
                 <button type="checkbox" class="btn btn-default" ng-class=" myFilterGluten == true ? 'push' : ''" ng-click= "myFilterGluten = !myFilterGluten">Gluten Free</button>
 
             </div>
         </div>
->>>>>>> Hadrien
     </div>
 
 
-<!-- Formulaire -->
+
     <div class="form-group move-down">
         <hr>
         <hr>
@@ -87,9 +58,6 @@
                 </div>
             </div>
 
-<<<<<<< HEAD
-    </div>
-=======
             <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
@@ -122,7 +90,6 @@
     </div>
 
   </div>
->>>>>>> Hadrien
 </div>
 
         </div>
