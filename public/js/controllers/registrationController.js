@@ -1,10 +1,21 @@
 function registrationController($scope, $http, accountService) {
+
+$scope.myFilterHomme = "";
+$scope.myFilterNoix = "";
+$scope.myFilterOeuf = "";
+$scope.myFilterLactose = "";
+$scope.myFiltervegetarien = "";
+$scope.myFilterVegan = "";
+$scope.myFilterGluten = "";
+
 function load(){
   accountService.get().then(function(res){
     $scope.accounts = res.data;
   });
 }
 $scope.i = 0;
+
+
 $scope.plus = function(i){
   $scope.i ++;
 };
@@ -19,9 +30,11 @@ $scope.add = function(){
   data.lastname = $scope.lastname;
   data.email = $scope.email;
   data.password = $scope.password;
-  data.sexe = $scope.sexe;
+  data.homme = $scope.homme;
+  data.femme = $scope.femme;
   data.image = $scope.imageFile;
   data.noix = $scope.noix;
+  data.oeuf = $scope.oeuf;
   data.gluten = $scope.gluten;
   data.lactose = $scope.lactose;
   data.vegetarien = $scope.vegetarien;
@@ -53,16 +66,20 @@ $scope.add = function(){
   $scope.lactose= "";
   $scope.vegetarien= "";
   $scope.vegan= "";
+  $scope.oeuf= "";
   $scope.gluten= "";
   $scope.city= "";
   $scope.zip= "";
   $scope.street= "";
   $scope.country= "";
+  $scope.homme ="";
+  $scope.femme= "";
   location.reload();
 };
 $scope.update = function(account){
   accountService.update(account._id, account).then(function(res){
     load();
+    location.reload();
   });
 };
 $scope.delete = function(account){

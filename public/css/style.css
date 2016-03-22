@@ -108,13 +108,15 @@ CSS PLATS
 =======================================*/
 
 .sub-title, .title{
-	font-size: 400%;
+	font-size: 450%;
 	margin-top: 7%;
 	text-align: center;
 	font-weight: bold;
 	color: #FFFFFF;
-
+	letter-spacing: 4px;
+	font-family: 'cookie', sans-serif;
 }
+
 .sub-title{
 	font-size: 200%;
 }
@@ -190,6 +192,15 @@ hr{
 	color: white;
 	font-size: 150%;
 }
+.loupe{
+	width: 5%;
+	padding: 1%;
+	margin-left: 1%;
+	color: #ED771E;
+	font-size: 180%;
+	margin-top: 2.7%;
+	text-align: center;
+}
 .row-button{
 	padding-left: 9%;
 }
@@ -226,25 +237,25 @@ hr{
 }
 .btn-retour{
 	position: fixed;
-    top: 15%;
-    left: 4.5%;
-    text-align: center;
-    width: 5%;
-    height: 65px;
-    color: #fFFFFF;
-    font-weight: bold;
-    background-color: transparent;
-    border-radius: 200px;
-    border: 3px solid #ED771E;
+	top: 15%;
+	left: 4.5%;
+	text-align: center;
+	width: 5%;
+	height: 65px;
+	color: #fFFFFF;
+	font-weight: bold;
+	background-color: transparent;
+	border-radius: 200px;
+	border: 3px solid #ED771E;
 }
 .btn-retour>p{
 	position: absolute;
-    display: inline-block;
-    top: 29%;
-    left: 7%;
-    font-size: 119%;
-    margin: auto;
-    color: white;
+	display: inline-block;
+	top: 29%;
+	left: 7%;
+	font-size: 119%;
+	margin: auto;
+	color: white;
 }
 .recup-photo{
 	display: -webkit-flex;
