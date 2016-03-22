@@ -2,7 +2,9 @@
 var mongoose = require('mongoose');
 var eventSchema = new mongoose.Schema({
   description: String,
+  description1: String,
   nom: String,
+  image: String,
   lieu: String,
   jour: String,
   mois: String,
@@ -19,7 +21,9 @@ var Event = {
     create: function(req, res) {
 		Event.model.create({
 			description: req.body.description,
+			description1: req.body.description1,
 			nom: req.body.nom,
+			image: req.body.image,
 			lieu: req.body.lieu,
 			jour: req.body.jour,
 			mois: req.body.mois,

@@ -1,36 +1,38 @@
 <div class="container">
 
 <h1 class="orange">Qui voulez-vous inviter?</h1>
-<div class="row">
-    <div class="col-md-4">
-    <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="Filtre" ng-model="filtre">
-</div>
-<div class="col-md-12">
-    <div class="col-md-4">
-        <h3 class="orange">Sexe</h3>
-        <button type="button" class="btn btn-default" value="female" ng-model="filtre" ng-click="myFilter = 'female'">female</button>
-        <button type="button" class="btn btn-default" value="female" ng-model="filtre" ng-click="myFilter = 'male'">Male</button>
+    <div class="row">
+        <div class="col-md-4">
+            <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="Filtre" ng-model="filtre">
+        </div>
 
+<!-- ???? Il manque un row ??? -->
+        <div class="col-md-12">
+            <div class="col-md-4">
+                <h3 class="orange">Sexe</h3>
+                <button type="button" class="btn btn-default" value="female" ng-model="filtre" ng-click="myFilter = 'female'">female</button>
+                <button type="button" class="btn btn-default" value="female" ng-model="filtre" ng-click="myFilter = 'male'">Male</button>
+
+            </div>
+            <div class="col-md-4">
+                <h3 class="orange">Allergies</h3>
+                <button type="button" class="btn btn-default" ng-click="myFilter = 'noix'">Noix</button>
+                <button type="button" class="btn btn-default" ng-click="myFilter = 'oeuf'">Oeuf</button>
+                <button type="button" class="btn btn-default" ng-click="myFilter = 'lactose'">Lactose</button>
+
+            </div>
+            <div class="col-md-4">
+                <h3 class="orange">Règime alimentaire</h3>
+                <button type="button" class="btn btn-default" ng-click="myFilter = 'vegetarien'">Végétarien</button>
+                <button type="button" class="btn btn-default"ng-click="myFilter = 'vegan'">Végan</button>
+                <button type="button" class="btn btn-default"ng-click="myFilter = 'gluten'">Gluten Free</button>
+
+            </div>
+        </div>  
     </div>
-    <div class="col-md-4">
-        <h3 class="orange">Allergies</h3>
-        <button type="button" class="btn btn-default" ng-click="myFilter = 'noix'">Noix</button>
-        <button type="button" class="btn btn-default" ng-click="myFilter = 'oeuf'">Oeuf</button>
-        <button type="button" class="btn btn-default" ng-click="myFilter = 'lactose'">Lactose</button>
-
-    </div>
-    <div class="col-md-4">
-        <h3 class="orange">Règime alimentaire</h3>
-        <button type="button" class="btn btn-default" ng-click="myFilter = 'vegetarien'">Végétarien</button>
-        <button type="button" class="btn btn-default"ng-click="myFilter = 'vegan'">Végan</button>
-        <button type="button" class="btn btn-default"ng-click="myFilter = 'gluten'">Gluten Free</button>
-
-    </div>
-    </div>
-    </div>
 
 
-
+<!-- Formulaire -->
     <div class="form-group move-down">
         <hr>
         <hr>
@@ -52,4 +54,5 @@
                 </div>
             </div>
 
+    </div>
 </div>
