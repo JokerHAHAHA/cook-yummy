@@ -1,6 +1,6 @@
 function config($routeProvider) {
 	$routeProvider
-	.when('/home', {
+	.when('/', {
 		templateUrl: 'views/home.html',
 		controller: 'registrationController'
 	})
