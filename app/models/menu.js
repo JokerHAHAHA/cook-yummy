@@ -1,11 +1,11 @@
 // MODEL TODO
 var mongoose = require('mongoose');
-var todoSchema = new mongoose.Schema({
+var menuSchema = new mongoose.Schema({
   description: String
 });
 var Menu = {
 
-    model: mongoose.model('Menu', todoSchema),
+    model: mongoose.model('Menu', menuSchema),
 
     create: function(req, res) {
 		Menu.model.create({
