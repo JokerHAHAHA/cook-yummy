@@ -51,11 +51,11 @@
 
 
 <h1>Invités</h1>
-      <div ng-repeat="account in menu.menu.accounts">
+      <div ng-repeat="account in menu.accounts">
 
 
          <!-- <input type="text" class="form-control input-sm" ng-model="menu.menu.accounts[0].firstname"> -->
-         <img style=" text-align: center; border: 1px solid #ED771E; border-radius: 5px; max-height: 150px; max-width: 150px;" src="{{menu.menu.accounts[0].image}}" alt="" />
+         <img style=" text-align: center; border: 1px solid #ED771E; border-radius: 5px; max-height: 150px; max-width: 150px;" src="{{menu.accounts[0].image}}" alt="" />
          <h4>
             {{account.firstname}}
 
@@ -63,7 +63,7 @@
       </div>
 </div>      <div class="col-md-5">
    <h1>Menu</h1>
-   <div ng-repeat="meal in menu.menu.meals">
+   <div ng-repeat="meal in menu.meals">
 
 
 <h3>{{meal.categorie}}</h3>

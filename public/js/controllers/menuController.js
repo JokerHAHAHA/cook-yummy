@@ -32,9 +32,9 @@ function menuController($scope, $http, mealService, menuService, accountService)
 	$scope.add = function(){
 		console.log($scope.menu.meals);
 		var data = {};
-		data.menu = $scope.menu;
-		data.menu.meals = $scope.menu.meals;
-		data.menu.accounts = $scope.menu.accounts;
+
+		data.meals = $scope.menu.meals;
+		data.accounts = $scope.menu.accounts;
 
 		menuService.create(data).then(function(res){
 			load();

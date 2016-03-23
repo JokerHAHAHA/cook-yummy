@@ -1,10 +1,10 @@
 // MODEL TODO
 var mongoose = require('mongoose');
 var menuSchema = new mongoose.Schema({
-  menu:{
+
     meals: Array,
     accounts: Array
-  }
+
 
 });
 
@@ -15,7 +15,8 @@ var Menu = {
     create: function(req, res) {
       console.log(req.body);
 		Menu.model.create({
-			menu: req.body.menu,
+			meals: req.body.meals,
+			accounts: req.body.accounts
 		},
 
 		function(){
@@ -29,7 +30,8 @@ var Menu = {
 	},
 	update: function(req, res){
 		Menu.model.findByIdAndUpdate(req.params.id, {
-			menu: req.body.menu,
+			meals: req.body.meals,
+			accounts: req.body.accounts
 
 		}, function(){
 			res.sendStatus(200);
