@@ -1,24 +1,39 @@
 // MODEL TODO
 var mongoose = require('mongoose');
-var todoSchema = new mongoose.Schema({
-  description: String
+var menuSchema = new mongoose.Schema({
+	name: String,
+	starter: Object,
+	starter: Object,
+	dish: Object,
+	garnish: Object,
+	dessert: Object,
+	drink: Object,
 });
+
+
 var Menu = {
 
-    model: mongoose.model('Menu', todoSchema),
+	model: mongoose.model('Menu', menuSchema),
 
-    create: function(req, res) {
+	create: function(req, res) {
 		Menu.model.create({
-			description: req.body.description
+			name: req.body.name,
+			starter: req.body.starter,
+			dish: req.body.dish,
+			garnish: req.body.garnish,
+			dessert: req.body.dessert,
+			drink: req.body.drink,
 		}, function(){
 			res.sendStatus(200);
 		})
 	},
+
 	findAll: function(req, res) {
 		Menu.model.find(function (err, data) {
 			res.send(data);
 		});
 	},
+
 	update: function(req, res){
 		Menu.model.findByIdAndUpdate(req.params.id, {
 			description: req.body.description
@@ -26,6 +41,7 @@ var Menu = {
 			res.sendStatus(200);
 		})
 	},
+	
 	delete: function(req, res){
 		Menu.model.findByIdAndRemove(req.params.id, function(){
 			res.sendStatus(200);
