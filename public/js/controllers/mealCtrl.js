@@ -114,6 +114,6 @@ function mealCtrl($scope, $http, mealService) {
 	load();
 	}
 
-
 	load();
 }
+

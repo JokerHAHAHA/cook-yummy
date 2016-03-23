@@ -107,7 +107,7 @@ h1 {
 CSS PLATS
 =======================================*/
 
-.sub-title, .title{
+.sub-titleMeals, .titleMeals{
 	font-size: 450%;
 	margin-top: 7%;
 	text-align: center;
@@ -359,9 +359,6 @@ hr{
 
 
 
-
-
-
  .navbar-border{
  	border-bottom: 3px solid #ed771e;
  }
@@ -457,496 +454,540 @@ hr{
 
 /* ***************************************************************************************************************************
 				*** EVENTS CSS ***
-********************************************************************************************************************************/
-	
-.inDescr {
-	width: 200px !important;
-}
+				********************************************************************************************************************************/
 
-.eventSearch {
-	width: 200px;
-}
+				.inDescr {
+					width: 200px !important;
+				}
 
-@import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic");
-@import url("//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
+				.eventSearch {
+					width: 200px;
+				}
 
-
-.event-list {
-	list-style: none;
-	font-family: 'Lato', sans-serif;
-	margin: 0px;
-	padding: 0px;
-}
-.event-list > li {
-	background-color: rgb(255, 255, 255);
-	box-shadow: 0px 0px 5px rgb(51, 51, 51);
-	box-shadow: 0px 0px 5px rgba(51, 51, 51, 0.7);
-	padding: 0px;
-	margin: 0px 0px 20px;
-}
-.event-list > li > time {
-	display: inline-block;
-	width: 100%;
-	color: rgb(255, 255, 255);
-	background-color: #ed771e;
-	padding: 5px;
-	text-align: center;
-	text-transform: uppercase;
-}
-.event-list > li:nth-child(even) > time {
-	background-color: rgb(254, 211, 39);
-}
-.event-list > li > time > span {
-	display: none;
-}
-.event-list > li > time > .day {
-	display: block;
-	font-size: 56pt;
-	font-weight: 100;
-	line-height: 1;
-}
-.event-list > li time > .month {
-	display: block;
-	font-size: 24pt;
-	font-weight: 900;
-	line-height: 1;
-}
-.event-list > li > img {
-	width: 100%;
-}
-.event-list > li > .info {
-	padding-top: 5px;
-	text-align: center;
-}
-.event-list > li > .info > .title {
-	font-size: 17pt;
-	font-weight: 700;
-	margin: 0px;
-}
-.event-list > li > .info > .desc {
-	font-size: 12pt;
-	font-weight: 300;
-	margin: 0px;
-}
-.event-list > li > .info > ul,
-.event-list > li > .social > ul {
-	display: table;
-	list-style: none;
-	margin: 10px 0px 0px;
-	padding: 0px;
-	width: 100%;
-	text-align: center;
-}
-
-.event-list > li > .info > ul > li,
-
-}
-.event-list > li > .info > ul > li > a {
-	display: block;
-	width: 100%;
-	color: rgb(30, 30, 30);
-	text-decoration: none;
-}
+				@import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic");
+				@import url("//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
 
 
-@media (min-width: 768px) {
-@import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic");
-@import url("//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
+				.event-list {
+					list-style: none;
+					font-family: 'Lato', sans-serif;
+					margin: 0px;
+					padding: 0px;
+				}
+				.event-list > li {
+					background-color: rgb(255, 255, 255);
+					box-shadow: 0px 0px 5px rgb(51, 51, 51);
+					box-shadow: 0px 0px 5px rgba(51, 51, 51, 0.7);
+					padding: 0px;
+					margin: 0px 0px 20px;
+				}
+				.event-list > li > time {
+					display: inline-block;
+					width: 100%;
+					color: rgb(255, 255, 255);
+					background-color: #ed771e;
+					padding: 5px;
+					text-align: center;
+					text-transform: uppercase;
+				}
+				.event-list > li:nth-child(even) > time {
+					background-color: rgb(254, 211, 39);
+				}
+				.event-list > li > time > span {
+					display: none;
+				}
+				.event-list > li > time > .day {
+					display: block;
+					font-size: 56pt;
+					font-weight: 100;
+					line-height: 1;
+				}
+				.event-list > li time > .month {
+					display: block;
+					font-size: 24pt;
+					font-weight: 900;
+					line-height: 1;
+				}
+				.event-list > li > img {
+					width: 100%;
+				}
+				.event-list > li > .info {
+					padding-top: 5px;
+					text-align: center;
+				}
+				.event-list > li > .info > .title {
+					font-size: 17pt;
+					font-weight: 700;
+					margin: 0px;
+				}
+				.event-list > li > .info > .desc {
+					font-size: 12pt;
+					font-weight: 300;
+					margin: 0px;
+				}
+				.event-list > li > .info > ul,
+				.event-list > li > .social > ul {
+					display: table;
+					list-style: none;
+					margin: 10px 0px 0px;
+					padding: 0px;
+					width: 100%;
+					text-align: center;
+				}
 
-.event-list {
-	list-style: none;
-	font-family: 'Lato', sans-serif;
-	margin: 0px;
-	padding: 0px;
-}
+				.event-list > li > .info > ul > li,
 
-.event-list > li {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: 120px;
-	padding: 0px;
-}
-.event-list > li > time,
-.event-list > li > img  {
-	display: inline-block;
+			}
+			.event-list > li > .info > ul > li > a {
+				display: block;
+				width: 100%;
+				color: rgb(30, 30, 30);
+				text-decoration: none;
+			}
 
 
-}
-.event-list > li:nth-child(even) > time {
-background-color: rgb(254, 211, 39);
-}
-.event-list > li > time > span {
-display: none;
-}
-.event-list > li > time > .day {
-display: block;
-font-size: 50pt;
-font-weight: 100;
-line-height: 1;
-}
-.event-list > li > time > .month {
-display: block;
-font-size: 20pt;
-font-weight: 900;
-line-height: 1;
-}
-.event-list > li > time > .year {
-display: block;
-font-size: 18px;
-font-weight: 400;
-line-height: 1;
-}
+			@media (min-width: 768px) {
+				@import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic");
+				@import url("//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
 
-.event-list > li > img {
-width: 120px;
-float: left;
-}
-.event-list > li > .info {
-background-color: rgb(245, 245, 245);
-overflow: hidden;
-}
-.event-list > li > time,
-.event-list > li > img {
-width: 120px;
-height: 120px;
-padding: 0px;
-margin: 0px;
-}
-.event-list > li > .info {
-position: relative;
-height: 120px;
-text-align: left;
-padding-right: 40px;
-}
-.event-list > li > .info > .title,
-.event-list > li > .info > .desc {
-padding: 0px 10px;
-}
-.event-list > li > .info > ul {
-position: absolute;
-left: 0px;
-bottom: 0px;
-}
-	
-	
+				.event-list {
+					list-style: none;
+					font-family: 'Lato', sans-serif;
+					margin: 0px;
+					padding: 0px;
+				}
 
-/**********************************/
-.event-list > li > time,
-.event-list > li > img  {
-	display: inline-block;
-}
-.event-list > li > time,
-.event-list > li > img {
-	width: 120px;
-	float: left;
-}
-.event-list > li > .info {
-	background-color: rgb(245, 245, 245);
-	overflow: hidden;
-}
-.event-list > li > time,
-.event-list > li > img {
-	width: 120px;
-	height: 120px;
-	padding: 0px;
-	margin: 0px;
-}
-.event-list > li > .info {
-	position: relative;
-	height: 120px;
-	text-align: left;
-	padding-right: 40px;
-}	
-.event-list > li > .info > .title, 
-.event-list > li > .info > .desc {
-	padding: 0px 10px;
-}
-.event-list > li > .info > ul {
-	position: absolute;
-	left: 0px;
-	bottom: 0px;
-}
+				.event-list > li {
+					position: relative;
+					display: block;
+					width: 100%;
+					height: 120px;
+					padding: 0px;
+				}
+				.event-list > li > time,
+				.event-list > li > img  {
+					display: inline-block;
+
+
+				}
+				.event-list > li:nth-child(even) > time {
+					background-color: rgb(254, 211, 39);
+				}
+				.event-list > li > time > span {
+					display: none;
+				}
+				.event-list > li > time > .day {
+					display: block;
+					font-size: 50pt;
+					font-weight: 100;
+					line-height: 1;
+				}
+				.event-list > li > time > .month {
+					display: block;
+					font-size: 20pt;
+					font-weight: 900;
+					line-height: 1;
+				}
+				.event-list > li > time > .year {
+					display: block;
+					font-size: 18px;
+					font-weight: 400;
+					line-height: 1;
+				}
+
+				.event-list > li > img {
+					width: 120px;
+					float: left;
+				}
+				.event-list > li > .info {
+					background-color: rgb(245, 245, 245);
+					overflow: hidden;
+				}
+				.event-list > li > time,
+				.event-list > li > img {
+					width: 120px;
+					height: 120px;
+					padding: 0px;
+					margin: 0px;
+				}
+				.event-list > li > .info {
+					position: relative;
+					height: 120px;
+					text-align: left;
+					padding-right: 40px;
+				}
+				.event-list > li > .info > .title,
+				.event-list > li > .info > .desc {
+					padding: 0px 10px;
+				}
+				.event-list > li > .info > ul {
+					position: absolute;
+					left: 0px;
+					bottom: 0px;
+				}
 
 
 
+				/**********************************/
+				.event-list > li > time,
+				.event-list > li > img  {
+					display: inline-block;
+				}
+				.event-list > li > time,
+				.event-list > li > img {
+					width: 120px;
+					float: left;
+				}
+				.event-list > li > .info {
+					background-color: rgb(245, 245, 245);
+					overflow: hidden;
+				}
+				.event-list > li > time,
+				.event-list > li > img {
+					width: 120px;
+					height: 120px;
+					padding: 0px;
+					margin: 0px;
+				}
+				.event-list > li > .info {
+					position: relative;
+					height: 120px;
+					text-align: left;
+					padding-right: 40px;
+				}	
+				.event-list > li > .info > .title, 
+				.event-list > li > .info > .desc {
+					padding: 0px 10px;
+				}
+				.event-list > li > .info > ul {
+					position: absolute;
+					left: 0px;
+					bottom: 0px;
+				}
 
 
-.containerEvents1 {
-	border: 4px solid #ED771E;
-	border-radius: 10px;
-	padding: 20px;
-	width: 250px;
-	display: inline-block;
-}
-.containerListEvents {
-	display: inline-block;
-}
 
 
-		
-.event-list > li > time{
 
-	width: 100%;
-	color: rgb(255, 255, 255);
-	background-color: #ed771e;
-	padding: 5px;
-	text-align: center;
-	text-transform: uppercase;
-}
-.event-list > li:nth-child(even) > time {
-	background-color: rgb(254, 211, 39);
-}
-.event-list > li > time > span {
-	display: none;
-}
-.event-list > li > time > .day {
-	display: block;
-	font-size: 50pt;
-	font-weight: 100;
-	line-height: 1;
-}
-.event-list > li > time > .month {
-	display: block;
-	font-size: 20pt;
-	font-weight: 900;
-	line-height: 1;
-}
-.event-list > li > time > .year {
-	display: block;
-	font-size: 18px;
-	font-weight: 400;
-	line-height: 1;
-}
-
-.event-list > li > img {
-	width: 120px;
-	float: left;
-}
-.event-list > li > .info {
-	background-color: rgb(245, 245, 245);
-	overflow: hidden;
-}
-.event-list > li > time,
-.event-list > li > img {
-	width: 120px;
-	height: 120px;
-	padding: 0px;
-	margin: 0px;
-}
-.event-list > li > .info {
-	position: relative;
-	height: 120px;
-	text-align: left;
-	padding-right: 40px;
-}
-.event-list > li > .info > .title,
-.event-list > li > .info > .desc {
-	padding: 0px 10px;
-}
-.event-list > li > .info > ul {
-	position: absolute;
-	left: 0px;
-	bottom: 0px;
-}
+				.containerEvents1 {
+					border: 4px solid #ED771E;
+					border-radius: 10px;
+					padding: 20px;
+					width: 250px;
+					display: inline-block;
+				}
+				.containerListEvents {
+					display: inline-block;
+				}
 
 
-@media (min-width: 768px) {
-.event-list > li {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: 120px;
-	padding: 0px;
-}
-.event-list > li > time,
-.event-list > li > img  {
-	display: inline-block;
-}
-.event-list > li > time,
-.event-list > li > img {
-	width: 120px;
-	float: left;
-}
-.event-list > li > .info {
-	background-color: rgb(245, 245, 245);
-	overflow: hidden;
-}
-.event-list > li > time,
-.event-list > li > img {
-	width: 120px;
-	height: 120px;
-	padding: 0px;
-	margin: 0px;
-}
-.event-list > li > .info {
-	position: relative;
-	height: 120px;
-	text-align: left;
-	padding-right: 40px;
-}	
-.event-list > li > .info > .title, 
-.event-list > li > .info > .desc {
-	padding: 0px 10px;
-}
-.event-list > li > .info > ul {
-	position: absolute;
-	left: 0px;
-	bottom: 0px;
-}
-.event-list > li > .social {
-	position: absolute;
-	top: 0px;
-	right: 0px;
-	display: block;
-	width: 40px;
-}
+
+				.event-list > li > time{
+
+					width: 100%;
+					color: rgb(255, 255, 255);
+					background-color: #ed771e;
+					padding: 5px;
+					text-align: center;
+					text-transform: uppercase;
+				}
+				.event-list > li:nth-child(even) > time {
+					background-color: rgb(254, 211, 39);
+				}
+				.event-list > li > time > span {
+					display: none;
+				}
+				.event-list > li > time > .day {
+					display: block;
+					font-size: 50pt;
+					font-weight: 100;
+					line-height: 1;
+				}
+				.event-list > li > time > .month {
+					display: block;
+					font-size: 20pt;
+					font-weight: 900;
+					line-height: 1;
+				}
+				.event-list > li > time > .year {
+					display: block;
+					font-size: 18px;
+					font-weight: 400;
+					line-height: 1;
+				}
+
+				.event-list > li > img {
+					width: 120px;
+					float: left;
+				}
+				.event-list > li > .info {
+					background-color: rgb(245, 245, 245);
+					overflow: hidden;
+				}
+				.event-list > li > time,
+				.event-list > li > img {
+					width: 120px;
+					height: 120px;
+					padding: 0px;
+					margin: 0px;
+				}
+				.event-list > li > .info {
+					position: relative;
+					height: 120px;
+					text-align: left;
+					padding-right: 40px;
+				}
+				.event-list > li > .info > .title,
+				.event-list > li > .info > .desc {
+					padding: 0px 10px;
+				}
+				.event-list > li > .info > ul {
+					position: absolute;
+					left: 0px;
+					bottom: 0px;
+				}
+
+
+				@media (min-width: 768px) {
+					.event-list > li {
+						position: relative;
+						display: block;
+						width: 100%;
+						height: 120px;
+						padding: 0px;
+					}
+					.event-list > li > time,
+					.event-list > li > img  {
+						display: inline-block;
+					}
+					.event-list > li > time,
+					.event-list > li > img {
+						width: 120px;
+						float: left;
+					}
+					.event-list > li > .info {
+						background-color: rgb(245, 245, 245);
+						overflow: hidden;
+					}
+					.event-list > li > time,
+					.event-list > li > img {
+						width: 120px;
+						height: 120px;
+						padding: 0px;
+						margin: 0px;
+					}
+					.event-list > li > .info {
+						position: relative;
+						height: 120px;
+						text-align: left;
+						padding-right: 40px;
+					}	
+					.event-list > li > .info > .title, 
+					.event-list > li > .info > .desc {
+						padding: 0px 10px;
+					}
+					.event-list > li > .info > ul {
+						position: absolute;
+						left: 0px;
+						bottom: 0px;
+					}
+					.event-list > li > .social {
+						position: absolute;
+						top: 0px;
+						right: 0px;
+						display: block;
+						width: 40px;
+					}
 
 										/* Fin Events list
-/**********************************************************************************************************************************/
+										/**********************************************************************************************************************************/
 
-.btn-event-orang {
-	position: relative;
-    left: 20px;
-}
+										.btn-event-orang {
+											position: relative;
+											left: 20px;
+										}
 
-.desc {
-	width: 425px;
-	
-}
+										.desc {
+											width: 425px;
 
-.bloc_aff {
+										}
 
-}
+										.bloc_aff {
+
+										}
 
 
 
-.btn-event-green {
-	color: #fff;
-	margin-top: 20px;
-	border: 1px solid #fff ;
-}
+										.btn-event-green {
+											color: #fff;
+											margin-top: 20px;
+											border: 1px solid #fff ;
+										}
 
 				/**************************************************	
 							*** Formulaire Events ***
-				**************************************************/					
-	
-	/* formulaire Description */
-.form-groupDescription {
-	display: inline-block;
-}
-#inputDescr_event {
-	width: 200px;
-}
+							**************************************************/					
 
-	/* formulaire Nom */
-#inputNom_event {
-	width: 200px;
-}
+							/* formulaire Description */
+							.form-groupDescription {
+								display: inline-block;
+							}
+							#inputDescr_event {
+								width: 200px;
+							}
 
-	/* formulaire Lieu */
-.form-groupLieu {
-	display: inline-block;	
-}
-#inputLieu_event {
-	width: 200px;
-}
+							/* formulaire Nom */
+							#inputNom_event {
+								width: 200px;
+							}
 
-	/* formulaire jour */
-.form-groupJour {
-	display: inline-block;
-}
-#inputJour_event {
-	width: 90px;
-	margin-right: 16px;
-}
+							/* formulaire Lieu */
+							.form-groupLieu {
+								display: inline-block;	
+							}
+							#inputLieu_event {
+								width: 200px;
+							}
 
-	/* formulaire mois */
-.form-groupMois {
-	display: inline-block;
-}
-#inputMois_event {
-	width: 90px;
-}
+							/* formulaire jour */
+							.form-groupJour {
+								display: inline-block;
+							}
+							#inputJour_event {
+								width: 90px;
+								margin-right: 16px;
+							}
 
-	/* formulaire Annee */
-.form-groupAnnee {
-	display: inline-block;
-}
-#inputAnnee_event {
-	width: 200px;
-	margin-top: 5px;
-}
+							/* formulaire mois */
+							.form-groupMois {
+								display: inline-block;
+							}
+							#inputMois_event {
+								width: 90px;
+							}
 
-	/* formulaire Heure */
-.form-groupHeure {
-	display: inline-block;
-}
-#inputHeure_event {
-	width: 90px;
-	margin-right: 16px;
-}
+							/* formulaire Annee */
+							.form-groupAnnee {
+								display: inline-block;
+							}
+							#inputAnnee_event {
+								width: 200px;
+								margin-top: 5px;
+							}
 
-	/* formulaire minute */
-.form-groupMinute {
-	display: inline-block;
-}
-#inputMinute_event {
-	width: 90px;
-}
+							/* formulaire Heure */
+							.form-groupHeure {
+								display: inline-block;
+							}
+							#inputHeure_event {
+								width: 90px;
+								margin-right: 16px;
+							}
+
+							/* formulaire minute */
+							.form-groupMinute {
+								display: inline-block;
+							}
+							#inputMinute_event {
+								width: 90px;
+							}
 
 
 					/************************************************************ 
 										*** ICONS Events***							
-					*************************************************************/										
-/* icon horloge */
-.timeEvent {
-		position: relative;
-		bottom: 22px;
-		left: 15px;
-	}
+										*************************************************************/										
+										/* icon horloge */
+										.timeEvent {
+											position: relative;
+											bottom: 22px;
+											left: 15px;
+										}
 
-.glyphicon { 
-	margin-right:5px; 
-}
+										.glyphicon { 
+											margin-right:5px; 
+										}
 
 
 					/*******************************************************					
 										*** Text Events ***
-					********************************************************/
-.h1_event {
-	color: #fff;
-	font-weight: bold;
-	font-size: 3.5em;
-	
-}
-.h3_event {
-	color: black;
-	font-weight: bold;
-	font-size: 1.8em;
-	margin-top: 5px;
-	margin-bottom: 5px;
-	margin-left: 10px;
-}
-.h2_event {
-	color: white;
-	font-weight: bold;
-	font-size: 2em;
-}
-.h4_event {
-	width: 305px;
-	color: #ed771e;
-	font-weight: bold;
-	margin-top: 5px;
-	margin-bottom: 5px;
-	margin-left: 10px;
-	margin-right: 10px;
-}
+										********************************************************/
+										.h1_event {
+											color: #fff;
+											font-weight: bold;
+											font-size: 3.5em;
 
-.labelBlanc {
-	color: #fff;
-}
+										}
+										.h3_event {
+											color: black;
+											font-weight: bold;
+											font-size: 1.8em;
+											margin-top: 5px;
+											margin-bottom: 5px;
+											margin-left: 10px;
+										}
+										.h2_event {
+											color: white;
+											font-weight: bold;
+											font-size: 2em;
+										}
+										.h4_event {
+											width: 305px;
+											color: #ed771e;
+											font-weight: bold;
+											margin-top: 5px;
+											margin-bottom: 5px;
+											margin-left: 10px;
+											margin-right: 10px;
+										}
+
+										.labelBlanc {
+											color: #fff;
+										}
 
 /**********************************************************************************************************************************
  										*** FIN EVENTS CSS *** 
-***********************************************************************************************************************************/
+ 										***********************************************************************************************************************************/
+
+
+
+
+
+
+/*=====================================
+ DEBUT CSS MENUS
+ =======================================*/
+
+ .sub-titleMenus, .titleMenus{
+ 	font-size: 450%;
+ 	margin-top: 7%;
+ 	text-align: center;
+ 	font-weight: bold;
+ 	color: #FFFFFF;
+ 	letter-spacing: 4px;
+ 	font-family: 'cookie', sans-serif;
+ }
+.allMeals{
+	float: left;
+	width: 47%;
+	margin: 0 1.5%;
+}
+.row-buttonMenu{
+	text-align: center;
+}
+.addMenu{
+	float: right;
+	width: 47%;
+	margin: 0 1.5%;
+	text-align: center;
+	color: #FFFFFF;
+}
+.addMenu>label{
+	width: 100%;
+	font-size: 150%;
+}
+
+/*=====================================
+ FIN CSS MENUS
+ =======================================*/
+
+
