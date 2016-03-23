@@ -1,5 +1,6 @@
 // menus CONTROLLER
 function menuController($scope, $http, menuService, mealService) {
+
 	// initaliser les variables
 	$scope.idStarterSelected = "ras";
 	$scope.idDishSelected = "ras";
@@ -18,8 +19,7 @@ function menuController($scope, $http, menuService, mealService) {
 	}
 
 
-	$scope.add = function(){
-		
+	$scope.add = function(categorie){
 		var data = {};
 		data.name = $scope.name;
 		data.starter = $scope.starter;
@@ -39,6 +39,11 @@ function menuController($scope, $http, menuService, mealService) {
 		$scope.garnish = "";
 		$scope.dessert = "";
 		$scope.drink = "";
+		$scope.idStarterSelected = "ras";
+		$scope.idDishSelected = "ras";
+		$scope.idGarnishSelected = "ras";
+		$scope.idDessertSelected = "ras";
+		$scope.idDrinkSelected = "ras";
 	}
 
 	$scope.update = function(todo){
@@ -65,7 +70,7 @@ function menuController($scope, $http, menuService, mealService) {
 			
 		}
 		else if (categorie == 'dessert'){
-			$scope.idDessertshSelected = _id;			
+			$scope.idDessertSelected = _id;			
 		}
 		else
 			$scope.idDrinkSelected = _id;
@@ -85,7 +90,7 @@ function menuController($scope, $http, menuService, mealService) {
 			
 		}
 		else if (categorie == 'dessert'){
-			$scope.idDessertshSelected = 'ras';			
+			$scope.idDessertSelected = 'ras';			
 		}
 		else
 			$scope.idDrinkSelected = 'ras';
@@ -93,7 +98,26 @@ function menuController($scope, $http, menuService, mealService) {
 		load();
 	}
 
-load();
+	$scope.keep = function(meal, categorie){
+		if (categorie == 'starter'){
+			$scope.starter = meal;
+		}
+		else if (categorie == 'dish'){
+			$scope.dish = meal;
+		}
+		else if (categorie == 'garnish'){
+			$scope.garnish = meal;
+			
+		}
+		else if (categorie == 'dessert'){
+			$scope.dessert = meal;			
+		}
+		else
+			$scope.drink = meal;
+		
+	}
+
+	load();
 
 }
 

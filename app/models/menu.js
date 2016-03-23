@@ -2,51 +2,12 @@
 var mongoose = require('mongoose');
 var menuSchema = new mongoose.Schema({
 	name: String,
-	starter: {
-		name: String,
-		description: String,
-		categorie: String,
-		ingredient: String,
-		recette: String,
-		boisson: String,
-		allergie: String,
-	},
-	dish: {
-		name: String,
-		description: String,
-		categorie: String,
-		ingredient: String,
-		recette: String,
-		boisson: String,
-		allergie: String,
-	},
-	garnish: {
-		name: String,
-		description: String,
-		categorie: String,
-		ingredient: String,
-		recette: String,
-		boisson: String,
-		allergie: String,
-	},
-	dessert: {
-		name: String,
-		description: String,
-		categorie: String,
-		ingredient: String,
-		recette: String,
-		boisson: String,
-		allergie: String,
-	},
-	drink: {
-		name: String,
-		description: String,
-		categorie: String,
-		ingredient: String,
-		recette: String,
-		boisson: String,
-		allergie: String,
-	},
+	starter: Object,
+	starter: Object,
+	dish: Object,
+	garnish: Object,
+	dessert: Object,
+	drink: Object,
 });
 
 

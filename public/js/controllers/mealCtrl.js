@@ -85,8 +85,8 @@ function mealCtrl($scope, $http, mealService) {
 	
 	$scope.keep = function(meal){
 
-		$scope._id = meal._id
-		$scope.avatar = meal.avatar
+		$scope._id = meal._id;
+		$scope.avatar = meal.avatar;
 		$scope.name = meal.name;
 		$scope.description = meal.description;
 		$scope.categorie = meal.categorie;
