@@ -1,39 +1,55 @@
-// MAIN CONTROLLER
-function menuController($scope, $http, menuService) {
-	$scope.title = "TODO LIST";
+
+function menuController($scope, $http, mealService, menuService, accountService) {
+
+	$scope.menu = {
+		meals: [],
+		accounts: []
+	};
+
 
 	function load(){
+		mealService.get().then(function(res){
+			$scope.meals = res.data;
+			console.log(res.data);
+		});
+		accountService.get().then(function(res){
+			$scope.accounts = res.data;
+			console.log(res.data);
+		});
 		menuService.get().then(function(res){
 			$scope.menus = res.data;
+			console.log(res.data);
 		});
 	}
-
-
-
-
-
-
-
-
-
-	/* hhdsqfdksfksdfndsfdksfnldsqs,DSLDS,KLCD,SKLCKLVNKLNKLVNKLQVNKLVN*/
+	/*============= */
+	$scope.addToMenu= function(meal){
+		$scope.menu.meals.push(meal);
+	};
+	$scope.addToMenuInvites= function(account){
+		$scope.menu.accounts.push(account);
+	};
+	/*============= */
 	$scope.add = function(){
+		console.log($scope.menu.meals);
 		var data = {};
-		data.description = $scope.description;
+		data.menu = $scope.menu;
+		data.menu.meals = $scope.menu.meals;
+		data.menu.accounts = $scope.menu.accounts;
+
 		menuService.create(data).then(function(res){
 			load();
+			$scope.menu.meals = [];
+			$scope.menu.accounts = [];
 		});
-		$scope.description = "";
-	}
-	$scope.update = function(todo){
-		menuService.update(todo._id, todo).then(function(res){
-			load();
-		});
-	}
-	$scope.delete = function(todo){
-		menuService.delete(todo._id).then(function(res){
-			load();
-		});
-	}
+
+		// $scope.menu.accounts = [];
+console.log(data.menu);
+	};
+
+
+
+
+
 	load();
+
 }

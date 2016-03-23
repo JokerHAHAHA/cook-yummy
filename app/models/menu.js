@@ -1,18 +1,26 @@
 // MODEL TODO
 var mongoose = require('mongoose');
-var todoSchema = new mongoose.Schema({
-  description: String
+var menuSchema = new mongoose.Schema({
+  menu:{
+    meals: Array,
+    accounts: Array
+  }
+
 });
+
 var Menu = {
 
-    model: mongoose.model('Menu', todoSchema),
+    model: mongoose.model('Menu', menuSchema),
 
     create: function(req, res) {
+      console.log(req.body);
 		Menu.model.create({
-			description: req.body.description
-		}, function(){
+			menu: req.body.menu,
+		},
+
+		function(){
 			res.sendStatus(200);
-		})
+		});
 	},
 	findAll: function(req, res) {
 		Menu.model.find(function (err, data) {
@@ -21,7 +29,8 @@ var Menu = {
 	},
 	update: function(req, res){
 		Menu.model.findByIdAndUpdate(req.params.id, {
-			description: req.body.description
+			menu: req.body.menu,
+
 		}, function(){
 			res.sendStatus(200);
 		})

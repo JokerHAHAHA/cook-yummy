@@ -35,6 +35,10 @@ function config($routeProvider) {
 		templateUrl: 'views/registration.html',
 		controller: 'registrationController'
 	})
+	.when('/menu', {
+		templateUrl: 'views/menu.html',
+		controller: 'menuController'
+	})
 	.otherwise({
 		redirectTo: '/'
 	});
@@ -49,7 +53,7 @@ function run($rootScope, $location){
 }
 
 
-angular.module('app', ['ngRoute','ngAutocomplete'])
+angular.module('app', ['ngRoute','ngAutocomplete','ngDraggable'])
 .config(config)
 .controller('mainController', mainController)
 .controller('registrationController', registrationController)

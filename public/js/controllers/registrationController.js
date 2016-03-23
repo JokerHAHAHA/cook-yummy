@@ -78,6 +78,11 @@ $scope.add = function(){
 
 
 };
+$scope.send = function($locationProvider){
+  $location.path('/liste_invites');
+};
+
+
 $scope.update = function(account){
   accountService.update(account._id, account).then(function(res){
     load();
