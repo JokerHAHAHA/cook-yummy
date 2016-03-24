@@ -1,5 +1,5 @@
 
-<h1 class="title">Plats</h1>
+<h1 class="titleMeals">Plats</h1>
 
 <div ng-hide="number == 6" class="en-tete">
 	<form class="recherche">
@@ -8,11 +8,6 @@
 		<!-- bouton ajouter repas -->
 		<button ng-click="viewCount(6)" type="submit" class="glyphicon glyphicon-plus mealAddButton btn btn-success"></button>
 	</form>
-
-<!-- bouton change variable filte	 -->
-<div class="container">
-	<button ng-click="change()" class="btn btn-warning" style="float: right;">GLUTEN FILTER</button>
-</div>
 
 	<!-- barre de navigation laterale -->
 	<div ng-hide="number == 7" class="nav-meals">
@@ -30,7 +25,7 @@ STARTERS
 ================================================================================== -->
 
 <div ng-show="number == 1" class="container principal">
-	<div ng-hide="meal.allergie == allGluten" class="row meal" ng-repeat="meal in meals | filter: {categorie: 'starter'} | filter: search">
+	<div ng-repeat="meal in meals | filter: {categorie: 'starter'} | filter: search">
 		
 		<span type="submit" class="loupe col-lg-1 glyphicon glyphicon-zoom-in" ng-click="keep(meal); viewCount(8)"></span>
 
@@ -145,7 +140,7 @@ MEAL SHEET
 	<div ng-click="load(); viewCount(0)" class="btn-retour btn">
 		<p>Retour</p>
 	</div>
-	<h1 class="sub-title">{{name}}</h1>
+	<h1 class="sub-titleMeals">{{name}}</h1>
 	
 	<!-- formulaire pour choisir une photo sur l'ordinateur/mobile de l'utilisateur -->
 	<form class="recup-photo">
@@ -273,7 +268,7 @@ ADD MEAL
 	<div ng-click="viewCount(0)" class="btn-retour btn">
 		<p>Retour</p>
 	</div>
-	<h1 class="sub-title">NOUVEAU</h1>
+	<h1 class="sub-titleMeals">NOUVEAU</h1>
 	
 	<!-- formulaire pour choisir une photo sur l'ordinateur/mobile de l'utilisateur -->
 	<form class="recup-photo">
@@ -400,7 +395,7 @@ UPDATE MEAL
 	<div ng-click="viewCount(0)" class="btn-retour btn">
 		<p>Retour</p>
 	</div>
-	<h1 class="sub-title">MISE A JOUR</h1>
+	<h1 class="sub-titleMeals">MISE A JOUR</h1>
 	
 	<!-- formulaire pour choisir une photo sur l'ordinateur/mobile de l'utilisateur -->
 	<form class="recup-photo">

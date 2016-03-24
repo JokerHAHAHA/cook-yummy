@@ -1,100 +1,100 @@
 <div class="container">
-    <div class="row">
-      <div class="col-md-7">
-    <h1 class="orange">Qui voulez-vous inviter?</h1>
+  <div class="row">
+    <div class="col-md-7">
+      <h1 class="orange">Qui voulez-vous inviter?</h1>
     </div>
     <div class="col-md-5">
-    <a href="#/invites"><button ng-click="viewCount(6)" type="submit" class="glyphicon glyphicon-plus mealAddButton btn btn-success"></button></a>
-</div>
-</div>
-    <div class="row">
-        <div class="col-md-4">
-            <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="Filtre" ng-model="filtre">
-        </div>
-        <div class="col-md-12">
-            <div class="col-md-4">
-                <h3 class="orange">Sexe</h3>
-                <button type="checkbox" class="btn btn-default">female</button>
-                <button type="button" class="btn btn-default">Male</button>
-
-            </div>
-            <div class="col-md-4">
-                <h3 class="orange">Allergies</h3>
-                <button type="checkbox" class="btn btn-default" ng-class=" myFilterNoix == true ? 'push' : ''" ng-click= "myFilterNoix = !myFilterNoix ">Noix</button>
-                <button type="checkbox" class="btn btn-default" ng-class=" myFilterOeuf == true ? 'push' : ''" ng-click= "myFilterOeuf = !myFilterOeuf">Oeuf</button>
-                <button type="checkbox" class="btn btn-default" ng-class=" myFilterLactose == true ? 'push' : ''" ng-click= "myFilterLactose = !myFilterLactose">Lactose</button>
-
-            </div>
-            <div class="col-md-4">
-                <h3 class="orange">Règime alimentaire</h3>
-                <button type="checkbox" class="btn btn-default" ng-class=" myFiltervegetarien == true ? 'push' : ''" ng-click= "myFiltervegetarien = !myFiltervegetarien">Végétarien</button>
-                <button type="checkbox" class="btn btn-default" ng-class=" myFilterVegan == true ? 'push' : ''" ng-click= "myFilterVegan = !myFilterVegan">Végan</button>
-                <button type="checkbox" class="btn btn-default" ng-class=" myFilterGluten == true ? 'push' : ''" ng-click= "myFilterGluten = !myFilterGluten">Gluten Free</button>
-
-            </div>
-        </div>
+      <a href="#/invites"><button ng-click="viewCount(6)" type="submit" class="glyphicon glyphicon-plus mealAddButton btn btn-success"></button></a>
     </div>
-
-
-
-    <div class="form-group move-down">
-        <hr>
-        <hr>
-        <hr/>
-        <input type="text" id="Autocomplete" class="form-control" ng-autocomplete='toto' ng-model="result" options="{ types: '(cities)'}" />
-    </div>
-    <div class="col-md-3" ng-repeat="account in accounts | filter: filtre">
-        <br>
-        <button type="button" class="close" ng-click="delete(account)" data-dismiss="modal">&times;</button>
-
-        <div class="card" ng-class= "account.femme == 'true' ? 'pink': ''">
-
-            <canvas class="header-bg" width="250" height="70" id="header-blur"></canvas>
-
-
-            <div class="avatar">
-                <img src="{{account.image}}" alt="" />
-            </div>
-
-            <div class="content">
-                <p>{{account.firstname}}<br>
-                    {{account.lastname}}</p>
-                    <p><button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-default">Update {{account.firstname}}</button></p>
-                </div>
-            </div>
-
-            <div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">{{account.firstname}}</h4>
-        <div style=" text-align: center;">
-            <img style=" text-align: center; border: 1px solid #ED771E; border-radius: 5px; max-height: 150px; max-width: 150px;" src="{{account.image}}" alt="" />
-        </div>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-          <div class="col-xs-6 col-sm-6 col-md-6">
-            <div class="form-group">
-              <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="Prénom" ng-model="account.firstname">
-            </div>
-          </div>
-          <div class="col-xs-6 col-sm-6 col-md-6">
-            <div class="form-group">
-              <input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Nom" ng-model="account.lastname">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="update(account)" >Update</button>
-      </div>
-    </div>
-
   </div>
-</div>
+  <div class="row">
+    <div class="col-md-4">
+      <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="Filtre" ng-model="filtre">
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-4">
+        <h3 class="orange">Sexe</h3>
+        <button class="btn push"><input type="checkbox" class="btn btn-warning btn-sm"ng-model="search.femme" ng-true-value="'true'" ng-false-value=''> female</button>
+        <button class="btn push"><input type="checkbox" class="btn btn-default" ng-model="search.homme" ng-true-value="'true'" ng-false-value=''>Male</button>
+
+      </div>
+      <div class="col-md-4">
+        <h3 class="orange">Allergies</h3>
+        <button class="btn push"><input type="checkbox" class="btn btn-default" ng-class=" myFilterNoix == 'true' ? 'push' : ''" ng-model="search.noix" ng-true-value="'true'" ng-false-value=''>Noix</button>
+        <button class="btn push"><input type="checkbox" class="btn btn-default" ng-class=" myFilterOeuf == 'true' ? 'push' : ''" ng-model="search.oeuf" ng-true-value="'true'" ng-false-value=''>Oeuf</button>
+        <button class="btn push"><input type="checkbox" class="btn btn-default" ng-class=" myFilterLactose == 'true' ? 'push' : ''" ng-model="search.lactose" ng-true-value="'true'" ng-false-value=''>Lactose</button>
+
+      </div>
+      <div class="col-md-4">
+        <h3 class="orange">Règime alimentaire</h3>
+        <button class="btn push"><input type="checkbox" class="btn btn-default" ng-class=" myFiltervegetarien == true ? 'push' : ''" ng-model="search.vegetarien" ng-true-value="'true'" ng-false-value=''>Végétarien</button>
+        <button class="btn push"><input type="checkbox" class="btn btn-default" ng-class=" myFilterVegan == true ? 'push' : ''" ng-model="search.vegan" ng-true-value="'true'" ng-false-value=''>Végan</button>
+        <button class="btn push"><input type="checkbox" class="btn btn-default" ng-class=" myFilterGluten == true ? 'push' : ''" ng-model="search.gluten" ng-true-value="'true'" ng-false-value=''>Gluten Free</button>
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="form-group move-down">
+    <hr>
+    <hr>
+    <hr/>
+    <input type="text" id="Autocomplete" class="form-control" ng-autocomplete='toto' ng-model="result" options="{ types: '(cities)'}" />
+  </div>
+  <div class="col-md-3" ng-repeat="account in accounts | filter:{noix : search.noix} | filter:{oeuf:search.oeuf} | filter:{lactose:search.lactose}  | filter:{vegetarien:search.vegetarien}  | filter:{vegan:search.vegan}  | filter:{gluten:search.gluten}| filter:{femme:search.femme}| filter:{homme:search.homme}">
+    <br>
+    <button type="button" class="close" ng-click="delete(account)" data-dismiss="modal">&times;</button>
+
+    <div class="card" ng-class= "account.femme == 'true' ? 'pink': ''">
+
+      <canvas class="header-bg" width="250" height="70" id="header-blur"></canvas>
+
+
+      <div class="avatar">
+        <img src="{{account.image}}" alt="" />
+      </div>
+
+      <div class="content">
+        <p>{{account.firstname}}<br>
+          {{account.lastname}}</p>
+          <p><button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-default">Update {{account.firstname}}</button></p>
+        </div>
+      </div>
+
+      <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">{{account.firstname}}</h4>
+              <div style=" text-align: center;">
+                <img style=" text-align: center; border: 1px solid #ED771E; border-radius: 5px; max-height: 150px; max-width: 150px;" src="{{account.image}}" alt="" />
+              </div>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                  <div class="form-group">
+                    <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="Prénom" ng-model="account.firstname">
+                  </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                  <div class="form-group">
+                    <input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Nom" ng-model="account.lastname">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="update(account)" >Update</button>
+            </div>
+          </div>
 
         </div>
+      </div>
+
+    </div>

@@ -85,8 +85,8 @@ function mealCtrl($scope, $http, mealService) {
 	
 	$scope.keep = function(meal){
 
-		$scope._id = meal._id
-		$scope.avatar = meal.avatar
+		$scope._id = meal._id;
+		$scope.avatar = meal.avatar;
 		$scope.name = meal.name;
 		$scope.description = meal.description;
 		$scope.categorie = meal.categorie;
@@ -109,11 +109,6 @@ function mealCtrl($scope, $http, mealService) {
 		// 8 = meal sheet
 	}
 
-	$scope.change = function(){
-		$scope.allGluten = "gluten";
-	load();
-	}
-
-
 	load();
 }
+
