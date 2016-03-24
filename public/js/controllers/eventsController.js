@@ -1,6 +1,13 @@
-// // EVENTS CONTROLLER
+// =========================================================================================================================
+//					 EVENTS CONTROLLER
+// =========================================================================================================================
 function eventsController($scope, $http, eventService) {
 	$scope.title = "Evénements";
+	$scope.test = 1;
+
+	$scope.suivant = function (){
+		$scope.test += 1;
+	}
 	
 	function load(){
 		eventService.get().then(function(res){

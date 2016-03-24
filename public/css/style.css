@@ -672,17 +672,6 @@ bottom: 0px;
 
 
 
-.containerEvents1 {
-	border: 4px solid #ED771E;
-	border-radius: 10px;
-	padding: 20px;
-	width: 250px;
-	display: inline-block;
-}
-.containerListEvents {
-	display: inline-block;
-}
-
 
 		
 .event-list > li > time{
@@ -800,14 +789,26 @@ bottom: 0px;
 	right: 0px;
 	display: block;
 	width: 40px;
-}
+}	/********************************** Fin Events list ******************************/
 
-										/* Fin Events list
-/**********************************************************************************************************************************/
 
+/*****************	Bouton Event  *******************/
 .btn-event-orang {
 	position: relative;
     left: 20px;
+}
+.btn-event-green {
+	color: #fff;
+	margin-top: 20px;
+	border: 1px solid #fff ;
+}
+.btnModalClose {
+	width: 38px;
+	height: 38px;
+	box-shadow: 2px 2px 8px #aaa;
+	border-radius: 50%;
+	position: relative;
+    bottom: 39px;
 }
 
 .desc {
@@ -815,22 +816,22 @@ bottom: 0px;
 	
 }
 
-.bloc_aff {
 
+/******************  Modal Event ********************/
+#inputDescription_event {
+	width: 300px;
 }
-
-
-
-.btn-event-green {
-	color: #fff;
-	margin-top: 20px;
-	border: 1px solid #fff ;
-}
-
-				/**************************************************	
-							*** Formulaire Events ***
-				**************************************************/					
+.modalContentEvent {
+	width: 863px;
 	
+}
+#inputNom_eventUpdate {
+	width: 300px;
+	
+}
+
+
+/*******************  Formulaire Events  ******************/ 					
 	/* formulaire Description */
 .form-groupDescription {
 	display: inline-block;
@@ -942,9 +943,36 @@ bottom: 0px;
 	margin-left: 10px;
 	margin-right: 10px;
 }
-
+.h4_event2 {
+	color: #ed771e;
+	font-weight: bold;
+	width: 200px;
+    padding-left: 10px;
+    display: inline-block;
+}
 .labelBlanc {
 	color: #fff;
+}
+
+
+.EvCo1 {
+	padding: 15px;
+    margin-left: -17px;
+    margin-top: 25px;
+    width: 1174px;
+}
+.EvCo2 {
+	border: 4px solid #ED771E;
+	border-radius: 10px;
+	padding: 30px;
+	
+}
+.EvCont3 {
+	width: 671px;
+    margin-top: 35px;
+}
+.EvCont {
+	
 }
 
 /**********************************************************************************************************************************

@@ -1,234 +1,186 @@
-<div class="container">
 
-<input type="text" class="eventSearch pull-right form-control" ng-model="search" placeholder="Recherche">
-<h1 class="page-header h1_event">{{title}}</h1>
 
-<!-- ============================= formulaire de création d'événements =============================================== -->
-<div class="containerEvents">
-	<div class="row col-md-offset-1">
-		<div class="containerEvents1 col-md-offest-2 col-md-3">
-			<h2  class="page-header h2_event">Créer un événement</h2>
-				<form class="form-inline">
-					<hr>
+<div class="container EvCo1">
+	<div class="row">
+		<h1 class="page-header h1_event">{{title}}</h1>
 
-				
-				<!-- formulaire: Description -->
-					<div class="form-groupDescription">
-						<label for="inputDescr_event" class="labelBlanc">Choisir un type d'événement :</label><br/>
-						<select type="text" class="form-control" id="inputDescr_event" 
-							   placeholder="Nom" ng-model="description">
-							<option value="0">Anniversaire</option>
-							<option value="1">Noël</option>
-							<option value="2">Nouvel An</option>
-							<option value="3">Petit déjeuner</option>
-							<option value="4">Déjeuner</option>
-							<option value="5">Dîner</option>
-							<option value="6" >Autre</option>
-						</select>
-					</div>
-						<hr>
-				
-				<!-- formulaire: Nom -->		
-					<div class="form-groupNom">
-						<label for="inputNom_event" class="labelBlanc">Nom :</label><br/>
-						<input type="text" class="form-control" id="inputNom_event"  ng-model="nom" ng-required="nom"/> 
-					</div>
+			<!-- ================= Formulaire de création d'événements ========================= -->
+	
+
+			<div class="EvCo2 col-md-4">
+					<h2 class="page-header h2_event">Créer un événement</h2>
+
+					<form name="creatEventForm" class="form-inline" ng-show="test=1">
 						<hr>
 
-				<!-- formulaire: lieu -->
-					<div class="form-groupLieu">
-						<label for="Autocomplete" class="labelBlanc">Lieu :</label><br/>
-						<input type="text" class="form-control" id="inputLieu_event" placeholder="Lieu" ng-autocomplete='toto' ng-model="lieu" options="{ types: '(cities)'}"/> 
-					</div>
-				
-				<hr>
-
-				<!-- formulaire: jour -->
-					<label class="labelBlanc">Date de l'événement :</label><br/>
-					<div class="form-groupJour" >
-						<select type="text" class="form-control" id="inputJour_event" ng-model="jour">
-							<option value="" selected="selected">Jour</option>
-							<option ng-repeat="jour in jours">{{jour}}</option>
-						</select>
-					</div>
-				
-				<!-- formulaire: mois -->
-					<div class="form-groupMois">
-						<select type="text" class="inMois form-control" id="inputMois_event" ng-model="mois">
-							<option value="" selected="selected">Mois</option>
-							<option ng-repeat="mois in month">{{mois}}</option>
-							
-							
-						</select>
-					</div>
-				
-				<!-- formulaire: année -->
-					<div class="form-groupAnnee">
-						<select type="number" class="inAnnee form-control" id="inputAnnee_event" 
-							    ng-model="annee">
-							<option value="" selected="selected">Année</option>
-							<option ng-repeat="annee in years" value="{{annee}}">{{annee}}</option>
-							
-						</select>
-					</div>
-						<hr>
-				
-				<!-- formulaire: heure -->
-					<label class="labelBlanc">Heure de l'événement :</label><br/>
-					<div class="form-groupHeure">
-						<select type="number" class="inHeure form-control" id="inputHeure_event" 
-							    ng-model="heure">
-							<option value="" selected="selected">Heure</option>
-							<option ng-repeat="heure in heures">{{heure}}</option>
-						</select>
-					</div>
-
-				<!-- formulaire: minute -->	
-					<div class="form-groupMinute">
-						<select type="number" class="inMinute form-control" id="inputMinute_event" 
-							    ng-model="minute">
-							<option value="" selected="selected">Minute</option>
-							<option ng-repeat="minute in minutes">{{minute}}</option>
-						</select>
-					</div>
-						<hr>
-			
-					<button type="submit" class="btn btn-success btn-event-green" ng-click="add()" ng-required="jour">Ajouter</button>	
-			</form>
-		</div><!-- /formulaire de création d'événements -->
 					
-			<hr>
-			
-<!-- ======================== Affichage des événements créé =============================================================== -->			
-			<div class="containerListEvents col-md-offset-1">
-				<h2 class="page-header h2_event">Ma liste d'événements</h2>
-				<ul class="event-list"> 
-					<li ng-repeat="event in events | orderBy: 'jour' | orderBy: 'mois' | orderBy: 'annee'">
-						<time datetime="2014-07-20">
-							<span class="day">{{event.jour}}</span>
-							<span class="month">{{event.mois}}</span>
-							<span class="year">{{event.annee}}</span>
-							<span class="time"></span>
-						</time>
-							<img alt="image" src="{{event.image}}" />
-						<div class="info">	
-							<h3 class="h3_event">{{event.description1 | uppercase}}</h3>
-							<h4 class="h4_event">{{event.nom }}</h4>
-							
-								<span class="pull-right timeEvent"><i class="glyphicon glyphicon-time"></i> {{event.heure}} H {{event.minute}}</span>
-							
-
-							<p class="desc" ng-model="lieu">@ {{event.lieu}}</p>
-                            <button type="button" class="btn btn-sm btn-warning pull-right btn-event-orang" data-toggle="modal" data-target=".bs-example-modal-lg"><span class="glyphicon glyphicon-plus-sign"></span>  DÉTAILS et MODIFICATIONS</button>
+						<!-- formulaire: Description -->
+						<div class="form-groupDescription">
+							<label class="labelBlanc">Choisir un type d'événement :</label><br>
+							<select type="text" class="form-control" id="inputDescr_event" ng-model="description">
+								<option value="0">Anniversaire</option>
+								<option value="1">Noël</option>
+								<option value="2">Nouvel An</option>
+								<option value="3">Petit déjeuner</option>
+								<option value="4">Déjeuner</option>
+								<option value="5">Dîner</option>
+								<option value="6" >Autre</option>
+							</select>
 						</div>
-					</li>	
-				</ul>
+							<hr>
+					
+						<!-- formulaire: Nom -->		
+						<div class="form-groupNom">
+							<label class="labelBlanc">Nom :</label><br>
+							<input name="nom" type="text" ng-maxlength="20" class="form-control" id="inputNom_event"  ng-model="nom"> 
+						</div>
+							<hr>
+
+						<!-- formulaire: lieu -->
+						<div class="form-groupLieu">
+							<label class="labelBlanc">Lieu :</label><br>
+							<input name="lieu" type="text" class="form-control" id="inputLieu_event" placeholder="Lieu" ng-autocomplete='toto' ng-model="lieu" options="{ types: '(cities)'}" > 
+						</div>
+							<hr>
+
+						<!-- formulaire: jour -->
+						<label class="labelBlanc">Date de l'événement :</label><br>
+						<div class="form-groupJour" >
+							<select type="text" class="form-control" id="inputJour_event" ng-model="jour">
+								<option value="" selected="selected">Jour</option>
+								<option ng-repeat="jour in jours">{{jour}}</option>
+							</select>
+						</div>
+					
+						<!-- formulaire: mois -->
+						<div class="form-groupMois">
+							<select type="text" class="inMois form-control" id="inputMois_event" ng-model="mois">
+								<option value="" selected="selected">Mois</option>
+								<option ng-repeat="mois in month">{{mois}}</option>
+								
+								
+							</select>
+						</div>
+					
+						<!-- formulaire: année -->
+						<div class="form-groupAnnee">
+							<select type="number" class="inAnnee form-control" id="inputAnnee_event" 
+								    ng-model="annee">
+								<option value="" selected="selected">Année</option>
+								<option ng-repeat="annee in years" value="{{annee}}">{{annee}}</option>
+							</select>
+						</div>
+							<hr>
+					
+						<!-- formulaire: heure -->
+						<label class="labelBlanc">Heure de l'événement :</label><br>
+						<div class="form-groupHeure">
+							<select type="number" class="inHeure form-control" id="inputHeure_event" 
+								    ng-model="heure">
+								<option value="" selected="selected">Heure</option>
+								<option ng-repeat="heure in heures">{{heure}}</option>
+							</select>
+						</div>
+
+						<!-- formulaire: minute -->	
+						<div class="form-groupMinute">
+							<select type="number" class="inMinute form-control" id="inputMinute_event" 
+								    ng-model="minute">
+								<option value="" selected="selected">Minute</option>
+								<option ng-repeat="minute in minutes">{{minute}}</option>
+							</select>
+						</div>
+							<hr>
+				
+						<button type="submit" class="btn btn-success btn-event-green" ng-click="suivant()" >Suivant</button>	
+					</form>	
+					<!-- Fin / Formulaire création d'événements -->
+				</div>
+							
+						<hr>
+				<div ng-hide="test=2">
+					jhrkghzeurgize
+				</div>
+					<!-- ======================== Affichage des événements créé ============================ -->
+					<div class="container EvCont3 col-md-offset-5 ">
+						
+						<h2 class="page-header h2_event">Ma liste d'événements</h2>
+						<ul class="event-list"> 
+							<li ng-repeat="event in events | orderBy: 'jour' | orderBy: 'mois' | orderBy: 'annee'">
+								<time datetime="2014-07-20">
+									<span class="day">{{event.jour}}</span>
+									<span class="month">{{event.mois}}</span>
+									<span class="year">{{event.annee}}</span>
+									<span class="time"></span>
+								</time>
+									<img alt="image" src="{{event.image}}" />
+								<div class="info">	
+									<h3 class="h3_event">{{event.description1 | uppercase}}</h3>
+									<h4 class="h4_event">{{event.nom }}</h4>
+									
+										<span class="pull-right timeEvent"><i class="glyphicon glyphicon-time"></i> {{event.heure}} H {{event.minute}}</span>
+									
+
+									<p class="desc" ng-model="lieu">@ {{event.lieu}}</p>
+		                            <button type="button" class="btn btn-sm btn-warning pull-right btn-event-orang" data-toggle="modal" data-target=".bs-event-modal-lg"><span class="glyphicon glyphicon-plus-sign"></span>  DÉTAILS et MODIFICATIONS</button>
+								</div>
+							</li>	
+						</ul>
+
+					</div>
+				
 			</div>
-	</div>
-</div>
+		</div>
+	
+
+
 
 	<hr>
 
-<!-- ================================================================================================================================-->
-<!-- Large modal -->
 
-<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+
+<!-- ======================================== Fenetre modal =============================================== -->
+ 
+<div class="modal fade bs-event-modal-lg" tabindex="-1" role="dialog" aria-labelledby="eventLargeModalLabel">
   <div class="modal-dialog modal-lg">
-    <div class="modal-content">
+    <div class="modal-content" ng-repeat="event in events">
 
-    <div class="bloc_aff">
+		<div class="modal-header modalHeaderEvent">
+			<h4>Modifier mon événement : </h4>
+	        <button type="button" class="btn btn-warning pull-right btnModalClose" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></button>
+	           
 
-    </div>
-      <!-- formulaire: Description -->
-					<div class="form-groupDescription">
-						<label for="inputDescr_event" class="labelBlanc">Choisir un type d'événement :</label><br/>
-						<select type="text" class="form-control" id="inputDescr_event" 
-							   placeholder="Nom" ng-model="description">
-							<option  value="0">Anniversaire</option>
-							<option  value="1">Noël</option>
-							<option  value="2">Nouvel An</option>
-							<option  value="3">Petit déjeuner</option>
-							<option  value="4">Déjeuner</option>
-							<option  value="5">Dîner</option>
-							<option value="6" >Autre</option>
-						</select>
-					</div>
-						<hr>
-				
-				<!-- formulaire: Nom -->		
-					<div class="form-groupNom">
-						<label for="inputNom_event" class="labelBlanc">Nom :</label><br/>
-						<input type="text" class="form-control" id="inputNom_event"  ng-model="nom" ng-required="nom"/> 
-					</div>
-						<hr>
+       	</div>
+  		 
+  		<div class="container modalContentEvent">
+  			<div class="row">
+	  			<div class="form1">
+					<label>Type d'événement :</label><h4 class="h4_event2">{{event.description1}}</h4>
+					<select type="text" class="form-control" id="inputDescr_event" ng-model="description" ng-init="description">
+						<option value="0">Anniversaire</option>
+						<option value="1">Noël</option>
+						<option value="2">Nouvel An</option>
+						<option value="3">Petit déjeuner</option>
+						<option value="4">Déjeuner</option>
+						<option value="5">Dîner</option>
+						<option value="6" >Autre</option>
+					</select>
+				</div>
 
-				<!-- formulaire: lieu -->
-					<div class="form-groupLieu">
-						<label for="Autocomplete" class="labelBlanc">Lieu :</label><br/>
-						<input type="text" class="form-control" id="inputLieu_event" placeholder="Lieu" ng-autocomplete='toto' ng-model="lieu" options="{ types: '(cities)'}"/> 
-					</div>
-				
-				<hr>
+				<div class="form2">
+					<label>Nom :</label><h4 class="h4_event2">{{event.nom}}</h4>
+					<input name="nom" type="text" ng-maxlength="20" class="form-control" id="inputNom_event"  ng-model="nom"> 
+				</div>
+			</div>		
+    	</div>
 
-				<!-- formulaire: jour -->
-					<label class="labelBlanc">Date de l'événement :</label><br/>
-					<div class="form-groupJour" >
-						<select type="text" class="form-control" id="inputJour_event" ng-model="jour">
-							<option value="" selected="selected">Jour</option>
-							<option ng-repeat="jour in jours">{{jour}}</option>
-						</select>
-					</div>
-				
-				<!-- formulaire: mois -->
-					<div class="form-groupMois">
-						<select type="text" class="inMois form-control" id="inputMois_event" ng-model="mois">
-							<option value="" selected="selected">Mois</option>
-							<option ng-repeat="mois in month">{{mois}}</option>
-							
-							
-						</select>
-					</div>
-				
-				<!-- formulaire: année -->
-					<div class="form-groupAnnee">
-						<select type="number" class="inAnnee form-control" id="inputAnnee_event" 
-							    ng-model="annee">
-							<option value="" selected="selected">Année</option>
-							<option ng-repeat="annee in years" value="{{annee}}">{{annee}}</option>
-							
-						</select>
-					</div>
-						<hr>
-				
-				<!-- formulaire: heure -->
-					<label class="labelBlanc">Heure de l'événement :</label><br/>
-					<div class="form-groupHeure">
-						<select type="number" class="inHeure form-control" id="inputHeure_event" 
-							    ng-model="heure">
-							<option value="" selected="selected">Heure</option>
-							<option ng-repeat="heure in heures">{{heure}}</option>
-						</select>
-					</div>
-
-				<!-- formulaire: minute -->	
-					<div class="form-groupMinute">
-						<select type="number" class="inMinute form-control" id="inputMinute_event" 
-							    ng-model="minute">
-							<option value="" selected="selected">Minute</option>
-							<option ng-repeat="minute in minutes">{{minute}}</option>
-						</select>
-					</div>
-						<hr>
-    </div>
-    <div class="modal-footer">
-	    <button type="submit" class="btn btn-default" ng-click="update(event)">Update</button>
-		<button type="submit" class="btn btn-danger" ng-click="delete(event)">Delete</button>
-	</div>
-  </div>
-</div>
-
-
-<!-- ================================================================================================================================ -->	
+    	<div class="modal-footer modalFooterEvent">
+    		<button type="button" class="btn btn-default" ng-click="update(event)">Mettre à jour</button>
+    		<button type="button" class="btn btn-danger" ng-click="delete(event)">Supprimer</button>
+    	</div>
+    </div>  
+      
+	
 
 					
 
