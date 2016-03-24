@@ -42,7 +42,7 @@ function run($rootScope, $location){
 }
 
 
-angular.module('app', ['ngRoute','ngAutocomplete','ngDraggable'])
+angular.module('app', ['ngRoute','ngAutocomplete'])
 .config(config)
 .controller('mainController', mainController)
 .controller('registrationController', registrationController)

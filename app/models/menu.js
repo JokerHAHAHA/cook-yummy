@@ -1,9 +1,7 @@
 // MODEL TODO
 var mongoose = require('mongoose');
 var menuSchema = new mongoose.Schema({
-<<<<<<< HEAD
 	name: String,
-	starter: Object,
 	starter: Object,
 	dish: Object,
 	garnish: Object,
@@ -25,27 +23,6 @@ var Menu = {
 			dessert: req.body.dessert,
 			drink: req.body.drink,
 		}, function(){
-=======
-
-    meals: Array,
-    accounts: Array
-
-
-});
-
-var Menu = {
-
-    model: mongoose.model('Menu', menuSchema),
-
-    create: function(req, res) {
-      console.log(req.body);
-		Menu.model.create({
-			meals: req.body.meals,
-			accounts: req.body.accounts
-		},
-
-		function(){
->>>>>>> Hadrien
 			res.sendStatus(200);
 		});
 	},
@@ -65,7 +42,7 @@ var Menu = {
 			res.sendStatus(200);
 		})
 	},
-	
+
 	delete: function(req, res){
 		Menu.model.findByIdAndRemove(req.params.id, function(){
 			res.sendStatus(200);
