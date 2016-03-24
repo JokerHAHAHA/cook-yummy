@@ -109,11 +109,6 @@ function mealCtrl($scope, $http, mealService) {
 		// 8 = meal sheet
 	}
 
-	$scope.change = function(){
-		$scope.allGluten = "gluten";
-	load();
-	}
-
 	load();
 }
 
