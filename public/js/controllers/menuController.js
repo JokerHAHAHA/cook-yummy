@@ -7,7 +7,7 @@ function menuController($scope, $http, menuService, mealService) {
 	$scope.idGarnishSelected = "ras";
 	$scope.idDessertSelected = "ras";
 	$scope.idDrinkSelected = "ras";
-	$scope.number = 2;
+	$scope.number = 1;
 
 	function load(){
 		menuService.get().then(function(res){
