@@ -139,8 +139,8 @@ hr{
 .nav-meals{
 	background-color: rgba(0,0,0,0.1);
 	position: fixed;
-	top: 55%;
-	left: 5%;
+	top: 54%;
+	left: 4%;
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
@@ -159,7 +159,7 @@ hr{
 	margin-right: 2%;
 	width: 15%;
 	height: 250px;
-	padding: 2.8% 3.5%;
+    padding: 2.8% 3.5% 0% 3.5%;
 	border-radius: 5%;
 	border: 2px solid rgb(237, 119, 30);
 }
@@ -988,10 +988,10 @@ hr{
  	text-align: center;
  	color: #FFFFFF;
  	background-color: rgba(0,0,0,0.3);
-	border-radius: 57px;
-	margin-bottom: 10%!important;
-	padding: 3% 7%;
-	border: 5px solid rgb(237,119,30);
+ 	border-radius: 57px;
+ 	margin-bottom: 10%!important;
+ 	padding: 3% 3%;
+ 	border: 5px solid rgb(237,119,30);
  }
  .separationMenu{
  	color: #ED771E;
@@ -1015,21 +1015,58 @@ hr{
  	background-color: transparent;
  }
 
-.filterButtonsContainer>span>button:focus{
+ .filterButtonsContainer>span>button:focus{
  	outline: none;
  	color: white;
-	background-color: rgba(237, 119, 30, 1);
+ 	background-color: rgba(237, 119, 30, 1);
  }
  .btn-enregistrerMenu{
  	margin-top: 12%;
  }
  .menuAddButton{
-    top: 25%;
-    width: 5%;
-    height: 54px;
-    font-size: 185%;
-    position: absolute;
+ 	top: 25%;
+ 	width: 5%;
+ 	height: 54px;
+ 	font-size: 185%;
+ 	position: absolute;
+ }
+ .btn-retourMenu, .btn-retourMenu:hover{
+ 	position: absolute;
+ 	top: 30%;
+ 	left: 8.5%;
+ 	text-align: center;
+ 	width: 6%;
+ 	height: 76px;
+ 	font-size: 135%;
+ 	color: #fFFFFF;
+ 	font-weight: bold;
+ 	background-color: transparent;
+ 	border-radius: 200px;
+ 	border: 3px solid #ED771E;
+ }
+ .btn-retourMenu>p{
+    margin-left: -11%;
+    margin-top: 28%;
 }
+.updateMenu{
+ 	float: right;
+ 	width: 47%;
+ 	margin: 0 1.5%;
+ 	text-align: center;
+ 	color: #FFFFFF;
+ 	background-color: rgba(0,0,0,0.3);
+ 	border-radius: 57px;
+ 	margin-bottom: 10%!important;
+ 	padding: 3% 3%;
+ 	border: 5px solid rgb(237,119,30);
+ }
+ .updateMenu>div>label, .updateMenu>label {
+ 	width: 100%;
+ 	font-size: 371%;
+ 	font-family: 'cookie', sans-serif;
+ 	margin-bottom: 3%;
+ }
+
 
 /*=====================================
  FIN CSS MENUS
