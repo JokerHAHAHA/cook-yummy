@@ -1047,6 +1047,13 @@ body {
  .btn-enregistrerMenu{
  	margin-top: 12%;
  }
+ .menuAddButton{
+    top: 25%;
+    width: 5%;
+    height: 54px;
+    font-size: 185%;
+    position: absolute;
+}
 
 /*=====================================
  FIN CSS MENUS
