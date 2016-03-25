@@ -8,10 +8,15 @@
 MENU LIST
 ================================================================================== -->
 
-<div ng show="number == 1" class="container Menus">
+<div ng show="number == 1" ng-hide="number == 2 || number == 3" class="container Menus">
 	<!-- bouton ajouter menu -->
+<<<<<<< HEAD
 	<button ng-click="numView(2)" type="submit" class="col-lg-offset-7 glyphicon glyphicon-plus menuAddButton btn btn-success"></button>
 	<div class="row menu container" ng-repeat="menu in menus">
+=======
+	<button ng-click="viewCount(2)" type="submit" class="col-lg-offset-7 glyphicon glyphicon-plus menuAddButton btn btn-success"></button>
+	<div class="row menu" ng-repeat="menu in menus">
+>>>>>>> menu
 		
 		<span type="submit" class="loupe col-lg-1 glyphicon glyphicon-zoom-in" ng-click="keep(menu)"></span>
 
@@ -21,7 +26,7 @@ MENU LIST
 
 		<div class="ligne col-md-3 row-button" style="vertical-align: middle;">
 			<form class="btn-modifier" style="display: inline-block;">
-				<button type="submit" class="btn btn-warning" ng-click="keep(menu)">Modifier</button>
+				<button type="submit" class="btn btn-warning" ng-click="keep(menu); viewCount(3)">Modifier</button>
 			</form>
 			<span type="submit" class="btn btn-danger" ng-click="delete(menu)">X</span>
 		</div>
@@ -41,6 +46,9 @@ END MENU LIST
 CREATE MENU
 ================================================================================== -->
 <div ng-show="number == 2">
+	<div ng-click="load(); viewCount(1)" class="btn-retourMenu btn">
+		<p>Retour</p>
+	</div>
 
 	<h1 class="sub-titleMenus">Nouveau Menu</h1>
 	
@@ -65,8 +73,6 @@ CREATE MENU
 		<!-- show meals filtered by filter button -->
 		<div class="row meal" ng-repeat="meal in meals | filter: cat | filter: search">
 
-			<!-- <span type="submit" class="loupe col-sm-1 glyphicon glyphicon-zoom-in" ng-click="keep(meal)"></span> -->
-
 			<div class="ligne col-sm-3">
 				<img class="img-circle" src="{{meal.avatar}}" style="height: 70%;" />
 			</div>
@@ -75,7 +81,7 @@ CREATE MENU
 
 
 			<div class="ligne col-sm-2 row-buttonMenu" style="vertical-align: middle;">
-				<button type="submit" ng-click="pushMeal(meal.categorie, meal._id); keep(meal, meal.categorie)" class="glyphicon glyphicon-arrow-right mealMenuAddButton btn btn-success"></button>
+				<button type="submit" ng-click="pushMeal(meal, meal.categorie, meal._id)" class="glyphicon glyphicon-arrow-right mealMenuAddButton btn btn-success"></button>
 			</div>
 		</div>
 	</div>
@@ -193,7 +199,7 @@ CREATE MENU
 
 		<!-- bouton final de validation -->
 		<div>
-			<button type="submit" class="btn-enregistrerMenu btn btn-success form-control" ng-click="add(idStarterSelected)">Enregistrer mon menu</button>
+			<button type="submit" class="btn-enregistrerMenu btn btn-success form-control" ng-click="add(idStarterSelected); viewCount(0)">Enregistrer mon menu</button>
 		</div>
 
 	</div>
@@ -201,4 +207,191 @@ CREATE MENU
 
 <!-- =============================================================================
 END CREATE MENUS
+================================================================================== -->
+
+
+
+
+<!-- =============================================================================
+UPDATE MENU
+================================================================================== -->
+
+<div ng-show="number == 3">
+	<div ng-click="load(); viewCount(1)" class="btn-retourMenu btn">
+		<p>Retour</p>
+	</div>
+
+	<h1 class="sub-titleMenus">Modifier le Menu</h1>
+	
+	<!-- Les plats disponibles -->
+	<div class="container-fluid allMeals">
+		
+		<!-- barre de recherche -->
+		<input type="text" class="rechercheMealMenu form-control" ng-model="search" placeholder="Recherche">
+
+		<!-- tickbox filters -->
+		<div class="filterButtonsContainer" ng-init="cat = 'ras'" class="input-group">
+			<span>
+				<button class="filterButton" type="submit" ng-click="cat = 'starter'">Entrées |</button>
+				<button class="filterButton" type="submit" ng-click="cat = 'dish'">Plats |</button>
+				<button class="filterButton" type="submit" ng-click="cat = 'garnish'">Accompagnements |</button>
+				<button class="filterButton" type="submit" ng-click="cat = 'dessert'">Desserts |</button>
+				<button class="filterButton" type="submit" ng-click="cat = 'drink'">Boissons</button>
+			</span>
+		</div>
+
+
+		<!-- show meals filtered by filter button -->
+		<div class="row meal" ng-repeat="meal in meals | filter: cat | filter: search">
+
+
+			<div class="ligne col-sm-3">
+				<img class="img-circle" src="{{meal.avatar}}" style="height: 70%;" />
+			</div>
+
+			<div class="ligne col-lg-7" style="vertical-align: middle;">{{meal.name}}</div>
+
+
+			<div class="ligne col-sm-2 row-buttonMenu" style="vertical-align: middle;">
+				<button type="submit" ng-click="pushMeal(meal.categorie, meal._id)" class="glyphicon glyphicon-arrow-right mealMenuAddButton btn btn-success"></button>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Le formulaire de creation du nouveau menu -->
+	<div class="container-fluid updateMenu">
+
+		<label for="name">Nom :</label>
+		<input type="text" ng-model="name" class="form-control" placeholder="Entrez le nom du nouveau menu ici">
+
+		<!-- show the starter selected -->
+		<!-- not shown if the menu updated doesn't have this meal -->
+		<div ng-show="idStarterSelected != 'ras'">
+			<p class="separationMenu">______________________________________________</p>
+			<label for="starter">Entrée :</label>
+			
+			<div class="container-fluid">
+				<div class="row meal">
+					<!-- avatar -->
+					<div class="ligne col-sm-3">
+						<img class="img-circle" src="{{starter.avatar}}" style="height: 70%;" />
+					</div>
+					<!-- nom -->
+					<div class="ligne col-lg-7" style="vertical-align: middle;">{{starter.name}}</div>
+					<!-- boutons -->
+					<div class="ligne col-sm-2 row-buttonMenu" style="vertical-align: middle;">
+						<button type="submit" ng-click="deleteMeal(meal.categorie)" class="btn btn-danger">x</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- show the dish selected -->
+		<!-- not shown if the menu updated doesn't have this meal -->
+		<div ng-show="idDishSelected != 'ras'">
+			<p class="separationMenu">______________________________________________</p>
+			<label for="dish">Plat :</label>
+			
+			<div class="container-fluid">
+				<div class="row meal">
+
+
+					<div class="ligne col-sm-3">
+						<img class="img-circle" src="{{dish.avatar}}" style="height: 70%;" />
+					</div>
+
+					<div class="ligne col-lg-7" style="vertical-align: middle;">{{dish.name}}</div>
+
+
+					<div class="ligne col-sm-2 row-buttonMenu" style="vertical-align: middle;">
+						<button type="submit" ng-click="deleteMeal(meal.categorie)" class="btn btn-danger">x</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- sh<ow the garnish selected -->
+		<!-- not shown if the menu updated doesn't have this meal -->
+		<div ng-show="idGarnishSelected != 'ras'">
+			<p class="separationMenu">______________________________________________</p>
+			<label for="garnish">Accompagnement :</label>
+			
+			<div class="container-fluid">
+				<div class="row meal">
+
+
+					<div class="ligne col-sm-3">
+						<img class="img-circle" src="{{garnish.avatar}}" style="height: 70%;" />
+					</div>
+
+					<div class="ligne col-lg-7" style="vertical-align: middle;">{{garnish.name}}</div>
+
+
+					<div class="ligne col-sm-2 row-buttonMenu" style="vertical-align: middle;">
+						<button type="submit" ng-click="deleteMeal(meal.categorie)" class="btn btn-danger">x</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- show the dessert seleted -->
+		<!-- not shown if the menu updated doesn't have this meal -->
+		<div ng-show="idDessertSelected != 'ras'">
+			<p class="separationMenu">______________________________________________</p>
+			<label for="dessert">Dessert :</label>
+			
+			<div class="container-fluid">
+				<div class="row meal">
+
+
+					<div class="ligne col-sm-3">
+						<img class="img-circle" src="{{dessert.avatar}}" style="height: 70%;" />
+					</div>
+
+					<div class="ligne col-lg-7" style="vertical-align: middle;">{{dessert.name}}</div>
+
+
+					<div class="ligne col-sm-2 row-buttonMenu" style="vertical-align: middle;">
+						<button type="submit" ng-click="deleteMeal(meal.categorie)" class="btn btn-danger">x</button>
+					</div>
+				</div>
+			</div>
+		</div><!-- end dessert -->
+
+		<!-- show the drink seleted -->
+		<!-- not shown if the menu updated doesn't have this meal -->
+		<div ng-show="idDrinkSelected != 'ras'">
+			<p class="separationMenu">______________________________________________</p>
+			<label for="drink">Boissons :</label>
+			
+			<div class="container-fluid">
+				<div class="row meal">
+
+
+					<div class="ligne col-sm-3">
+						<img class="img-circle" src="{{drink.avatar}}" style="height: 70%;" />
+					</div>
+
+					<div class="ligne col-lg-7" style="vertical-align: middle;">{{drink.name}}</div>
+
+
+					<div class="ligne col-sm-2 row-buttonMenu" style="vertical-align: middle;">
+						<button type="submit" ng-click="deleteMeal(meal.categorie)" class="btn btn-danger">x</button>
+					</div>
+				</div>
+			</div>
+		</div><!-- end drink -->
+
+		<!-- bouton final de validation -->
+		<div>
+			<button type="submit" class="btn-enregistrerMenu btn btn-success form-control" ng-click="update(idStarterSelected); viewCount(0)">Modifier mon menu</button>
+		</div>
+
+	</div>
+</div>
+
+
+
+<!-- =============================================================================
+END UPDATE MENU
 ================================================================================== -->

@@ -19,9 +19,11 @@ function menuController($scope, $http, menuService, mealService) {
 		});
 	}
 
-	function viewCount(number){
+	$scope.viewCount = function(number){
 		$scope.number = number;
-		debugger
+		// 1 = Menu list
+		// 2 = Add menu
+		// 3 = Update Menu
 	}
 
 	$scope.add = function(categorie){
@@ -63,25 +65,6 @@ function menuController($scope, $http, menuService, mealService) {
 			load();
 		});
 	}
-	$scope.pushMeal = function(categorie,_id){
-		if (categorie == 'starter'){
-			$scope.idStarterSelected = _id;
-		}
-		else if (categorie == 'dish'){
-			$scope.idDishSelected = _id;
-		}
-		else if (categorie == 'garnish'){
-			$scope.idGarnishSelected = _id;
-			
-		}
-		else if (categorie == 'dessert'){
-			$scope.idDessertSelected = _id;			
-		}
-		else
-			$scope.idDrinkSelected = _id;
-
-		load();
-	}
 
 	$scope.deleteMeal = function(categorie){
 		if (categorie == 'starter'){
@@ -103,25 +86,55 @@ function menuController($scope, $http, menuService, mealService) {
 		load();
 	}
 
-	$scope.keep = function(meal, categorie){
+	$scope.keep = function(menu){
+		$scope.name = menu.name;
+		$scope.starter = menu.starter;
+		$scope.dish = menu.dish;
+		$scope.garnish = menu.garnish;
+		$scope.dessert = menu.dessert;
+		$scope.drink = menu.drink;
+		
+		if (menu.starter != "")
+			$scope.idStarterSelected = menu.starter._id;
+		if (menu.dish != "")
+			$scope.idDishSelected = menu.dish._id;
+		if (menu.garnish != "")
+			$scope.idGarnishSelected = menu.garnish._id;
+		if (menu.dessert)
+			$scope.idDessertSelected = menu.dessert._id;
+		else
+			$scope.idDessertSelected = 'ras';
+		if (menu.drink != "")
+			$scope.idDrinkSelected = menu.drink._id;
+
+		load();
+	}
+	
+	$scope.pushMeal = function(meal, categorie,_id){
 		if (categorie == 'starter'){
+			$scope.idStarterSelected = _id;
 			$scope.starter = meal;
 		}
 		else if (categorie == 'dish'){
+			$scope.idDishSelected = _id;
 			$scope.dish = meal;
 		}
 		else if (categorie == 'garnish'){
+			$scope.idGarnishSelected = _id;
 			$scope.garnish = meal;
 			
 		}
 		else if (categorie == 'dessert'){
-			$scope.dessert = meal;			
+			$scope.idDessertSelected = _id;			
+			$scope.dessert = meal;
 		}
 		else
-			$scope.drink = meal;
-		
-	}
+			$scope.idDrinkSelected = _id;
+		$scope.drink = meal;
 
+		load();
+	}
+	
 	load();
 
 }
