@@ -7,6 +7,7 @@ function menuController($scope, $http, menuService, mealService) {
 	$scope.idGarnishSelected = "ras";
 	$scope.idDessertSelected = "ras";
 	$scope.idDrinkSelected = "ras";
+	$scope.number = 2;
 
 	function load(){
 		menuService.get().then(function(res){
@@ -18,6 +19,10 @@ function menuController($scope, $http, menuService, mealService) {
 		});
 	}
 
+	function viewCount(number){
+		$scope.number = number;
+		debugger
+	}
 
 	$scope.add = function(categorie){
 		var data = {};
