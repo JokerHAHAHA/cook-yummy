@@ -10,14 +10,14 @@
 			<div class="EvCo2 col-md-4">
 					<h2 class="page-header h2_event">Créer un événement</h2>
 
-					<form name="creatEventForm" class="form-inline" ng-show="test=1">
+					<form name="creatEventForm" class="form-inline" ng-show="test==1">
 						<hr>
 
 					
 						<!-- formulaire: Description -->
 						<div class="form-groupDescription">
 							<label class="labelBlanc">Choisir un type d'événement :</label><br>
-							<select type="text" class="form-control" id="inputDescr_event" ng-model="description">
+							<select type="text" class="form-control" id="inputDescr_event" ng-model="description" ng-required="required">
 								<option value="0">Anniversaire</option>
 								<option value="1">Noël</option>
 								<option value="2">Nouvel An</option>
@@ -92,37 +92,88 @@
 						</div>
 							<hr>
 				
-						<button type="submit" class="btn btn-success btn-event-green" ng-click="suivant()" >Suivant</button>	
+						<button type="submit" class="btn btn-warning pull-right" ng-click="suivant()">Suivant</button>	
 					</form>	
-					<!-- Fin / Formulaire création d'événements -->
-				</div>
-							
+					
+					<form ng-show="test==2">
+						<div class="nextForm1">
+							<h5 class="h5_event" >Inviter des amis :</h5>
+							<label>Recherche par nom et / ou prénom</label><br>
+							<input type="search" class="form-control" ng-model="search">
+						</div>
+						<div class="nextForm1-1">
+							<div class="inv" ng-repeat="account in accounts">
+								
+								<img src="{{account.image}}" alt="" class="tronche pull-left">	
+							        <h6 class="h6_event">{{account.firstname}}</h6>
+							        
+								
+							       <button type="submit" class="btn btn-warning btnAddInv pull-right" ng-click="addToEventInvites(account)">+</button>
+
+							</div>
+						</div>
 						<hr>
-				<div ng-hide="test=2">
-					jhrkghzeurgize
+						<button type="submit" class="btn btn-warning" ng-click="retour()">Retour</button>
+						<button type="submit" class="btn btn-warning pull-right" ng-click="suivant()">Suivant</button>	
+					</form>
+
+					<form ng-show="test==3">
+						<div class="nextForm3" >
+								<h5 class="h5_menuEvent" >choisir mon menu :</h5>
+						</div>
+						<div class="nextForm1-1">
+							<div class="men" ng-repeat="menu in menus">
+							
+							<div class="">	
+							        <p class="h6_event">{{menu.name}}</p>
+							        </div>
+								
+							       <div class=""> <button type="submit" class="btn btn-warning" ng-click="addToEventMenu(menu)">+</button></div>
+						
+
+							</div>
+						</div>
+						<button type="submit" class="btn btn-warning" ng-click="retour()">Retour</button>
+						<button type="submit" class="btn btn-success pull-right" ng-click="add()">Créer</button>
+					</form>
 				</div>
+						<!-- Fin / Formulaire création d'événements -->
+	
+						<hr>
 					<!-- ======================== Affichage des événements créé ============================ -->
 					<div class="container EvCont3 col-md-offset-5 ">
 						
 						<h2 class="page-header h2_event">Ma liste d'événements</h2>
 						<ul class="event-list"> 
-							<li ng-repeat="event in events | orderBy: 'jour' | orderBy: 'mois' | orderBy: 'annee'">
-								<time datetime="2014-07-20">
+							<li ng-repeat="event in events | orderBy: 'jour' | orderBy: 'mois' | orderBy: 'annee' ">
+								<time datetime="20-07-2014">
 									<span class="day">{{event.jour}}</span>
 									<span class="month">{{event.mois}}</span>
 									<span class="year">{{event.annee}}</span>
-									<span class="time"></span>
 								</time>
 									<img alt="image" src="{{event.image}}" />
 								<div class="info">	
 									<h3 class="h3_event">{{event.description1 | uppercase}}</h3>
 									<h4 class="h4_event">{{event.nom }}</h4>
 									
-										<span class="pull-right timeEvent"><i class="glyphicon glyphicon-time"></i> {{event.heure}} H {{event.minute}}</span>
-									
-
 									<p class="desc" ng-model="lieu">@ {{event.lieu}}</p>
-		                            <button type="button" class="btn btn-sm btn-warning pull-right btn-event-orang" data-toggle="modal" data-target=".bs-event-modal-lg"><span class="glyphicon glyphicon-plus-sign"></span>  DÉTAILS et MODIFICATIONS</button>
+
+										<button type="button" class="btn btn-warning pull-right btnEventUpdate" data-toggle="modal" data-target="#{{event._id}}" title="Mettre à Jour"><i class="glyphicon glyphicon-list-alt"></i></button>
+										<button type="button" class="btn btn-danger pull-right btnEventDelete" ng-click="delete(event)" title="Supprimer">
+										<i class="glyphicon glyphicon-trash"></i></button>
+		                            
+		                            <ul>
+										<li style="width:50%;"> {{event.heure}} H {{event.minute}}<span class="glyphicon glyphicon-time pull-left"></span></li>
+
+										<div class="dropdown">
+	  										<button class="btn btn-xs btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span class="badge"> 4 </span> Invités <span class="caret"></span>
+										  	</button>
+											  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+											    <li>{{account.name}}</li>
+											  </ul>
+										</div>
+										<!-- <li style="width:50%;"><span class="badge"> 4 </span> Invités </li> -->
+									</ul>
 								</div>
 							</li>	
 						</ul>
@@ -133,17 +184,11 @@
 		</div>
 	
 
-
-
-	<hr>
-
-
-
 <!-- ======================================== Fenetre modal =============================================== -->
  
-<div class="modal fade bs-event-modal-lg" tabindex="-1" role="dialog" aria-labelledby="eventLargeModalLabel">
+<div class="modal fade bs-event-modal-lg" tabindex="-1" role="dialog" aria-labelledby="eventLargeModalLabel" ng-repeat="event in events" id="{{event._id}}">
   <div class="modal-dialog modal-lg">
-    <div class="modal-content" ng-repeat="event in events">
+    <div class="modal-content" >
 
 		<div class="modal-header modalHeaderEvent">
 			<h4>Modifier mon événement : </h4>
@@ -152,7 +197,7 @@
 
        	</div>
   		 
-  		<div class="container modalContentEvent">
+  		<div class="container modalContentEvent" >
   			<div class="row">
 	  			<div class="form1">
 					<label>Type d'événement :</label><h4 class="h4_event2">{{event.description1}}</h4>
@@ -176,7 +221,6 @@
 
     	<div class="modal-footer modalFooterEvent">
     		<button type="button" class="btn btn-default" ng-click="update(event)">Mettre à jour</button>
-    		<button type="button" class="btn btn-danger" ng-click="delete(event)">Supprimer</button>
     	</div>
     </div>  
       

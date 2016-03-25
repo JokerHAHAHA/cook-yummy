@@ -13,8 +13,9 @@ var eventSchema = new mongoose.Schema({
   annee: String,
   heure: String,
   minute: String,
-  menu: String,
-  invitation: String
+  menu: Array,
+  invites: Array
+  
 });
 var Event = {
     
@@ -33,7 +34,7 @@ var Event = {
 			heure: req.body.heure,
 			minute: req.body.minute,
 			menu: req.body.menu,
-			invitation: req.body.invitation
+			invites: req.body.invites
 		}, function(){
 			res.sendStatus(200);
 		})
@@ -54,7 +55,7 @@ var Event = {
 			heure: req.body.heure,
 			minute: req.body.minute,
 			menu: req.body.menu,
-			invitation: req.body.invitation
+			invites: req.body.invites
 		}, function(){
 			res.sendStatus(200);
 		})

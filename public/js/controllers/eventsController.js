@@ -1,19 +1,41 @@
 // =========================================================================================================================
 //					 EVENTS CONTROLLER
 // =========================================================================================================================
-function eventsController($scope, $http, eventService) {
+function eventsController($scope, $http, eventService, menuService, accountService) {
 	$scope.title = "Evénements";
 	$scope.test = 1;
 
 	$scope.suivant = function (){
 		$scope.test += 1;
 	}
+	$scope.retour = function (){
+		$scope.test -= 1;
+	}
+	$scope.required = true;
 	
+
 	function load(){
 		eventService.get().then(function(res){
 			$scope.events = res.data;
 		});
+		menuService.get().then(function(res){
+			$scope.menus = res.data;
+			console.log($scope.menus)
+		});
+		accountService.get().then(function(res){
+			$scope.accounts = res.data;
+		});
 	}
+	$scope.event = {
+		menu:[],
+		invites: []
+	};
+	$scope.addToEventMenu= function(menu){
+    $scope.event.menu.push(menu);
+	};
+	$scope.addToEventInvites= function(account){
+	    $scope.event.invites.push(account);
+	};
 
 	$scope.jours = ['01','02','03','04','05','06','07','08','09','10','11','12','13','14','15',
 					'16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31'];
@@ -48,9 +70,10 @@ function eventsController($scope, $http, eventService) {
 		data.annee = $scope.annee;
 		data.heure = $scope.heure;
 		data.minute = $scope.minute;
-		data.menu = $scope.menu;
-		data.invitation = $scope.invitation;
+		data.menu = $scope.event.menu;
+		data.invites = $scope.event.invites;
 		data.image = $scope.images[$scope.description];
+		$scope.test=1;
 		
 
 		eventService.create(data).then(function(res){
@@ -64,10 +87,13 @@ function eventsController($scope, $http, eventService) {
 		$scope.annee = "";
 		$scope.heure = "";
 		$scope.minute = "";
-		$scope.menu = "";
 		$scope.invitation = "";
+		$scope.event.menu = [];
+		$scope.event.invites = [];
 	}
 	$scope.update = function(event){
+		$(".modal-backdrop").remove();
+		$("body").removeClass('modal-open');
 		eventService.update(event._id, event).then(function(res){
 			load();
 		});
