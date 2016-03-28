@@ -15,7 +15,7 @@ hr {
 	border-top: transparent;
 }
 .navbar-inverse {
-    background-color: rgba(34, 34, 34, 0.7);
+    background-color: rgba(34, 34, 34, 0.8);
 }
 .home{
 	/*background:url("../img/ok4.jpg");*/
@@ -138,7 +138,7 @@ hr{
 }
 .mealAddButton{
     position: absolute;
-    top: 26%;
+    top: 24%;
     text-align: center;
     width: 3.5%;
     height: 43px;

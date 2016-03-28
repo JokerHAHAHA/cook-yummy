@@ -250,7 +250,7 @@ ADD MEAL
 			<p>Choisir une photo</p>
 			<input class="input-file" type="file" ng-model="imageFile" onchange="angular.element(this).scope().previewFile(this)">
 		</div>
-		<img class="preview" id="preview" /><br>
+		<img class="preview" src="{{imageFile}}" /><br>
 	</form>
 
 	<label>Nom :</label>
@@ -409,14 +409,10 @@ UPDATE MEAL
 	<form class="recup-photo">
 		<label>Image de présentation :</label>
 		<div class="parcourir">
-			<p>Choisir une photo</p>
+			<p>Mofidier la photo</p>
 			<input class="input-file" type="file" ng-model="imageFile" onchange="angular.element(this).scope().previewFile(this)">
 		</div>
-
-		<!-- <div ng-repeat="meal in meals">
-			<img class="img-circle" src="{{meal.avatar}}" style="height: 70%;" /></br>
-		</div> -->
-		<img ng-model="avatar">
+		<img class="preview" src="{{avatar}}" /><br>
 	</form>
 
 	<label>Nom :</label>
@@ -476,40 +472,75 @@ UPDATE MEAL
 	<label>Produits allergènes :</label>
 	<form class="form-allergie">
 		<div class="radio">
-			<label><input type="radio" name="optradio" ng-model="allergie" value="gluten">Gluten</label>
+			<label>
+				<input type="checkbox" name="optradio" ng-model="allergie" value="gluten"> Gluten
+			</label>
 		</div>
+		
 		<div class="radio">
-			<label><input type="radio" name="optradio" ng-model="allergie" value="crustace">Crustacés</label>
+			<label>
+				<input type="checkbox" name="optradio" ng-model="allergie" value="crustace"> Crustacés
+			</label>
 		</div>
+		
 		<div class="radio">
-			<label><input type="radio" name="optradio" ng-model="allergie"	value="oeuf">Oeufs</label>
+			<label>
+				<input type="checkbox" name="optradio" ng-model="allergie"	value="oeuf"> Oeufs
+			</label>
 		</div>
+		
 		<div class="radio">
-			<label><input type="radio" name="optradio" ng-model="allergie" value="poisson">Poissons</label>
+			<label>
+				<input type="checkbox" name="optradio" ng-model="allergie" value="poisson"> Poissons
+			</label>
 		</div>
+		
 		<div class="radio">
-			<label><input type="radio" name="optradio" ng-model="allergie" value="arachide">Arachides</label>
+			<label>
+				<input type="checkbox" name="optradio" ng-model="allergie" value="arachide"> Arachides
+			</label>
 		</div>
+		
 		<div class="radio">
-			<label><input type="radio" name="optradio" ng-model="allergie" value="soja">Soja</label>
+			<label>
+				<input type="checkbox" name="optradio" ng-model="allergie" value="soja"> Soja
+			</label>
 		</div>
+		
 		<div class="radio">
-			<label><input type="radio" name="optradio" ng-model="allergie" value="lait">Lait</label>
+			<label>
+				<input type="checkbox" name="optradio" ng-model="allergie" value="lait"> Lait
+			</label>
 		</div>
+		
 		<div class="radio">
-			<label><input type="radio" name="optradio" ng-model="allergie"	value="coque">Fruits à coque</label>
+			<label>
+				<input type="checkbox" name="optradio" ng-model="allergie"	value="coque"> Fruits à coque
+			</label>
 		</div>
+		
 		<div class="radio">
-			<label><input type="radio" name="optradio" ng-model="allergie" value="celeri">Céleri</label>
+			<label>
+				<input type="checkbox" name="optradio" ng-model="allergie" value="celeri"> Céleri
+			</label>
 		</div>
+		
 		<div class="radio">
-			<label><input type="radio" name="optradio" ng-model="allergie" value="sesame">Sésame</label>
+			<label>
+				<input type="checkbox" name="optradio" ng-model="allergie" value="sesame"> Sésame
+			</label>
 		</div>
+		
 		<div class="radio">
-			<label><input type="radio" name="optradio" ng-model="allergie" value="lupin">Lupin</label>
+			<label>
+				<input type="checkbox" name="optradio" ng-model="allergie" value="lupin"> Lupin
+			</label>
 		</div>
+		
 		<div class="radio">
-			<label><input type="radio" name="optradio" ng-model="allergie" value="mollusque">Mollusque</label>
+			<label>
+				<input type="checkbox" name="optradio" ng-model="allergie" value="mollusque"> Mollusque
+			</label>
 		</div>
 	</form>
 
@@ -519,6 +550,6 @@ UPDATE MEAL
 
 	<!-- bouton final de validation -->
 	<div>
-		<button type="submit" class="btn-enregistrer btn btn-success form-control" ng-click="update(); viewCount(0)">Enregistrer</button>
+		<button type="submit" class="btn-enregistrer btn btn-success form-control" ng-click="update(); viewCount(0)">Mettre à jour</button>
 	</div>
 </div>
