@@ -1,15 +1,13 @@
 // MEALS CONTROLLER
 function mealCtrl($scope, $http, mealService) {
+	// initialize variables values
 	$scope.number = 0;
+
 
 	function load(){
 		mealService.get().then(function(res){
 			$scope.meals = res.data;
 		});
-	}
-
-	function viewCount(number){
-		$scope.number = number;
 	}
 
 	$scope.add = function(){
@@ -25,7 +23,7 @@ function mealCtrl($scope, $http, mealService) {
 		data.allergie = $scope.allergie;
 
 		// reaffiche HOME MEAL
-		viewCount(0);
+		$scope.viewCount(0);
 		
 		mealService.create(data).then(function(res){
 			load();
@@ -96,6 +94,19 @@ function mealCtrl($scope, $http, mealService) {
 		$scope.allergie = meal.allergie;
 	}
 
+	$scope.unkeep = function(){
+
+		$scope._id = "";
+		$scope.avatar = "";
+		$scope.name = "";
+		$scope.description = "";
+		$scope.categorie = "starter";
+		$scope.ingredient = "";
+		$scope.recette = "";
+		$scope.boisson = "";
+		$scope.allergie = "";
+	}
+
 	$scope.viewCount = function(number){
 		$scope.number = number;
 		// 0 = home meal
@@ -108,6 +119,8 @@ function mealCtrl($scope, $http, mealService) {
 		// 7 = updateMeal
 		// 8 = meal sheet
 	}
+
+	
 
 	load();
 }

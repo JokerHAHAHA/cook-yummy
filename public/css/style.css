@@ -14,7 +14,9 @@ a {
 hr {
 	border-top: transparent;
 }
-
+.navbar-inverse {
+    background-color: rgba(34, 34, 34, 0.7);
+}
 .home{
 	/*background:url("../img/ok4.jpg");*/
 	filter: sep
@@ -127,11 +129,22 @@ hr{
 	width: 50%;
 	margin-bottom: 0;
 }
+.recherche>input:focus{
+	border-color: rgba(237, 119, 30, 0.8);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(237, 119, 30, 0.6);
+	outline: 0 none;
+	width: 50%;
+	margin-bottom: 0;
+}
 .mealAddButton{
-	width: 9%;
-	height: 54px;
-	margin-left: 41%;
-	font-size: 185%;
+    position: absolute;
+    top: 26%;
+    text-align: center;
+    width: 3.5%;
+    height: 43px;
+    color: #ED771E;
+    font-size: 138%;
+    font-weight: bold;
 }
 .addMealInput{
 	margin-bottom: 5%;
