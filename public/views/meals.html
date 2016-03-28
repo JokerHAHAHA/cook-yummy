@@ -248,7 +248,7 @@ ADD MEAL
 		<label>Image de présentation :</label>
 		<div class="parcourir">
 			<p>Choisir une photo</p>
-			<input class="input-file" type="file" ng-model="imageFile" onchange="angular.element(this).scope().previewFile(this)">
+			<input class="input-file" type="file" id="add" ng-model="imageFile" onchange="angular.element(this).scope().previewFile(this)">
 		</div>
 		<img class="preview" src="{{imageFile}}" /><br>
 	</form>
@@ -403,14 +403,14 @@ UPDATE MEAL
 	<div ng-click="viewCount(0)" class="btn-retour btn">
 		<p>Retour</p>
 	</div>
-	<h1 class="sub-titleMeals">MISE A JOUR</h1>
+	<h1 class="sub-titleMeals">Mise à jour</h1>
 	
 	<!-- formulaire pour choisir une photo sur l'ordinateur/mobile de l'utilisateur -->
 	<form class="recup-photo">
 		<label>Image de présentation :</label>
 		<div class="parcourir">
 			<p>Mofidier la photo</p>
-			<input class="input-file" type="file" ng-model="imageFile" onchange="angular.element(this).scope().previewFile(this)">
+			<input class="input-file" type="file" id="update" ng-model="imageFile" onchange="angular.element(this).scope().previewFile(this, '#update')">
 		</div>
 		<img class="preview" src="{{avatar}}" /><br>
 	</form>
