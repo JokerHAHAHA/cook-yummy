@@ -30,7 +30,7 @@ STARTERS
 		<span type="submit" class="loupe col-lg-1 glyphicon glyphicon-zoom-in" ng-click="keep(meal); viewCount(8)"></span>
 
 		<div class="ligne col-lg-3">
-			<img class="img-circle" src="{{meal.avatar}}" style="height: 90%;" />
+			<img class="img-circle" src="{{meal.avatar}}" style="height: 100%;" />
 		</div>
 
 		<div class="ligne col-lg-5" style="vertical-align: middle;">{{meal.name}}</div>
@@ -51,38 +51,42 @@ DISH
 
 <div ng-show="number == 2" class="container principal">
 	<div class="row meal" ng-repeat="meal in meals | filter: {categorie: 'dish'} | filter: search">
-
+		
 		<span type="submit" class="loupe col-lg-1 glyphicon glyphicon-zoom-in" ng-click="keep(meal); viewCount(8)"></span>
 
 		<div class="ligne col-lg-3">
-			<img class="img-circle" src="{{meal.avatar}}" style="height: 70%;" />
+			<img class="img-circle" src="{{meal.avatar}}" style="height: 100%;" />
 		</div>
-		
+
 		<div class="ligne col-lg-5" style="vertical-align: middle;">{{meal.name}}</div>
+		
 
 		<div class="ligne col-md-3 row-button" style="vertical-align: middle;">
-			<form class="btn-modifier" type="get" action="#/updateMeal" style="display: inline-block;">
+			<form class="btn-modifier" style="display: inline-block;">
 				<button type="submit" class="btn btn-warning" ng-click="keep(meal); viewCount(7)">Modifier</button>
 			</form>
 			<span type="submit" class="btn btn-danger" ng-click="delete(meal)">X</span>
 		</div>
 	</div>
 </div>
-
 <!-- =============================================================================
 GARNISH
 ================================================================================== -->
 
 <div ng-show="number == 3" class="container principal">
 	<div class="row meal" ng-repeat="meal in meals | filter: {categorie: 'garnish'} | filter: search">
-		<div class="ligne col-lg-4">
-			<img class="img-circle" src="{{meal.avatar}}" style="height: 70%;" />
-		</div>
 		
+		<span type="submit" class="loupe col-lg-1 glyphicon glyphicon-zoom-in" ng-click="keep(meal); viewCount(8)"></span>
+
+		<div class="ligne col-lg-3">
+			<img class="img-circle" src="{{meal.avatar}}" style="height: 100%;" />
+		</div>
+
 		<div class="ligne col-lg-5" style="vertical-align: middle;">{{meal.name}}</div>
-		<!-- <div class="ligne col-sm-4" style="vertical-align: middle;">{{meal.description}}</div> -->
+		
+
 		<div class="ligne col-md-3 row-button" style="vertical-align: middle;">
-			<form class="btn-modifier" type="get" action="#/updateMeal" style="display: inline-block;">
+			<form class="btn-modifier" style="display: inline-block;">
 				<button type="submit" class="btn btn-warning" ng-click="keep(meal); viewCount(7)">Modifier</button>
 			</form>
 			<span type="submit" class="btn btn-danger" ng-click="delete(meal)">X</span>
@@ -96,14 +100,18 @@ DESSERT
 
 <div ng-show="number == 4" class="container principal">
 	<div class="row meal" ng-repeat="meal in meals | filter: {categorie: 'dessert'} | filter: search">
-		<div class="ligne col-lg-4">
-			<img class="img-circle" src="{{meal.avatar}}" style="height: 70%;" />
-		</div>
 		
+		<span type="submit" class="loupe col-lg-1 glyphicon glyphicon-zoom-in" ng-click="keep(meal); viewCount(8)"></span>
+
+		<div class="ligne col-lg-3">
+			<img class="img-circle" src="{{meal.avatar}}" style="height: 100%;" />
+		</div>
+
 		<div class="ligne col-lg-5" style="vertical-align: middle;">{{meal.name}}</div>
-		<!-- <div class="ligne col-sm-4" style="vertical-align: middle;">{{meal.description}}</div> -->
+		
+
 		<div class="ligne col-md-3 row-button" style="vertical-align: middle;">
-			<form class="btn-modifier" type="get" action="#/updateMeal" style="display: inline-block;">
+			<form class="btn-modifier" style="display: inline-block;">
 				<button type="submit" class="btn btn-warning" ng-click="keep(meal); viewCount(7)">Modifier</button>
 			</form>
 			<span type="submit" class="btn btn-danger" ng-click="delete(meal)">X</span>
@@ -117,14 +125,18 @@ DRINK
 
 <div ng-show="number == 5" class="container principal">
 	<div class="row meal" ng-repeat="meal in meals | filter: {categorie: 'drink'} | filter: search">
-		<div class="ligne col-lg-4">
-			<img class="img-circle" src="{{meal.avatar}}" style="height: 70%;" />
-		</div>
 		
+		<span type="submit" class="loupe col-lg-1 glyphicon glyphicon-zoom-in" ng-click="keep(meal); viewCount(8)"></span>
+
+		<div class="ligne col-lg-3">
+			<img class="img-circle" src="{{meal.avatar}}" style="height: 100%;" />
+		</div>
+
 		<div class="ligne col-lg-5" style="vertical-align: middle;">{{meal.name}}</div>
-		<!-- <div class="ligne col-sm-4" style="vertical-align: middle;">{{meal.description}}</div> -->
+		
+
 		<div class="ligne col-md-3 row-button" style="vertical-align: middle;">
-			<form class="btn-modifier" type="get" action="#/updateMeal" style="display: inline-block;">
+			<form class="btn-modifier" style="display: inline-block;">
 				<button type="submit" class="btn btn-warning" ng-click="keep(meal); viewCount(7)">Modifier</button>
 			</form>
 			<span type="submit" class="btn btn-danger" ng-click="delete(meal)">X</span>
