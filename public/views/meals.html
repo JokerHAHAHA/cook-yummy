@@ -30,7 +30,7 @@ STARTERS
 		<span type="submit" class="loupe col-lg-1 glyphicon glyphicon-zoom-in" ng-click="keep(meal); viewCount(8)"></span>
 
 		<div class="ligne col-lg-3">
-			<img class="img-circle" src="{{meal.avatar}}" style="height: 70%;" />
+			<img class="img-circle" src="{{meal.avatar}}" style="height: 90%;" />
 		</div>
 
 		<div class="ligne col-lg-5" style="vertical-align: middle;">{{meal.name}}</div>
@@ -51,7 +51,10 @@ DISH
 
 <div ng-show="number == 2" class="container principal">
 	<div class="row meal" ng-repeat="meal in meals | filter: {categorie: 'dish'} | filter: search">
-		<div class="ligne col-lg-4">
+
+		<span type="submit" class="loupe col-lg-1 glyphicon glyphicon-zoom-in" ng-click="keep(meal); viewCount(8)"></span>
+
+		<div class="ligne col-lg-3">
 			<img class="img-circle" src="{{meal.avatar}}" style="height: 70%;" />
 		</div>
 		
@@ -410,7 +413,7 @@ UPDATE MEAL
 		<label>Image de présentation :</label>
 		<div class="parcourir">
 			<p>Mofidier la photo</p>
-			<input class="input-file" type="file" id="update" ng-model="imageFile" onchange="angular.element(this).scope().previewFile(this, '#update')">
+			<input class="input-file" type="file" id="update" ng-model="imageFile" onchange="angular.element(this).scope().previewFile(this)">
 		</div>
 		<img class="preview" src="{{avatar}}" /><br>
 	</form>

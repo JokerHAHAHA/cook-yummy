@@ -29,7 +29,6 @@ hr {
 }
 .moe-down{
 	padding-top: 10px;
-
 }
 #Autocomplete{
 	margin-top: 10px;
@@ -40,6 +39,7 @@ hr {
 	margin-top: -5px;
 }
 body{
+	overflow-x: hidden;
 	padding-top: 70px;
 	background-image: url("../img/ok5.jpg");
 	background-repeat:no-repeat;

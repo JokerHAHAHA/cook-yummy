@@ -79,13 +79,13 @@ function mealCtrl($scope, $http, mealService) {
 		// this runs first
 		if (file) {
 			reader.readAsDataURL(file);
-			// load();
+			load();
 		} else {
 			// for the ADD MEAL part
 			$scope.imageFile = $scope.defaultAvatar;
 			// for the UPDATE MEAL part
 			$scope.avatar = $scope.defaultAvatar;
-			// load();
+			load();
 		}
 	}
 	
@@ -105,8 +105,7 @@ function mealCtrl($scope, $http, mealService) {
 	$scope.unkeep = function(){
 
 		$scope._id = "";
-		$scope.avatar = $scope.defaultAvatar;
-		debugger	
+		$scope.avatar = $scope.defaultAvatar;	
 		$scope.name = "";
 		$scope.description = "";
 		$scope.categorie = "starter";
